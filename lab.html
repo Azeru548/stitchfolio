@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Technical Foundry | AI Research &amp; Engineering</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Manrope:wght@300;400;600&amp;family=Inter:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#151310",
+                        "on-secondary-container": "#c0b7aa",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "tertiary-fixed": "#e3e2e0",
+                        "background": "#151310",
+                        "surface-tint": "#d9c3ad",
+                        "on-primary-fixed-variant": "#544433",
+                        "surface-container-low": "#1d1b18",
+                        "primary-container": "#a18d79",
+                        "on-surface-variant": "#d0c4ba",
+                        "on-tertiary-container": "#292a29",
+                        "primary-fixed": "#f6dec8",
+                        "surface-variant": "#373430",
+                        "inverse-primary": "#6d5b49",
+                        "surface-bright": "#3b3935",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "secondary-fixed": "#ebe1d3",
+                        "surface-container-lowest": "#0f0e0b",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "secondary-fixed-dim": "#cfc5b8",
+                        "on-surface": "#e7e2db",
+                        "secondary-container": "#4e483e",
+                        "inverse-on-surface": "#32302c",
+                        "tertiary-container": "#90918f",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#25190b",
+                        "surface-container-highest": "#373430",
+                        "surface": "#151310",
+                        "on-tertiary": "#2f3130",
+                        "inverse-surface": "#e7e2db",
+                        "on-primary-container": "#352718",
+                        "tertiary": "#c7c6c5",
+                        "surface-container-high": "#2c2a26",
+                        "primary-fixed-dim": "#d9c3ad",
+                        "surface-container": "#211f1c",
+                        "outline": "#998f86",
+                        "on-secondary-fixed": "#201b13",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e7e2db",
+                        "primary": "#d9c3ad",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "secondary": "#cfc5b8",
+                        "outline-variant": "#4d453e",
+                        "on-secondary": "#353026",
+                        "on-primary": "#3c2e1e"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        body {
+            background-color: #151310;
+            color: #e7e2db;
+        }
+    </style>
+</head>
+
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+            <div class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Editorial Intelligence
+            </div>
+            <div class="hidden md:flex gap-10">
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
+                    href="work.html">Work</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="projects.html">Projects</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="stack.html">Stack</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="lab.html">Lab</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="#">Contact</a>
+            </div>
+            <button
+                class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
+                Get in Touch
+            </button>
+        </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="pt-32 pb-20">
+        <!-- Lab Hero -->
+        <section class="max-w-[1440px] mx-auto px-12 mb-32">
+            <div class="grid grid-cols-12 gap-8 items-end">
+                <div class="col-span-12 md:col-span-8">
+                    <span class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-6 block">Foundation
+                        v4.0</span>
+                    <h1 class="font-headline text-6xl md:text-8xl leading-tight mb-8 font-light italic">The Lab.</h1>
+                    <p
+                        class="font-headline text-2xl md:text-3xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                        Where complex logic meets human-centric elegance. A repository of AI research, experiments, and
+                        technical explorations.
+                    </p>
+                </div>
+                <div class="col-span-12 md:col-span-4 flex justify-end">
+                    <div
+                        class="w-48 h-48 rounded-full border border-outline-variant/30 flex items-center justify-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors"></div>
+                        <span class="material-symbols-outlined text-4xl text-primary animate-pulse">science</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Papers: Editorial Grid -->
+        <section class="bg-surface-container-low py-32">
+            <div class="max-w-[1440px] mx-auto px-12">
+                <div class="flex justify-between items-baseline mb-16">
+                    <h2 class="font-headline text-4xl italic">Featured Papers</h2>
+                    <span class="font-label text-xs tracking-widest uppercase opacity-40">Publications /
+                        2023-2024</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <!-- Paper 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="flex gap-4 mb-4">
+                            <span
+                                class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded text-on-surface-variant">ArXiv:2401.0822</span>
+                            <span
+                                class="font-label text-[10px] bg-secondary-container text-secondary-fixed px-2 py-0.5 rounded">Deep
+                                Learning</span>
+                        </div>
+                        <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Transformers
+                            for Real-time Fraud Detection</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
+                            An architectural deep-dive into utilizing attention mechanisms for sub-millisecond anomaly
+                            detection within high-frequency financial transaction streams. This research proposes a
+                            pruned attention block that reduces latency by 42% while maintaining F1-scores.
+                        </p>
+                        <a class="inline-flex items-center gap-2 text-primary font-label text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform"
+                            href="#">
+                            Read on ArXiv <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                    <!-- Paper 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="flex gap-4 mb-4">
+                            <span
+                                class="font-label text-[10px] border border-outline-variant px-2 py-0.5 rounded text-on-surface-variant">ArXiv:2311.1402</span>
+                            <span
+                                class="font-label text-[10px] bg-secondary-container text-secondary-fixed px-2 py-0.5 rounded">NLP
+                                &amp; Vision</span>
+                        </div>
+                        <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Neural
+                            Document Parsing at Scale</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-6 line-clamp-3">
+                            Implementing a hybrid CNN-Transformer model for multi-modal document understanding. We
+                            explore the boundaries of zero-shot transfer learning for semi-structured administrative
+                            forms across twelve languages.
+                        </p>
+                        <a class="inline-flex items-center gap-2 text-primary font-label text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform"
+                            href="#">
+                            Read on ArXiv <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Active Experiments: Bento Grid -->
+        <section class="max-w-[1440px] mx-auto px-12 py-32">
+            <h2 class="font-headline text-4xl italic mb-16 text-center">Active Experiments</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Experiment 1: Large Card -->
+                <div
+                    class="md:col-span-2 bg-surface-container-high p-10 rounded-xl relative overflow-hidden group border border-outline-variant/10">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 mb-6">
+                                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                <span class="font-label text-xs tracking-tighter text-primary">LIVE PROCESSING</span>
+                            </div>
+                            <h4 class="font-headline text-3xl mb-4">Generative UI for FinTech</h4>
+                            <p class="font-body text-on-surface-variant max-w-md">Dynamic layout generation based on
+                                user risk profiles and portfolio complexity. Utilizing LLMs to compile React components
+                                in real-time.</p>
+                        </div>
+                        <div
+                            class="mt-12 font-mono text-[10px] bg-surface-container-lowest p-4 rounded border border-outline-variant/20 opacity-60 group-hover:opacity-100 transition-opacity">
+                            <span class="text-primary-container">const</span> layout = <span
+                                class="text-secondary">await</span> ai.generate({ context, role: <span
+                                class="text-primary">'advisor'</span> });
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all">
+                    </div>
+                </div>
+                <!-- Experiment 2: Small Card -->
+                <div
+                    class="bg-surface-container-high p-10 rounded-xl border border-outline-variant/10 flex flex-col justify-between">
+                    <div>
+                        <span class="material-symbols-outlined text-primary mb-6 text-4xl"
+                            data-weight="fill">memory</span>
+                        <h4 class="font-headline text-2xl mb-4">Edge AI for Valuation</h4>
+                        <p class="font-body text-sm text-on-surface-variant">Quantized models running on-device for
+                            instantaneous real-estate asset valuation using computer vision.</p>
+                    </div>
+                    <button
+                        class="w-full py-3 bg-gradient-to-br from-primary to-primary-container text-on-primary font-label text-xs uppercase tracking-widest rounded-md mt-8">View
+                        Prototype</button>
+                </div>
+                <!-- Experiment 3: Small Card -->
+                <div class="bg-surface-container-high p-10 rounded-xl border border-outline-variant/10">
+                    <h4 class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-6">Metrics
+                    </h4>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
+                                <span>Model Convergence</span>
+                                <span class="text-primary">98.2%</span>
+                            </div>
+                            <div class="h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+                                <div class="h-full bg-primary w-[98.2%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs mb-2">
+                                <span>Inference Latency</span>
+                                <span class="text-primary">12ms</span>
+                            </div>
+                            <div class="h-1 bg-surface-container-lowest rounded-full overflow-hidden">
+                                <div class="h-full bg-primary w-[15%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Experiment 4: Multi-column Card -->
+                <div
+                    class="md:col-span-2 bg-surface-container-high p-10 rounded-xl border border-outline-variant/10 flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-1/2">
+                        <img class="rounded-lg grayscale hover:grayscale-0 transition-all duration-700 opacity-60 hover:opacity-100"
+                            data-alt="Abstract neural network visualization"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2ez9ycmTsyvE6nTCxQGQteFAOzZLGXZNy9RCkRUnrVnv3z6_XqoEXs2HLGho9jip_bR_LpTM0RS9SwhvS8MpcKM_9DtINzeEUQAMk59SBcV6gpWuXmmTB5lZRJ_iBtrur0g01Jr7RgUhfHjR1Akh8ebFks14L4XiC_oGBr9qu4-pvcI-B33ILitqpLivA5Zxj3MeZ1E6K3l83gENiqHmFhCo3vyg957XG9Uc5xW5XRAWZ_QGT-0UVFz2ruaL2XtEuelEmDWmxRYY4" />
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h4 class="font-headline text-2xl mb-4 italic">Neural Architecture Search</h4>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Automating the design of
+                            specialized neural networks for specific mobile chipsets. Achieving 4x efficiency over
+                            manual design.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Open Source Tools -->
+        <section class="bg-surface-container-low py-32">
+            <div class="max-w-[1440px] mx-auto px-12">
+                <div class="grid grid-cols-12 gap-12">
+                    <div class="col-span-12 md:col-span-4">
+                        <h2 class="font-headline text-4xl italic mb-6">Open Source</h2>
+                        <p class="font-body text-on-surface-variant leading-relaxed">
+                            A commitment to the collective intelligence. These tools are maintained for the engineering
+                            community.
+                        </p>
+                    </div>
+                    <div class="col-span-12 md:col-span-8 space-y-4">
+                        <!-- Tool 1 -->
+                        <div
+                            class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-lg border border-transparent hover:border-outline-variant/30 transition-all">
+                            <div class="flex items-center gap-6">
+                                <span class="material-symbols-outlined text-primary text-3xl">terminal</span>
+                                <div>
+                                    <h5 class="font-label font-bold text-on-surface">Azeru-OCR-Core</h5>
+                                    <p class="text-xs text-on-surface-variant mt-1">Lightweight OCR engine for
+                                        low-resource environments.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="font-label text-[10px] text-on-surface-variant"></span>
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">arrow_outward</span>
+                            </div>
+                        </div>
+                        <!-- Tool 2 -->
+                        <div
+                            class="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-lg border border-transparent hover:border-outline-variant/30 transition-all">
+                            <div class="flex items-center gap-6">
+                                <span class="material-symbols-outlined text-primary text-3xl">account_tree</span>
+                                <div>
+                                    <h5 class="font-label font-bold text-on-surface">Asguard-Flow-Engine</h5>
+                                    <p class="text-xs text-on-surface-variant mt-1">State-machine logic for
+                                        deterministic AI workflows.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="font-label text-[10px] text-on-surface-variant"></span>
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">arrow_outward</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Methodology -->
+        <section class="max-w-[1440px] mx-auto px-12 py-32">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="font-label text-[10px] tracking-[0.3em] uppercase text-primary mb-12 block">The Atelier
+                    Approach</span>
+                <h2 class="font-headline text-5xl mb-12 leading-tight">Engineering as a <span
+                        class="italic">Craft</span>.</h2>
+                <div
+                    class="columns-1 md:columns-2 gap-16 text-left font-body text-on-surface-variant leading-loose space-y-8">
+                    <p>
+                        In the Digital Atelier, we reject the notion that high-performance code must be unsightly. We
+                        believe the architecture of a neural network should be as considered as the architecture of a
+                        museum. Precision is our primary aesthetic.
+                    </p>
+                    <p>
+                        Our methodology centers on "Organic Precision." This means building systems that are robust
+                        enough for production but flexible enough to evolve as new research emerges. We favor
+                        intentionality over velocity.
+                    </p>
+                    <p>
+                        Every line of code is a brushstroke. Whether it's optimizing a kernel for a GPU or designing a
+                        frictionless user interface, the commitment to quality remains constant. We are not just
+                        developers; we are digital artisans.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#151310] dark:bg-[#151310] w-full py-16 border-t border-[#373430]/10">
+        <div
+            class="flex flex-col items-center gap-8 px-8 w-full max-w-7xl mx-auto text-[#a18d79] dark:text-[#a18d79] font-['Inter'] uppercase text-[10px] tracking-[0.1em]">
+            <div class="flex gap-12 mb-4">
+                <a class="text-[#e7e2db]/30 hover:text-[#d9c3ad] transition-colors underline underline-offset-4 decoration-[#a18d79]/30"
+                    href="#">Ethics Policy</a>
+                <a class="text-[#e7e2db]/30 hover:text-[#d9c3ad] transition-colors underline underline-offset-4 decoration-[#a18d79]/30"
+                    href="#">Privacy</a>
+                <a class="text-[#e7e2db]/30 hover:text-[#d9c3ad] transition-colors underline underline-offset-4 decoration-[#a18d79]/30"
+                    href="#">ArXiv</a>
+                <a class="text-[#e7e2db]/30 hover:text-[#d9c3ad] transition-colors underline underline-offset-4 decoration-[#a18d79]/30"
+                    href="#">GitHub</a>
+            </div>
+            <p class="text-center opacity-40">© 2024 Editorial Intelligence. Designed as a Digital Atelier.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

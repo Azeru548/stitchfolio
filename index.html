@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kennedy Chinwo | Editorial Intelligence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#d9c3ad",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0f0e0b",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "surface-dim": "#151310",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "secondary-container": "#4e483e",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#1d1b18",
+                        "on-primary-fixed": "#25190b",
+                        "on-primary-fixed-variant": "#544433",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "on-tertiary": "#2f3130",
+                        "surface-container-high": "#2c2a26",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "tertiary-fixed": "#e3e2e0",
+                        "inverse-primary": "#6d5b49",
+                        "secondary-fixed-dim": "#cfc5b8",
+                        "on-surface": "#e7e2db",
+                        "primary": "#d9c3ad",
+                        "on-primary-container": "#352718",
+                        "outline-variant": "#4d453e",
+                        "secondary": "#cfc5b8",
+                        "on-secondary-fixed": "#201b13",
+                        "secondary-fixed": "#ebe1d3",
+                        "on-primary": "#3c2e1e",
+                        "inverse-on-surface": "#32302c",
+                        "surface-bright": "#3b3935",
+                        "primary-fixed-dim": "#d9c3ad",
+                        "primary-container": "#a18d79",
+                        "background": "#151310",
+                        "on-secondary-container": "#c0b7aa",
+                        "outline": "#998f86",
+                        "on-surface-variant": "#d0c4ba",
+                        "on-error": "#690005",
+                        "error-container": "#93000a",
+                        "tertiary": "#c7c6c5",
+                        "surface": "#151310",
+                        "surface-container": "#211f1c",
+                        "surface-container-highest": "#373430",
+                        "inverse-surface": "#e7e2db",
+                        "on-background": "#e7e2db",
+                        "tertiary-container": "#90918f",
+                        "surface-variant": "#373430",
+                        "on-secondary": "#353026",
+                        "on-tertiary-container": "#292a29",
+                        "primary-fixed": "#f6dec8"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(21, 19, 16, 0.6);
+            backdrop-filter: blur(12px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #d9c3ad 0%, #a18d79 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+            <div class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Editorial Intelligence
+            </div>
+            <div class="hidden md:flex gap-10">
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
+                    href="work.html">Work</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="projects.html">Projects</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="stack.html">Stack</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="lab.html">Lab</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="#">Contact</a>
+            </div>
+            <button
+                class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
+                Get in Touch
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 px-8 max-w-7xl mx-auto overflow-hidden">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+                    <span class="font-label text-xs uppercase tracking-[0.05em] text-on-surface-variant">Available for
+                        Technical Leadership</span>
+                </div>
+                <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl leading-tight text-on-surface">
+                    Kennedy Chinwo <br />
+                    <span class="italic text-primary">Full Stack &amp; AI Engineer</span>
+                </h1>
+                <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                    Building scalable, secure digital experiences where complex logic meets human-centric elegance.
+                    Specializing in high-performance backends, AI integration, and blockchain architectures.
+                </p>
+                <div class="flex flex-wrap gap-6 pt-4">
+                    <button
+                        class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-md font-semibold text-base">View
+                        Case Studies</button>
+                    <button
+                        class="text-primary border border-outline-variant/20 hover:border-primary/40 px-8 py-4 rounded-md font-semibold text-base transition-all">Latest
+                        Research</button>
+                </div>
+            </div>
+            <div class="hidden lg:block lg:col-span-4 relative">
+                <div class="aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low group">
+                    <img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                        data-alt="Professional portrait of Kennedy Chinwo in a minimalist setting"
+                        src="IMG_E7983.JPG" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                </div>
+                <!-- Abstract Geometric Overlay -->
+                <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Expertise Section: What I Do -->
+    <section class="py-32 px-8 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Core
+                        Competencies</span>
+                    <h2 class="font-headline text-4xl md:text-5xl text-on-surface">The Digital <span
+                            class="italic">Atelier</span></h2>
+                </div>
+                <p class="font-body text-on-surface-variant max-w-md text-sm md:text-base leading-relaxed">
+                    A multi-disciplinary approach to engineering, bridging the gap between hardware-level efficiency and
+                    cloud-scale intelligence.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-1">
+                <!-- Backend -->
+                <div
+                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
+                    <span class="material-symbols-outlined text-primary mb-6 text-4xl"
+                        data-icon="database">database</span>
+                    <h3 class="font-headline text-xl mb-4">Backend Architecture</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Designing high-concurrency systems using
+                        Rust, Go, and Python for mission-critical infrastructure.</p>
+                </div>
+                <!-- Full Stack -->
+                <div
+                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-primary mb-6 text-4xl" data-icon="layers">layers</span>
+                    <h3 class="font-headline text-xl mb-4">Full Stack Development</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Creating seamless interfaces with React
+                        and Next.js, powered by robust API ecosystems.</p>
+                </div>
+                <!-- AI Engineering -->
+                <div
+                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-primary mb-6 text-4xl"
+                        data-icon="psychology">psychology</span>
+                    <h3 class="font-headline text-xl mb-4">AI &amp; LLM Integration</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Deploying specialized models for document
+                        intelligence and automated fraud detection systems.</p>
+                </div>
+                <!-- Blockchain -->
+                <div
+                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-primary mb-6 text-4xl" data-icon="token">token</span>
+                    <h3 class="font-headline text-xl mb-4">Blockchain &amp; Web3</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">Smart contract engineering and
+                        decentralized protocols for secure value transfer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Projects: Bento Grid -->
+    <section class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="mb-20">
+            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Selected Works</span>
+            <h2 class="font-headline text-4xl md:text-5xl text-on-surface">Architecting <span
+                    class="italic">Solutions</span></h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <!-- Project 1: Asguard -->
+            <div class="md:col-span-8 group cursor-pointer">
+                <div class="aspect-[16/9] overflow-hidden rounded-xl bg-surface-container-high relative mb-6">
+                    <img class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000"
+                        data-alt="Digital representation of complex security nodes and AI pathways"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE7WrucZ1isaBvO4oQQSd0T7Y8VDqGdDd1jUh6UH5QqB2zWiiB_apzb5zUTCWkUHkiZcpB80GuSWUuH6tpaTYZySwwpogIZ9APKT5W9QYJPneUAT2OCS4Bw4o-ycZS9Ry42zmRlhlnd5KiCCewU4Gn-RfMcEYo8Va_2zx0s65ngraQG6-hjBtNNwxOIlqkkrwXfvYrKbULzWiiFcMC5j2FwxSD7PXE2C5adbri2nFdrAqnlM3LNK36nkTTJR4-7DOKS5GvBCC1jmCi" />
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <div
+                            class="bg-surface-container-low/60 backdrop-blur-md p-8 max-w-md border border-outline-variant/20">
+                            <h3 class="font-headline text-3xl mb-2 text-on-surface">Asguard</h3>
+                            <p class="text-sm text-on-surface-variant mb-4">Real-time AI-powered fraud detection system
+                                for high-volume fintech environments.</p>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary border border-primary/20">Golang</span>
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary border border-primary/20">Ollama</span>
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary border border-primary/20">OpenApi</span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2: Azeru -->
+            <div class="md:col-span-4 group cursor-pointer">
+                <div
+                    class="aspect-square md:aspect-auto md:h-full overflow-hidden rounded-xl bg-surface-container-high relative mb-6">
+                    <img class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000"
+                        data-alt="Stacks of documents transformed into glowing digital data bits"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ux3up6bHYgluMsojfOypFsitomz2mweS1G71TqdbH2SoWDSYZWjhLguKs52MS3z0onkQOZS9FTiT1bAq-NfREJvuZ0Qvieltwyhx4KOTgfTeiCe2C4NFmwfTT4cLIP0iPOhmSB0MTr7YqCbcWs8CHfSUhxur_oACRWHd9QMytjyvtBvbtBp4mlM1EYaOXX8kpLwK37t1gvXX7gb-D-YiS55g9QAKiCZDjyZEFq00-NMHn_r2jb-2kIW28b_eu-MIJvTb6boUjaHQ" />
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <div class="bg-surface-container-low/60 backdrop-blur-md p-6 border border-outline-variant/20">
+                            <h3 class="font-headline text-2xl mb-2 text-on-surface">Azeru</h3>
+                            <p class="text-sm text-on-surface-variant mb-4">Intelligent document extraction and semantic
+                                analysis.</p>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Golang</span>
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">NextJs</span>
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">PostgreSQL</span>
+                                <span
+                                    class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">RAG</span>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3: Hauser -->
+            <div class="md:col-span-12 group cursor-pointer">
+                <div class="aspect-[21/9] overflow-hidden rounded-xl bg-surface-container-high relative">
+                    <img class="w-full h-full object-cover grayscale opacity-30 group-hover:scale-105 group-hover:opacity-50 transition-all duration-1000"
+                        data-alt="Modern luxury architecture with clean lines and glass surfaces"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuABCveVvxMlvxAIYPP0Oo4odE3sh2wGPEBEkoxy3GScDOcTdONmf5X-Jt8ixWWneO_Gurx6Cgyr6MWR3vW0tvGiw9zvI7_aWpSIVlcO0uzgJpN3SeVDpkjUavuzV5Kn6ZnBswBeVvrSGYBLzYNrcm5AepzCh_AdwKCP5ImXf3FWpl7H0NKDnva2ofKBBHndlvfZKUGDQcdvqDu7Ql1J67NGclIGXr5Onl_CsnE97no8I9FReuSiBsoMCtMJYOtue0phJAQO_9AkBfBa" />
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center max-w-xl px-8">
+                            <h3 class="font-headline text-4xl md:text-5xl mb-4 text-on-surface">Hauser</h3>
+                            <p class="text-lg text-on-surface-variant italic mb-8">Redefining real estate intelligence
+                                through blockchain-verified assets and AI valuation models.</p>
+                            <button
+                                class="inline-flex items-center gap-2 text-primary uppercase font-label text-xs tracking-[0.2em] group-hover:translate-x-2 transition-transform">
+                                <a href="projects.html"> Explore projects</a> <span
+                                    class="material-symbols-outlined text-sm"
+                                    data-icon="arrow_forward">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills & Experience -->
+    <section class="py-32 px-8 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24">
+            <!-- Skills Grid -->
+            <div>
+                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">The Stack</span>
+                <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-12">Technological <span
+                        class="italic">Foundry</span></h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div class="space-y-4">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Languages</h4>
+                        <ul class="text-on-surface-variant text-sm space-y-2">
+                            <li>Rust / Go</li>
+                            <li>Python / C++</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Cloud &amp; DevOps
+                        </h4>
+                        <ul class="text-on-surface-variant text-sm space-y-2">
+                            <li>AWS / GCP</li>
+                            <li>Kubernetes</li>
+                            <li>Terraform</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">AI Frameworks</h4>
+                        <ul class="text-on-surface-variant text-sm space-y-2">
+                            <li>PyTorch</li>
+                            <li>LangChain</li>
+                            <li>HuggingFace</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Web</h4>
+                        <ul class="text-on-surface-variant text-sm space-y-2">
+                            <li>Next.js / React</li>
+                            <li>GraphQL</li>
+                            <li>WebAssembly</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Database</h4>
+                        <li>PostgreSQL</li>
+                        <li>Vector DBs (Pinecone)</li>
+                        <li>Redis / Kafka</li>
+                    </div>
+                    <div class="space-y-4">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Specialized</h4>
+                        <li>Solidity / EVM</li>
+                        <li>Zero-Knowledge</li>
+                        <li>Edge AI</li>
+                    </div>
+                </div>
+            </div>
+            <!-- Experience Timeline -->
+            <div>
+                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Journey</span>
+                <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-12">Professional <span
+                        class="italic">Lineage</span></h2>
+                <div class="space-y-12">
+                    <div
+                        class="relative pl-10 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-[calc(100%+48px)] before:bg-outline-variant/30">
+                        <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
+                        <span
+                            class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block">2022
+                            — Present</span>
+                        <h4 class="font-headline text-lg text-on-surface">Lead AI Engineer</h4>
+                        <p class="text-primary text-xs mb-3 italic">Autonomous Finance Corp.</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Pioneering fraud detection algorithms
+                            and real-time security architectures for enterprise banking.</p>
+                    </div>
+                    <div
+                        class="relative pl-10 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-[calc(100%+48px)] before:bg-outline-variant/30">
+                        <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-outline"></div>
+                        <span
+                            class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block">2020
+                            — 2022</span>
+                        <h4 class="font-headline text-lg text-on-surface">Senior Backend Developer</h4>
+                        <p class="text-primary text-xs mb-3 italic">Lumina Labs</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Developed distributed data processing
+                            pipelines using Go and AWS Lambda.</p>
+                    </div>
+                    <div class="relative pl-10">
+                        <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-outline"></div>
+                        <span
+                            class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block">2018
+                            — 2020</span>
+                        <h4 class="font-headline text-lg text-on-surface">Full Stack Engineer</h4>
+                        <p class="text-primary text-xs mb-3 italic">Creative Protocol</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Focused on DeFi protocols and
+                            interactive data visualizations for NFT ecosystems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Let's Build Section -->
+    <section class="py-32 px-8">
+        <div
+            class="max-w-4xl mx-auto bg-surface-container-high rounded-2xl p-12 md:p-20 text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -mr-32 -mt-32"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -ml-32 -mb-32"></div>
+            <div class="relative z-10">
+                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-6 block">Inquiry</span>
+                <h2 class="font-headline text-4xl md:text-6xl text-on-surface mb-8">Let’s Build <br /> Something <span
+                        class="italic">Meaningful</span></h2>
+                <p class="text-on-surface-variant mb-12 max-w-lg mx-auto leading-relaxed">
+                    Currently accepting select projects for Q3 2024. Whether it's an AI implementation or a complex
+                    cloud migration, let's start the dialogue.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <a class="bg-primary text-on-primary px-10 py-4 rounded-md font-semibold text-lg hover:scale-[0.98] transition-all"
+                        href="mailto:hello@kennedychinwo.com">hello@kennedychinwo.com</a>
+                    <a class="text-on-surface hover:text-primary transition-colors font-semibold border-b border-transparent hover:border-primary pb-1"
+                        href="#">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="bg-[#1d1b18] dark:bg-[#1d1b18] w-full py-12 mt-20 transition-all duration-500 opacity-80 hover:opacity-100">
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6">
+            <div class="font-['Noto_Serif'] text-lg text-[#e7e2db]">Editorial Intelligence</div>
+            <div class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40">
+                © 2024 Editorial Intelligence. Crafted with Organic Precision.
+            </div>
+            <div class="flex gap-8">
+                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">GitHub</a>
+                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">LinkedIn</a>
+                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">Twitter</a>
+                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

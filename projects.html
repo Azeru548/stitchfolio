@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Selected Works | Editorial Intelligence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500&amp;family=Manrope:wght@300;400;600&amp;family=Inter:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#373430",
+                        "tertiary-container": "#90918f",
+                        "secondary-fixed-dim": "#cfc5b8",
+                        "outline-variant": "#4d453e",
+                        "secondary-fixed": "#ebe1d3",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-primary": "#3c2e1e",
+                        "surface-container-low": "#1d1b18",
+                        "surface-bright": "#3b3935",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "primary-fixed-dim": "#d9c3ad",
+                        "on-primary-container": "#352718",
+                        "surface-container-highest": "#373430",
+                        "on-tertiary": "#2f3130",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "inverse-on-surface": "#32302c",
+                        "surface-tint": "#d9c3ad",
+                        "primary": "#d9c3ad",
+                        "inverse-surface": "#e7e2db",
+                        "secondary": "#cfc5b8",
+                        "primary-container": "#a18d79",
+                        "surface": "#151310",
+                        "on-primary-fixed": "#25190b",
+                        "inverse-primary": "#6d5b49",
+                        "surface-container-lowest": "#0f0e0b",
+                        "error-container": "#93000a",
+                        "outline": "#998f86",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "on-secondary-container": "#c0b7aa",
+                        "on-surface": "#e7e2db",
+                        "on-secondary": "#353026",
+                        "background": "#151310",
+                        "on-surface-variant": "#d0c4ba",
+                        "on-background": "#e7e2db",
+                        "surface-dim": "#151310",
+                        "primary-fixed": "#f6dec8",
+                        "secondary-container": "#4e483e",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-container": "#211f1c",
+                        "error": "#ffb4ab",
+                        "tertiary": "#c7c6c5",
+                        "on-secondary-fixed": "#201b13",
+                        "on-primary-fixed-variant": "#544433",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2c2a26",
+                        "on-tertiary-container": "#292a29",
+                        "on-error-container": "#ffdad6"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(20px);
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+            <div class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Editorial Intelligence
+            </div>
+            <div class="hidden md:flex gap-10">
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
+                    href="work.html">Work</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="projects.html">Projects</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="stack.html">Stack</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="lab.html">Lab</a>
+                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+                    href="index.html">home</a>
+            </div>
+            <button
+                class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
+                Get in Touch
+            </button>
+        </div>
+    </nav>
+    </nav>
+    <main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+        <!-- Hero Header -->
+        <header class="mb-32 max-w-4xl">
+            <h1
+                class="text-6xl md:text-8xl font-headline font-light tracking-tighter text-on-surface mb-8 leading-none">
+                Selected <span class="italic text-primary">Works</span>
+            </h1>
+            <p class="text-xl md:text-2xl font-body text-on-surface-variant font-light leading-relaxed max-w-2xl">
+                A curation of high-fidelity systems where architectural precision meets cognitive intelligence.
+                Designing for the next epoch of digital interaction.
+            </p>
+        </header>
+        <!-- Catalog Grid -->
+        <div class="space-y-48">
+            <!-- Project 1: Asguard (Large Asymmetric Layout) -->
+            <section class="editorial-grid gap-8 group">
+                <div
+                    class="col-span-12 md:col-span-7 relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-container-low">
+                    <video alt="Asguard Project"
+                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                        data-alt="Abstract glowing network nodes representing digital security"
+                        src="screen_1773947235709.mp4" autoplay loop muted playsinline />
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+                </div>
+                <div class="col-span-12 md:col-span-5 flex flex-col justify-center space-y-6 md:pl-12">
+                    <div class="flex items-center gap-4">
+                        <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">01 / Artificial
+                            Intelligence</span>
+                        <div class="h-px flex-grow bg-outline-variant/30"></div>
+                    </div>
+                    <h2 class="text-5xl font-headline text-on-surface">Asguard</h2>
+                    <p class="text-lg text-on-surface-variant leading-relaxed">
+                        An enterprise-grade fraud detection engine utilizing deep neural networks to safeguard global
+                        transactions. Asguard processes millions of events in real-time, identifying anomalies with
+                        surgical precision to ensure maximum security without friction.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">PyTorch</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Kafka</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Kubernetes</span>
+                    </div>
+                    <div class="pt-8">
+                        <a class="inline-flex items-center group/link text-primary font-medium tracking-tight"
+                            href="asguard.html">
+                            <span
+                                class="border-b border-primary/30 group-hover/link:border-primary transition-all pb-1">View
+                                Project</span>
+                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Project 2: Azeru (Reversed Asymmetric Layout) -->
+            <section class="editorial-grid gap-8 group">
+                <div
+                    class="col-span-12 md:col-span-5 order-2 md:order-1 flex flex-col justify-center space-y-6 md:pr-12">
+                    <div class="flex items-center gap-4">
+                        <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">02 / NLP &amp;
+                            OCR</span>
+                        <div class="h-px flex-grow bg-outline-variant/30"></div>
+                    </div>
+                    <h2 class="text-5xl font-headline text-on-surface">Azeru</h2>
+                    <p class="text-lg text-on-surface-variant leading-relaxed">
+                        Redefining document intelligence through advanced Optical Character Recognition and Natural
+                        Language Processing. Azeru transforms unstructured legacy data into actionable cognitive
+                        insights, enabling automated workflows for complex legal and medical audits.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">TensorFlow</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">FastAPI</span>
+                        <span
+                            class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">React</span>
+                    </div>
+                    <div class="pt-8">
+                        <a class="inline-flex items-center group/link text-primary font-medium tracking-tight"
+                            href="azeru.html">
+                            <span
+                                class="border-b border-primary/30 group-hover/link:border-primary transition-all pb-1">View
+                                Project</span>
+                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    class="col-span-12 md:col-span-7 order-1 md:order-2 relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-container-low">
+                    <video alt="Azeru Interface"
+                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                        data-alt="Monochrome close up of a clean digital interface code" src="screen_1774120316927.mp4"
+                        autoplay loop muted playsinline />
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+                </div>
+            </section>
+            <!-- Project 3: Hauser (Centered Editorial Layout) -->
+            <section class="max-w-5xl mx-auto group">
+                <div class="relative overflow-hidden rounded-xl aspect-[21/9] mb-12 bg-surface-container-low">
+                    <video alt="Hauser Real Estate"
+                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                        data-alt="Architectural minimalist building against a dark sky" src="screen_1774120647093.mp4"
+                        autoplay loop muted playsinline />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="md:col-span-2 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">Real Estate</span>
+                        </div>
+                        <h2 class="text-5xl font-headline text-on-surface">Hauser</h2>
+                        <p class="text-lg text-on-surface-variant leading-relaxed">
+                            A decentralized real estate intelligence platform. Hauser leverages the Sui Network for
+                            transparent asset tracking while utilizing neural architectures to predict market volatility
+                            and valuation accuracy with unprecedented precision.
+                        </p>
+                    </div>
+                    <div class="flex flex-col justify-end space-y-6">
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Firebase
+                            </span>
+                            <span
+                                class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Cloudinary</span>
+                            <span
+                                class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">CDN</span>
+                        </div>
+                        <a class="inline-flex items-center group/link text-primary font-medium tracking-tight"
+                            href="hauser.html">
+                            <span
+                                class="border-b border-primary/30 group-hover/link:border-primary transition-all pb-1">View
+                                Project</span>
+                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t border-[#373430]/20 bg-[#151310]">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+            <div class="mb-8 md:mb-0">
+                <div class="font-['Noto_Serif'] text-lg text-[#e7e2db] mb-2"> Intelligence</div>
+                <p class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40">© 2024 Editorial Intelligence. Built
+                    with Precision.</p>
+            </div>
+            <div class="flex gap-8">
+                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">GitHub</a>
+                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">LinkedIn</a>
+                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">ResearchGate</a>
+                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                    href="#">Documentation</a>
+            </div>
+        </div>
+    </footer>
+    <!-- FAB (Suppressed as per rules for Catalog/List screens, but if needed for 'Top' action) -->
+    <div class="fixed bottom-8 right-8 z-40 hidden md:block">
+        <button
+            class="w-12 h-12 rounded-full bg-surface-container-highest text-primary flex items-center justify-center hover:bg-surface-bright transition-colors duration-300 shadow-xl border border-outline-variant/20">
+            <span class="material-symbols-outlined">expand_less</span>
+        </button>
+    </div>
+</body>
+
+</html>

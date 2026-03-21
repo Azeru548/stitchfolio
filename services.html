@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Strategic Engineering Solutions | Editorial Intelligence</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#cfc5b8",
+                        "on-surface": "#e7e2db",
+                        "surface-dim": "#151310",
+                        "inverse-surface": "#e7e2db",
+                        "inverse-on-surface": "#32302c",
+                        "primary": "#d9c3ad",
+                        "on-tertiary-container": "#292a29",
+                        "on-primary": "#3c2e1e",
+                        "secondary-container": "#4e483e",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "inverse-primary": "#6d5b49",
+                        "on-primary-fixed-variant": "#544433",
+                        "surface-container-lowest": "#0f0e0b",
+                        "on-secondary-fixed-variant": "#4c463c",
+                        "error-container": "#93000a",
+                        "surface-tint": "#d9c3ad",
+                        "surface": "#151310",
+                        "on-secondary-fixed": "#201b13",
+                        "secondary-fixed": "#ebe1d3",
+                        "surface-container": "#211f1c",
+                        "primary-fixed-dim": "#d9c3ad",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-container-low": "#1d1b18",
+                        "surface-container-high": "#2c2a26",
+                        "on-background": "#e7e2db",
+                        "on-primary-fixed": "#25190b",
+                        "primary-container": "#a18d79",
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#90918f",
+                        "on-primary-container": "#352718",
+                        "on-secondary": "#353026",
+                        "tertiary": "#c7c6c5",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-tertiary": "#2f3130",
+                        "outline-variant": "#4d453e",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#f6dec8",
+                        "surface-container-highest": "#373430",
+                        "on-error": "#690005",
+                        "surface-bright": "#3b3935",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "secondary-fixed-dim": "#cfc5b8",
+                        "outline": "#998f86",
+                        "surface-variant": "#373430",
+                        "background": "#151310",
+                        "on-secondary-container": "#c0b7aa",
+                        "on-surface-variant": "#d0c4ba"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .editorial-gradient {
+            background: linear-gradient(135deg, #d9c3ad 0%, #a18d79 100%);
+        }
+
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            background: rgba(55, 52, 48, 0.4);
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 no-border bg-gradient-to-b from-[#1d1b18] to-transparent bg-[#151310]/80 backdrop-blur-xl">
+        <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+            <div class="text-xl font-['Noto_Serif'] italic text-[#e7e2db]">Editorial Intelligence</div>
+            <div class="hidden md:flex items-center gap-12 font-['Noto_Serif'] font-light tracking-tight">
+                <a class="text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1" href="#">Solutions</a>
+                <a class="text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors" href="#">Methodology</a>
+                <a class="text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors" href="#">Lab</a>
+                <a class="text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors" href="#">Inquiry</a>
+            </div>
+            <button
+                class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-label text-sm font-medium hover:scale-95 duration-200 ease-in-out">
+                Consult
+            </button>
+        </div>
+    </nav>
+    <main class="pt-32 pb-24">
+        <!-- Hero Section -->
+        <section class="px-8 md:px-16 max-w-screen-2xl mx-auto mb-32">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+                <div class="lg:col-span-8">
+                    <span class="font-label text-xs tracking-[0.2em] text-primary uppercase mb-6 block">Strategic
+                        Engineering</span>
+                    <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] mb-8">
+                        Engineering the intersection of AI, Web3, and Scalable Full Stack.
+                    </h1>
+                </div>
+                <div class="lg:col-span-4 lg:pb-4">
+                    <p
+                        class="text-lg text-on-surface-variant font-light leading-relaxed border-l border-outline-variant/30 pl-8">
+                        A boutique technical practice dedicated to architecting digital systems with the precision of a
+                        high-end atelier.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-20 h-[1px] bg-gradient-to-r from-outline-variant/50 to-transparent"></div>
+        </section>
+        <!-- Core Specializations (Dynamic Editorial Layout) -->
+        <section class="px-8 md:px-16 max-w-screen-2xl mx-auto mb-40">
+            <h2 class="font-headline text-4xl mb-16 italic">Core Specializations</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                <!-- AI Card - Larger Span -->
+                <div
+                    class="lg:col-span-7 group bg-surface-container-low p-12 md:p-16 flex flex-col justify-between min-h-[550px] relative overflow-hidden">
+                    <div class="relative z-10 max-w-lg">
+                        <span class="material-symbols-outlined text-primary text-5xl mb-10 block"
+                            data-icon="neurology">neurology</span>
+                        <h3 class="font-headline text-3xl md:text-4xl mb-6">Cognitive Intelligence &amp; AI</h3>
+                        <p class="text-xl text-on-surface-variant leading-relaxed mb-10">Building next-generation
+                            reasoning engines through RAG Architecture, LLM fine-tuning, and neural engineering.</p>
+                        <ul class="space-y-4 font-label text-xs tracking-[0.2em] opacity-50">
+                            <li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> VECTOR
+                                EMBEDDING OPTIMIZATION</li>
+                            <li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> AUTONOMOUS
+                                AGENT WORKFLOWS</li>
+                            <li class="flex items-center gap-3"><span class="w-1 h-1 bg-primary"></span> PYTORCH &amp;
+                                TRANSFORMER TUNING</li>
+                        </ul>
+                    </div>
+                    <div
+                        class="absolute -bottom-16 -right-16 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity duration-700">
+                        <span class="material-symbols-outlined text-[350px]" data-icon="memory">memory</span>
+                    </div>
+                </div>
+                <!-- Right Column: Staggered Layout -->
+                <div class="lg:col-span-5 flex flex-col gap-8 lg:gap-12 lg:-mt-20">
+                    <!-- Web3 Card -->
+                    <div
+                        class="group bg-surface-container-highest p-10 flex flex-col justify-between min-h-[420px] relative overflow-hidden">
+                        <div class="relative z-10">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-8 block"
+                                data-icon="account_balance_wallet">account_balance_wallet</span>
+                            <h3 class="font-headline text-2xl mb-4">Distributed Systems &amp; Web3</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">Securing the decentralized future
+                                with SuiMove and Solidity protocol design and smart contract engineering.</p>
+                            <ul class="space-y-3 font-label text-[10px] tracking-wider opacity-60">
+                                <li>SMART CONTRACT AUDITING</li>
+                                <li>DECENTRALIZED PROTOCOL DESIGN</li>
+                                <li>GO-SDK INTEGRATIONS</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                            <span class="material-symbols-outlined text-[200px]" data-icon="hub">hub</span>
+                        </div>
+                    </div>
+                    <!-- Full Stack Card -->
+                    <div
+                        class="group bg-surface-container-low p-10 flex flex-col justify-between min-h-[420px] relative overflow-hidden lg:ml-12">
+                        <div class="relative z-10">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-8 block"
+                                data-icon="layers">layers</span>
+                            <h3 class="font-headline text-2xl mb-4">Full Stack Architecture</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-8">High-concurrency backends in Go
+                                coupled with modern React 19 and Next.js 15 frontend experiences.</p>
+                            <ul class="space-y-3 font-label text-[10px] tracking-wider opacity-60">
+                                <li>GRPC &amp; MICROSERVICES</li>
+                                <li>REAL-TIME DATA STREAMING</li>
+                                <li>DESIGN SYSTEM ENGINEERING</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -right-10 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                            <span class="material-symbols-outlined text-[200px]" data-icon="terminal">terminal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- The Methodology (Asymmetric Layout) -->
+        <section class="bg-surface-container-low py-32 overflow-hidden">
+            <div class="px-8 md:px-16 max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+                <div class="lg:col-span-5 relative">
+                    <div class="aspect-[4/5] bg-surface-container-high rounded-sm overflow-hidden shadow-2xl">
+                        <img alt="Sophisticated hardware and architectural design"
+                            class="w-full h-full object-cover grayscale opacity-50 mix-blend-luminosity"
+                            data-alt="Close up of high-end circuit board and architecture blueprint"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8Z79YM1lDlhUXzG5lmp9PUkkZDhyL7K-BbLDv11FGg6xTVQk21Kgg2iO1QH_fkl2DoKLGDSI8hLp9RcmqY2XWAMIbxnVELE7QY9U4aOe6WlDtMUkIRwT-Yu_e5wNpO90kvhckhf83f2xeniIzydjJ3S5Q24k_k21K2ZIcNVuxxcSu4SnIlMJyJISFN4qISeihAYn1SeRgkPINDTbx03v-zZWGH49CjFOSt5iL_uEsOqechyFlGJImz6b1Bv7QEidpsrs25UUbh7AE" />
+                    </div>
+                    <div class="absolute -bottom-12 -right-12 glass-panel p-8 hidden md:block">
+                        <p class="font-headline italic text-xl">"Code is the modern artisan's medium."</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-7">
+                    <span class="font-label text-xs tracking-[0.2em] text-primary uppercase mb-6 block">The
+                        Methodology</span>
+                    <h2 class="font-headline text-5xl font-light mb-10 leading-tight">Organic Precision: The Atelier
+                        Approach</h2>
+                    <div class="space-y-12">
+                        <div class="flex gap-8">
+                            <span class="font-headline text-3xl text-primary/40 italic">01</span>
+                            <div>
+                                <h4 class="font-headline text-xl mb-2">Test-Driven Integrity</h4>
+                                <p class="text-on-surface-variant leading-relaxed">Validation is not an afterthought; it
+                                    is the skeleton of the build. Every module is verified before it is rendered.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8">
+                            <span class="font-headline text-3xl text-primary/40 italic">02</span>
+                            <div>
+                                <h4 class="font-headline text-xl mb-2">Clean Architecture</h4>
+                                <p class="text-on-surface-variant leading-relaxed">Prioritizing the decoupling of
+                                    business logic from infrastructure to ensure longevity and seamless scalability.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-8">
+                            <span class="font-headline text-3xl text-primary/40 italic">03</span>
+                            <div>
+                                <h4 class="font-headline text-xl mb-2">Security-First Thinking</h4>
+                                <p class="text-on-surface-variant leading-relaxed">In a world of distributed threats,
+                                    trust is engineered through formal verification and zero-trust protocol
+                                    implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Advisory & Consultation -->
+        <section class="px-8 md:px-16 max-w-screen-2xl mx-auto py-40">
+            <div class="flex flex-col md:flex-row gap-20 items-center">
+                <div class="flex-1">
+                    <h2 class="font-headline text-5xl font-light mb-8">Advisory &amp; Strategic Consulting</h2>
+                    <p class="text-xl text-on-surface-variant font-light mb-12 max-w-2xl leading-relaxed">
+                        Beyond execution, I provide technical leadership for startups and enterprises navigating the
+                        complexities of AI integration and blockchain transitions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-x-12 gap-y-8">
+                        <div>
+                            <p class="font-label text-[10px] tracking-widest text-primary mb-2 uppercase">Service</p>
+                            <p class="font-headline text-lg italic">CTO-as-a-Service</p>
+                        </div>
+                        <div>
+                            <p class="font-label text-[10px] tracking-widest text-primary mb-2 uppercase">Service</p>
+                            <p class="font-headline text-lg italic">Audit &amp; Optimization</p>
+                        </div>
+                        <div>
+                            <p class="font-label text-[10px] tracking-widest text-primary mb-2 uppercase">Service</p>
+                            <p class="font-headline text-lg italic">AI Strategy</p>
+                        </div>
+                        <div>
+                            <p class="font-label text-[10px] tracking-widest text-primary mb-2 uppercase">Service</p>
+                            <p class="font-headline text-lg italic">Protocol Governance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="bg-surface-container p-12 rounded-sm border-l-4 border-primary">
+                        <span class="material-symbols-outlined text-primary text-5xl mb-6"
+                            data-icon="forum">forum</span>
+                        <h4 class="font-headline text-2xl mb-4">Request a Consultation</h4>
+                        <p class="text-on-surface-variant mb-8 leading-relaxed">Reserved for high-impact projects
+                            requiring deep technical domain expertise and strategic oversight.</p>
+                        <button
+                            class="w-full editorial-gradient text-on-primary font-label py-4 tracking-widest uppercase text-xs font-bold hover:brightness-110 transition-all">Schedule
+                            Inquiry</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="px-8 md:px-16 max-w-screen-2xl mx-auto">
+            <div class="relative bg-surface-container-high py-24 px-12 md:px-24 overflow-hidden">
+                <div class="relative z-10 text-center max-w-3xl mx-auto">
+                    <h2 class="font-headline text-4xl md:text-6xl mb-10">Inquire for Collaboration</h2>
+                    <p class="text-on-surface-variant text-lg mb-12 leading-relaxed">Now accepting limited engagements
+                        for Q3-Q4 2024. Let's engineer the future of your technical infrastructure with organic
+                        precision.</p>
+                    <a class="inline-flex items-center gap-4 text-primary font-headline text-2xl italic hover:gap-8 transition-all"
+                        href="mailto:hello@editorialintelligence.io">
+                        hello@editorialintelligence.io
+                        <span class="material-symbols-outlined" data-icon="arrow_right_alt">arrow_right_alt</span>
+                    </a>
+                </div>
+                <!-- Abstract visual element -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[120px]"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-container/10 blur-[120px]"></div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t border-[#373430]/20 bg-[#1d1b18]">
+        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 max-w-screen-2xl mx-auto">
+            <div class="font-['Noto_Serif'] text-lg text-[#e7e2db]">Editorial Intelligence</div>
+            <div class="font-['Manrope'] text-sm tracking-wide text-[#a18d79]">© Editorial Intelligence. All Rights
+                Reserved. Organic Precision in Code &amp; Craft.</div>
+            <div class="flex gap-8 font-['Manrope'] text-sm tracking-wide">
+                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">Privacy</a>
+                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">Terms</a>
+                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">LinkedIn</a>
+                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

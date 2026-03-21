@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Azeru — Project Detail</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#1d1b18",
+            "secondary-container": "#4e483e",
+            "primary-fixed": "#f6dec8",
+            "background": "#151310",
+            "surface-bright": "#3b3935",
+            "on-secondary-container": "#c0b7aa",
+            "surface-container": "#211f1c",
+            "on-tertiary": "#2f3130",
+            "on-surface": "#e7e2db",
+            "surface-dim": "#151310",
+            "on-error": "#690005",
+            "error-container": "#93000a",
+            "surface": "#151310",
+            "surface-container-high": "#2c2a26",
+            "inverse-on-surface": "#32302c",
+            "error": "#ffb4ab",
+            "tertiary": "#c7c6c5",
+            "surface-container-lowest": "#0f0e0b",
+            "on-primary-container": "#352718",
+            "surface-tint": "#d9c3ad",
+            "secondary-fixed": "#ebe1d3",
+            "inverse-surface": "#e7e2db",
+            "tertiary-container": "#90918f",
+            "on-primary-fixed-variant": "#544433",
+            "tertiary-fixed-dim": "#c7c6c5",
+            "primary": "#d9c3ad",
+            "on-tertiary-fixed": "#1a1c1b",
+            "outline-variant": "#4d453e",
+            "on-secondary-fixed": "#201b13",
+            "primary-container": "#a18d79",
+            "secondary": "#cfc5b8",
+            "primary-fixed-dim": "#d9c3ad",
+            "on-tertiary-fixed-variant": "#464746",
+            "on-secondary": "#353026",
+            "inverse-primary": "#6d5b49",
+            "on-error-container": "#ffdad6",
+            "secondary-fixed-dim": "#cfc5b8",
+            "tertiary-fixed": "#e3e2e0",
+            "surface-variant": "#373430",
+            "on-tertiary-container": "#292a29",
+            "on-primary-fixed": "#25190b",
+            "on-background": "#e7e2db",
+            "on-secondary-fixed-variant": "#4c463c",
+            "outline": "#998f86",
+            "on-surface-variant": "#d0c4ba",
+            "surface-container-highest": "#373430",
+            "on-primary": "#3c2e1e"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-panel {
+      background: rgba(21, 19, 16, 0.7);
+      backdrop-filter: blur(20px);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopNavBar -->
+  <!-- Top Navigation -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
+    <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+      <div class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Editorial Intelligence
+      </div>
+      <div class="hidden md:flex gap-10">
+        <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
+          href="work.html">Work</a>
+        <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+          href="projects.html">Projects</a>
+        <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+          href="stack.html">Stack</a>
+        <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+          href="lab.html">Lab</a>
+        <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
+          href="index.html">Home</a>
+      </div>
+      <button
+        class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
+        <a href="https://github.com/org-cyber/azeru"> visit site</a>
+      </button>
+    </div>
+  </nav>
+  <main class="pt-24">
+    <!-- Hero Section -->
+    <section class="relative min-h-[870px] flex items-end px-8 md:px-16 py-24 overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+        <video alt="Hero Image"
+          class="w-full h-full object-cover opacity-40 mix-blend-luminosity grayscale contrast-125"
+          data-alt="Abstract visualization of golden neural data flows and document nodes"
+          src="screen_1774120316927.mp4" autoplay loop muted />
+      </div>
+      <div class="relative z-20 max-w-5xl">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/30 border border-outline-variant/20 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span class="font-label text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Case Study 01</span>
+        </div>
+        <h1
+          class="font-headline text-6xl md:text-8xl lg:text-9xl font-bold text-on-surface leading-[0.9] tracking-tighter mb-8 italic">
+          Azeru
+        </h1>
+        <p class="font-headline text-2xl md:text-4xl text-on-surface-variant max-w-2xl leading-tight">
+          Intelligent Document Intelligence Platform
+        </p>
+      </div>
+    </section>
+    <!-- Brief / Overview Section -->
+    <section class="px-8 md:px-16 py-32 bg-surface">
+      <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
+        <div class="md:col-span-4">
+          <h2 class="font-label text-xs font-bold tracking-[0.3em] text-primary uppercase mb-6">Overview</h2>
+          <div class="h-px w-12 bg-primary/30 mb-8"></div>
+        </div>
+        <div class="md:col-span-8">
+          <p class="font-headline text-3xl md:text-4xl text-on-surface leading-snug">
+            Azeru leverages advanced computer vision and NLP to transform unstructured documents into actionable
+            insights with high precision.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Challenge & Solution Bento -->
+    <section class="px-8 md:px-16 py-20 bg-surface-container-low">
+      <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- The Challenge Card -->
+        <div
+          class="p-12 bg-surface-container rounded-3xl border border-outline-variant/10 flex flex-col justify-between min-h-[500px]">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-12">warning_amber</span>
+            <h3 class="font-headline text-4xl mb-6">The Challenge</h3>
+            <p class="font-body text-lg text-on-surface-variant leading-relaxed opacity-80 max-w-md">
+              Manual data entry and error-prone document processing were slowing down financial institutions. They
+              needed a way to extract complex data from thousands of varied forms instantly.
+            </p>
+          </div>
+          <div class="mt-12">
+            <div class="flex items-center gap-4 text-primary">
+              <span class="font-label text-xs tracking-widest uppercase">Legacy System Latency</span>
+              <div class="flex-grow h-px bg-primary/10"></div>
+            </div>
+          </div>
+        </div>
+        <!-- The Solution Card -->
+        <div
+          class="p-12 bg-surface-container-high rounded-3xl border border-outline-variant/20 flex flex-col justify-between min-h-[500px]">
+          <div>
+            <span class="material-symbols-outlined text-4xl text-primary mb-12">architecture</span>
+            <h3 class="font-headline text-4xl mb-6">The Solution</h3>
+            <p class="font-body text-lg text-on-surface-variant leading-relaxed opacity-80 max-w-md">
+              We built a custom Golang OCR and semantic analysis engine that learns from document structures,
+              combined with a high-performance Next.Js dashboard for real-time validation.
+            </p>
+          </div>
+          <div class="mt-12 space-y-4">
+            <div class="p-4 bg-surface-container-highest rounded-xl flex items-center gap-4">
+              <span class="material-symbols-outlined text-primary">psychology</span>
+              <span class="font-label text-xs uppercase tracking-wider text-on-surface-variant">Neural Structure
+                Recognition</span>
+            </div>
+            <div class="p-4 bg-surface-container-highest rounded-xl flex items-center gap-4">
+              <span class="material-symbols-outlined text-primary">speed</span>
+              <span class="font-label text-xs uppercase tracking-wider text-on-surface-variant">Real-time Validation
+                Loop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Foundry Grid -->
+    <section class="px-8 md:px-16 py-32 bg-surface">
+      <div class="max-w-screen-2xl mx-auto">
+        <div class="mb-20 text-center">
+          <h2 class="font-label text-xs font-bold tracking-[0.4em] text-primary uppercase mb-4">Technical Foundry</h2>
+          <p class="font-headline text-4xl italic">The Stack that Powers Precision</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12">
+          <!-- Tech Item -->
+          <div class="group flex flex-col items-center text-center">
+            <div
+              class="w-20 h-20 rounded-2xl bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+              <span class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary"
+                style="font-variation-settings: 'FILL' 1;">neurology</span>
+            </div>
+            <span
+              class="font-label text-[10px] font-bold tracking-[0.2em] text-on-surface/40 uppercase">Framework</span>
+            <h4 class="font-headline text-lg mt-1">Golang</h4>
+          </div>
+          <!-- Tech Item -->
+          <div class="group flex flex-col items-center text-center">
+            <div
+              class="w-20 h-20 rounded-2xl bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+              <span
+                class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">developer_board</span>
+            </div>
+            <span
+              class="font-label text-[10px] font-bold tracking-[0.2em] text-on-surface/40 uppercase">Interface</span>
+            <h4 class="font-headline text-lg mt-1">Next.js</h4>
+          </div>
+          <!-- Tech Item -->
+          <div class="group flex flex-col items-center text-center">
+            <div
+              class="w-20 h-20 rounded-2xl bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+              <span
+                class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">database</span>
+            </div>
+            <span class="font-label text-[10px] font-bold tracking-[0.2em] text-on-surface/40 uppercase">Runtime</span>
+            <h4 class="font-headline text-lg mt-1">Golang/Gin</h4>
+          </div>
+          <!-- Tech Item -->
+          <div class="group flex flex-col items-center text-center">
+            <div
+              class="w-20 h-20 rounded-2xl bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+              <span
+                class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">cloud</span>
+            </div>
+            <span
+              class="font-label text-[10px] font-bold tracking-[0.2em] text-on-surface/40 uppercase">Extraction</span>
+            <h4 class="font-headline text-lg mt-1">Ollama </h4>
+          </div>
+          <!-- Tech Item -->
+          <div class="group flex flex-col items-center text-center">
+            <div
+              class="w-20 h-20 rounded-2xl bg-surface-container-high flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-500">
+              <span
+                class="material-symbols-outlined text-3xl text-on-surface-variant group-hover:text-primary">deployed_code</span>
+            </div>
+            <span class="font-label text-[10px] font-bold tracking-[0.2em] text-on-surface/40 uppercase">DevOps</span>
+            <h4 class="font-headline text-lg mt-1">Docker</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Key Results Section -->
+    <section class="relative px-8 md:px-16 py-40 overflow-hidden">
+      <!-- Background Accent -->
+      <div
+        class="absolute -right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none">
+      </div>
+      <div class="max-w-screen-2xl mx-auto">
+        <div class="mb-24">
+          <h2 class="font-label text-xs font-bold tracking-[0.4em] text-primary uppercase mb-6">Key Results</h2>
+          <h3 class="font-headline text-5xl md:text-7xl">Measured Excellence.</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1px bg-outline-variant/20">
+          <div class="bg-background py-16 pr-12">
+            <span class="font-headline text-8xl text-primary font-bold">85%</span>
+            <p class="font-label text-xs tracking-widest uppercase mt-6 text-on-surface-variant">Reduction in processing
+              time</p>
+          </div>
+          <div class="bg-background py-16 px-12">
+            <span class="font-headline text-8xl text-primary font-bold">99%</span>
+            <p class="font-label text-xs tracking-widest uppercase mt-6 text-on-surface-variant">Accuracy in extraction
+            </p>
+          </div>
+          <div class="bg-background py-16 pl-12">
+            <span class="font-headline text-8xl text-primary font-bold">50+</span>
+            <p class="font-label text-xs tracking-widest uppercase mt-6 text-on-surface-variant">Supported document
+              types</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Up Next Section -->
+    <section class="px-8 md:px-16 py-48 border-t border-outline-variant/10 group cursor-pointer">
+      <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-end gap-12">
+        <div>
+          <span class="font-label text-xs font-bold tracking-[0.4em] text-on-surface/40 uppercase mb-8 block">Up
+            Next</span>
+          <h2 class="font-headline text-7xl md:text-9xl group-hover:text-primary transition-colors duration-500">Hauser
+          </h2>
+          <p class="font-headline text-xl text-on-surface-variant mt-4 opacity-60">Real Estate</p>
+        </div>
+        <div class="pb-4">
+          <span
+            class="material-symbols-outlined text-6xl text-primary transform group-hover:translate-x-4 transition-transform duration-500"><a
+              href="hauser.html">arrow_forward</a></span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-[#1d1b18] w-full rounded-t-[2rem] mt-20">
+    <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
+      <div class="mb-8 md:mb-0">
+        <span class="text-lg font-['Noto_Serif'] text-[#e7e2db]">AZERU</span>
+      </div>
+      <div class="flex gap-8 mb-8 md:mb-0">
+        <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all"
+          href="#">LinkedIn</a>
+        <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all"
+          href="#">GitHub</a>
+        <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all"
+          href="#">Twitter</a>
+        <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all"
+          href="#">Next Project</a>
+      </div>
+      <div class="text-[#a18d79] font-['Manrope'] text-sm tracking-wide opacity-60">
+        © 2024 Editorial Intelligence. Crafted with Organic Precision.
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
