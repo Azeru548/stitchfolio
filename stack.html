@@ -1,379 +1,275 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400&amp;family=Manrope:wght@200;300;400;500;600&amp;family=Inter:wght@400;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+    <title>Stack | Kennedy Chinwo</title>
+    <meta name="description"
+        content="Technology stack and engineering toolkit used by Kennedy Chinwo — Go, Next.js, AI/RAG, Firebase, Docker, security." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "tertiary-container": "#90918f",
-                        "error": "#ffb4ab",
-                        "surface-dim": "#151310",
-                        "primary-container": "#a18d79",
-                        "surface-container-lowest": "#0f0e0b",
-                        "surface-container": "#211f1c",
-                        "on-tertiary": "#2f3130",
-                        "secondary-container": "#4e483e",
-                        "tertiary": "#c7c6c5",
-                        "primary-fixed-dim": "#d9c3ad",
-                        "on-tertiary-fixed": "#1a1c1b",
-                        "surface": "#151310",
-                        "on-error-container": "#ffdad6",
-                        "inverse-on-surface": "#32302c",
-                        "on-surface": "#e7e2db",
-                        "on-background": "#e7e2db",
-                        "on-secondary-fixed-variant": "#4c463c",
-                        "surface-variant": "#373430",
-                        "surface-bright": "#3b3935",
-                        "error-container": "#93000a",
-                        "on-tertiary-fixed-variant": "#464746",
-                        "surface-tint": "#d9c3ad",
-                        "secondary-fixed-dim": "#cfc5b8",
-                        "surface-container-high": "#2c2a26",
-                        "surface-container-low": "#1d1b18",
-                        "primary": "#d9c3ad",
-                        "on-surface-variant": "#d0c4ba",
-                        "on-secondary-fixed": "#201b13",
-                        "background": "#151310",
-                        "on-error": "#690005",
-                        "on-primary-fixed-variant": "#544433",
-                        "secondary-fixed": "#ebe1d3",
-                        "on-primary-container": "#352718",
-                        "primary-fixed": "#f6dec8",
-                        "inverse-surface": "#e7e2db",
-                        "inverse-primary": "#6d5b49",
-                        "outline": "#998f86",
-                        "tertiary-fixed": "#e3e2e0",
-                        "surface-container-highest": "#373430",
-                        "on-tertiary-container": "#292a29",
-                        "on-secondary": "#353026",
-                        "tertiary-fixed-dim": "#c7c6c5",
-                        "on-primary": "#3c2e1e",
-                        "secondary": "#cfc5b8",
-                        "outline-variant": "#4d453e",
-                        "on-primary-fixed": "#25190b",
-                        "on-secondary-container": "#c0b7aa"
+                        background: "#faf7f2",
+                        surface: "#faf7f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "surface-container-high": "#e9e2d9",
+                        "surface-container-highest": "#e3dbd1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0"
                     },
                     fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                },
-            },
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
         }
     </script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-
-        .glass-panel {
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-
-        .asymmetric-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
 
-<body
-    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
-            <a href="index.html" class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Kennedy Chinwo</a>
-            <div class="hidden md:flex gap-10">
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="index.html">Home</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="projects.html">Projects</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
-                    href="stack.html">Stack</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="index.html#experience">Experience</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="index.html#contact">Contact</a>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container paper-grain">
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#experience">Experience</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#contact">Contact</a>
             </div>
             <a href="mailto:chinwokennedy9@gmail.com"
-                class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
-                Get in Touch
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                Get in touch
             </a>
         </div>
     </nav>
-    <main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
-        <!-- Hero Section -->
-        <header class="mb-24">
-            <div class="max-w-4xl">
-                <span class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-6 block">The Digital
-                    Atelier</span>
-                <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl leading-tight text-on-surface mb-8">
-                    Technological Foundry</h1>
-                <p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-                    A curated collection of instruments and environments leveraged to transform abstract logic into
-                    architectural precision. Engineered for resilience, designed for elegance.
-                </p>
-            </div>
+
+    <main class="pt-28 md:pt-36 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+        <header class="mb-16 md:mb-20 max-w-3xl">
+            <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Technology map</span>
+            <h1 class="font-headline text-4xl md:text-6xl tracking-tight leading-[1.05] mb-6">
+                Tools chosen for reliability, speed, and clarity
+            </h1>
+            <p class="text-lg text-on-surface-variant font-light leading-relaxed">
+                This is the working stack behind Asguard, Azeru, Hauser, Koe, and Vpipe — not a buzzword list.
+                Each layer is selected for how it behaves under real product constraints: latency, cost, security, and maintainability.
+            </p>
         </header>
-        <!-- Stack Bento Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <!-- Backend Development - Large Feature Card -->
-            <section
-                class="md:col-span-8 bg-surface-container-low rounded-xl p-10 group hover:bg-surface-container transition-colors duration-500">
-                <div class="flex justify-between items-start mb-12">
+
+        <div class="grid md:grid-cols-12 gap-5">
+            <!-- Backend -->
+            <section class="md:col-span-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8 md:p-10">
+                <div class="flex items-start justify-between gap-4 mb-8">
                     <div>
-                        <span class="material-symbols-outlined text-primary text-4xl mb-4"
-                            data-icon="terminal">terminal</span>
-                        <h2 class="font-headline text-3xl text-on-surface">Backend Development</h2>
+                        <span class="material-symbols-outlined text-primary text-3xl mb-3">terminal</span>
+                        <h2 class="font-headline text-2xl md:text-3xl">Backend systems</h2>
                     </div>
-                    <span class="font-label text-[10px] tracking-widest opacity-30">SYSTEMS_01</span>
+                    <span class="font-label text-[10px] tracking-widest text-outline uppercase">Layer 01</span>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-4">
-                    <div class="flex flex-col gap-1">
-                        <span class="font-label text-[10px] text-primary uppercase tracking-widest">Language</span>
-                        <span class="font-headline text-lg italic">Go/Golang</span>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8 max-w-2xl">
+                    Go is the default for services that need concurrent I/O and predictable performance.
+                    Gin handles HTTP routing; GORM maps domain models to PostgreSQL. Firebase/Firestore covers
+                    real-time product surfaces where operational speed matters more than custom infrastructure.
+                </p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Language</p>
+                        <p class="font-headline text-lg">Go / Golang</p>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="font-label text-[10px] text-primary uppercase tracking-widest">Framework</span>
-                        <span class="font-headline text-lg italic">Gin Framework</span>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">HTTP</p>
+                        <p class="font-headline text-lg">Gin</p>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="font-label text-[10px] text-primary uppercase tracking-widest">Database/ORM</span>
-                        <span class="font-headline text-lg italic">GORM ORM</span>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">ORM</p>
+                        <p class="font-headline text-lg">GORM</p>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="font-label text-[10px] text-primary uppercase tracking-widest">Runtime</span>
-                        <span class="font-headline text-lg italic">Node.js</span>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Runtime alt.</p>
+                        <p class="font-headline text-lg">Node.js</p>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span
-                            class="font-label text-[10px] text-primary uppercase tracking-widest">Infrastructure</span>
-                        <span class="font-headline text-lg italic">Firebase/Firestore</span>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Relational</p>
+                        <p class="font-headline text-lg">PostgreSQL</p>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="font-label text-[10px] text-primary uppercase tracking-widest">Relational</span>
-                        <span class="font-headline text-lg italic">PostgreSQL</span>
-                    </div>
-                </div>
-            </section>
-            <!-- Frontend Development - Vertical Card -->
-            <section
-                class="md:col-span-4 bg-surface-container-highest rounded-xl p-10 border border-outline-variant/10">
-                <span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="layers">layers</span>
-                <h2 class="font-headline text-3xl text-on-surface mb-8">Frontend</h2>
-                <div class="space-y-8">
-                    <div class="group">
-                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Architecture</p>
-                        <p class="font-headline text-xl">Next.js 15+ &amp; React 19</p>
-                    </div>
-                    <div class="group">
-                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Typing</p>
-                        <p class="font-headline text-xl">TypeScript</p>
-                    </div>
-                    <div class="group">
-                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Logic</p>
-                        <p class="font-headline text-xl">JavaScript (ES6+)</p>
-                    </div>
-                    <div class="group">
-                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Structure</p>
-                        <p class="font-headline text-xl">CSS3 &amp; HTML5</p>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Realtime / BaaS</p>
+                        <p class="font-headline text-lg">Firebase</p>
                     </div>
                 </div>
             </section>
-            <!-- AI & Machine Learning - Wide Glass Card -->
-            <section class="md:col-span-12 bg-surface-container-low rounded-xl overflow-hidden relative group">
-                <div
-                    class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none">
+
+            <!-- Frontend -->
+            <section class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8 md:p-10">
+                <span class="material-symbols-outlined text-primary text-3xl mb-3">layers</span>
+                <h2 class="font-headline text-2xl md:text-3xl mb-6">Frontend</h2>
+                <div class="space-y-5">
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Framework</p>
+                        <p class="font-headline text-lg">Next.js 15+ · React 19</p>
+                    </div>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Types</p>
+                        <p class="font-headline text-lg">TypeScript</p>
+                    </div>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Styling</p>
+                        <p class="font-headline text-lg">Tailwind CSS</p>
+                    </div>
+                    <div>
+                        <p class="font-label text-[10px] text-primary uppercase tracking-widest mb-1">Standards</p>
+                        <p class="font-headline text-lg">HTML5 · CSS3 · ES6+</p>
+                    </div>
                 </div>
-                <div class="p-10 md:p-16 flex flex-col md:flex-row gap-12 items-center">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-4 mb-6">
-                            <span class="material-symbols-outlined text-primary text-4xl"
-                                data-icon="neurology">neurology</span>
-                            <span class="h-px w-12 bg-outline-variant"></span>
-                            <span class="font-label text-xs tracking-widest uppercase opacity-60">Intelligence
-                                Systems</span>
+            </section>
+
+            <!-- AI -->
+            <section class="md:col-span-12 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8 md:p-12">
+                <div class="grid lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="material-symbols-outlined text-primary text-3xl">neurology</span>
+                            <span class="font-label text-[10px] tracking-widest uppercase text-outline">Layer 03</span>
                         </div>
-                        <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6">AI Enineering &amp;
-                            Automation
-                        </h2>
-                        <p class="font-body text-on-surface-variant max-w-xl leading-relaxed mb-8">
-                            Synthesizing complex data streams through Large Language Models and Retrieval Augmented
-                            Generation (RAG) to create context-aware intelligent agents.
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">AI engineering</h2>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">
+                            Production AI work here means retrieval quality, inference latency, provider fallbacks,
+                            and safety — not demos. RAG pipelines chunk and embed documents, semantic search retrieves
+                            context, and multi-provider LLM routing (Groq, OpenAI, Anthropic, OpenRouter) keeps
+                            systems resilient when one endpoint slows down.
                         </p>
-                        <div class="flex flex-wrap gap-3">
-                            <span
-                                class="px-4 py-2 bg-surface-container-high rounded-full font-label text-[10px] uppercase tracking-widest border border-outline-variant/20">Groq
-                                API</span>
-                            <span
-                                class="px-4 py-2 bg-surface-container-high rounded-full font-label text-[10px] uppercase tracking-widest border border-outline-variant/20">Llama
-                                3/4 Models</span>
-                            <span
-                                class="px-4 py-2 bg-surface-container-high rounded-full font-label text-[10px] uppercase tracking-widest border border-outline-variant/20">OpenRouter
-                                API</span>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-primary-container/60 text-on-surface text-xs font-label uppercase tracking-wider rounded-md">Groq API</span>
+                            <span class="px-3 py-1.5 bg-primary-container/60 text-on-surface text-xs font-label uppercase tracking-wider rounded-md">Llama 3/4</span>
+                            <span class="px-3 py-1.5 bg-primary-container/60 text-on-surface text-xs font-label uppercase tracking-wider rounded-md">OpenRouter</span>
+                            <span class="px-3 py-1.5 bg-primary-container/60 text-on-surface text-xs font-label uppercase tracking-wider rounded-md">Azure TTS</span>
                         </div>
                     </div>
-                    <div class="flex-1 grid grid-cols-2 gap-8">
-                        <div class="p-6 bg-surface-container rounded-lg border-l-2 border-primary">
-                            <h4 class="font-label text-[10px] text-primary uppercase tracking-[0.2em] mb-3">Methods</h4>
-                            <p class="font-headline text-lg">RAG Architecture</p>
-                            <p class="font-headline text-lg">Vector Embeddings</p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-6 bg-surface-container-low rounded-xl border-l-2 border-primary">
+                            <h4 class="font-label text-[10px] text-primary uppercase tracking-[0.15em] mb-3">Methods</h4>
+                            <p class="font-headline text-lg mb-1">RAG architecture</p>
+                            <p class="font-headline text-lg mb-1">Vector embeddings</p>
+                            <p class="font-headline text-lg">Prompt + context design</p>
                         </div>
-                        <div class="p-6 bg-surface-container rounded-lg border-l-2 border-primary">
-                            <h4 class="font-label text-[10px] text-primary uppercase tracking-[0.2em] mb-3">Focus</h4>
-                            <p class="font-headline text-lg">NLP Processing</p>
-                            <p class="font-headline text-lg">Semantic Search</p>
+                        <div class="p-6 bg-surface-container-low rounded-xl border-l-2 border-primary">
+                            <h4 class="font-label text-[10px] text-primary uppercase tracking-[0.15em] mb-3">Focus</h4>
+                            <p class="font-headline text-lg mb-1">Semantic search</p>
+                            <p class="font-headline text-lg mb-1">NLP extraction</p>
+                            <p class="font-headline text-lg">Secret sanitization</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Web3 & Blockchain - Square Card -->
-            <section
-                class="md:col-span-6 lg:col-span-4 bg-surface-container-high rounded-xl p-10 flex flex-col justify-between">
-                <div>
-                    <span class="material-symbols-outlined text-primary text-4xl mb-6"
-                        data-icon="currency_bitcoin">currency_bitcoin</span>
-                    <h2 class="font-headline text-3xl text-on-surface mb-4">Web3 &amp; Blockchain</h2>
-                    <ul class="space-y-4 mt-8">
-                        <li class="flex items-center gap-4">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                            <span class="font-body text-lg">Sui &amp; SuiMove Expert</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                            <span class="font-body text-lg">Solidity Smart Contracts</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                            <span class="font-body text-lg">Web3.js Integration</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                            <span class="font-body text-lg">Wallet Infrastructure</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pt-10">
-                    <img class="w-full h-32 object-cover rounded grayscale hover:grayscale-0 transition-all duration-700 opacity-40 hover:opacity-100"
-                        data-alt="Abstract glowing network representing blockchain nodes"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe4kZnYCJgz_VnUWvwAzlQnpm4GKrNqJtffx0FCHEWkehWd9JtBATVvA2MbwcdXseZryIn-yxL6w-UFcU7n2R21nLonyX4WE78bIITunW0fx8gMbc674kWMOFe9P5WCy8K82hMy21NVkuQkejhEkThpoUgHwbuyexIsnzTdlIHZPesSZX2Vy8YnUsLQ7O-gefnh5aE0bEzvqwRhw3kP2ccemiDW7Mmgaz5FAPvmeCIlpwoN7DoT0piuygCwO3uCYKPAEWaCq9pSK-Y" />
-                </div>
+
+            <!-- Web3 -->
+            <section class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8">
+                <span class="material-symbols-outlined text-primary text-3xl mb-3">token</span>
+                <h2 class="font-headline text-2xl mb-4">Web3</h2>
+                <ul class="space-y-3 text-on-surface-variant">
+                    <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>Sui &amp; Move</li>
+                    <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>Solidity contracts</li>
+                    <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>Web3.js integration</li>
+                    <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>Storj decentralized storage</li>
+                </ul>
             </section>
-            <!-- Tools & DevOps - Mid Card -->
-            <section class="md:col-span-6 lg:col-span-4 bg-surface-container-low rounded-xl p-10 flex flex-col">
-                <span class="material-symbols-outlined text-primary text-4xl mb-6"
-                    data-icon="settings_input_component">settings_input_component</span>
-                <h2 class="font-headline text-3xl text-on-surface mb-8">Tools &amp; DevOps</h2>
-                <div class="space-y-6 flex-grow">
-                    <div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
-                        <span class="font-body">Docker</span>
-                        <span class="font-label text-[10px] uppercase opacity-40">Containerization</span>
+
+            <!-- DevOps -->
+            <section class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8">
+                <span class="material-symbols-outlined text-primary text-3xl mb-3">settings_input_component</span>
+                <h2 class="font-headline text-2xl mb-6">Tools &amp; DevOps</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                        <span>Docker</span>
+                        <span class="font-label text-[10px] uppercase text-outline">Containers</span>
                     </div>
-                    <div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
-                        <span class="font-body">Git/GitHub</span>
-                        <span class="font-label text-[10px] uppercase opacity-40">Version Control</span>
+                    <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                        <span>Git / GitHub</span>
+                        <span class="font-label text-[10px] uppercase text-outline">VCS</span>
                     </div>
-                    <div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
-                        <span class="font-body">Cloud Functions</span>
-                        <span class="font-label text-[10px] uppercase opacity-40">Serverless</span>
+                    <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                        <span>Cloud Functions</span>
+                        <span class="font-label text-[10px] uppercase text-outline">Serverless</span>
                     </div>
-                    <div class="flex justify-between items-end border-b border-outline-variant/10 pb-4">
-                        <span class="font-body">CI/CD Pipelines</span>
-                        <span class="font-label text-[10px] uppercase opacity-40">Automation</span>
+                    <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                        <span>CI/CD pipelines</span>
+                        <span class="font-label text-[10px] uppercase text-outline">Automation</span>
                     </div>
-                </div>
-                <div class="mt-8 flex gap-4">
-                    <div class="flex-1 bg-surface-container p-4 rounded text-center">
-                        <p class="font-label text-[10px] opacity-60">Firebase SDK</p>
-                    </div>
-                    <div class="flex-1 bg-surface-container p-4 rounded text-center">
-                        <p class="font-label text-[10px] opacity-60">DevTools</p>
+                    <div class="flex justify-between pb-1">
+                        <span>Postman</span>
+                        <span class="font-label text-[10px] uppercase text-outline">API testing</span>
                     </div>
                 </div>
             </section>
-            <!-- Security & Best Practices - Mid Card -->
-            <section
-                class="md:col-span-12 lg:col-span-4 bg-surface-container-high rounded-xl p-10 border border-primary/5">
-                <div class="h-full flex flex-col">
-                    <span class="material-symbols-outlined text-primary text-4xl mb-6"
-                        data-icon="encrypted">encrypted</span>
-                    <h2 class="font-headline text-3xl text-on-surface mb-8">Security &amp; Protocol</h2>
-                    <div class="space-y-6">
-                        <div class="group cursor-default">
-                            <h5 class="font-label text-[10px] text-primary uppercase tracking-[0.2em] mb-2">Auth Systems
-                            </h5>
-                            <p class="font-body text-on-surface-variant group-hover:text-on-surface transition-colors">
-                                OAuth/JWT Auth, API Security Headers</p>
-                        </div>
-                        <div class="group cursor-default">
-                            <h5 class="font-label text-[10px] text-primary uppercase tracking-[0.2em] mb-2">Offensive
-                                Security</h5>
-                            <p class="font-body text-on-surface-variant group-hover:text-on-surface transition-colors">
-                                Kali Linux, Ethical Hacking Foundations</p>
-                        </div>
-                        <div class="group cursor-default">
-                            <h5 class="font-label text-[10px] text-primary uppercase tracking-[0.2em] mb-2">Architecture
-                            </h5>
-                            <p class="font-body text-on-surface-variant group-hover:text-on-surface transition-colors">
-                                Clean Architecture, TDD (Test Driven Dev)</p>
-                        </div>
+
+            <!-- Security -->
+            <section class="md:col-span-4 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl p-8">
+                <span class="material-symbols-outlined text-primary text-3xl mb-3">encrypted</span>
+                <h2 class="font-headline text-2xl mb-6">Security</h2>
+                <div class="space-y-5">
+                    <div>
+                        <h5 class="font-label text-[10px] text-primary uppercase tracking-[0.15em] mb-1">Auth</h5>
+                        <p class="text-sm text-on-surface-variant">OAuth / JWT, secure session design, API hardening</p>
                     </div>
-                    <div class="mt-auto pt-10">
-                        <div class="bg-surface-container-lowest p-6 rounded-lg relative overflow-hidden">
-                            <div class="relative z-10 flex items-center gap-4 text-primary">
-                                <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-                                <span class="font-label text-xs uppercase tracking-[0.1em]">Security-First
-                                    Mindset</span>
-                            </div>
-                            <div class="absolute right-[-10px] bottom-[-10px] opacity-5">
-                                <span class="material-symbols-outlined text-9xl" data-icon="shield">shield</span>
-                            </div>
-                        </div>
+                    <div>
+                        <h5 class="font-label text-[10px] text-primary uppercase tracking-[0.15em] mb-1">Background</h5>
+                        <p class="text-sm text-on-surface-variant">B.Tech Cybersecurity · ethical hacking foundations · Kali Linux</p>
+                    </div>
+                    <div>
+                        <h5 class="font-label text-[10px] text-primary uppercase tracking-[0.15em] mb-1">Practice</h5>
+                        <p class="text-sm text-on-surface-variant">Clean architecture, least privilege, secret scrubbing before LLM egress</p>
                     </div>
                 </div>
             </section>
         </div>
-        <!-- Philosophical Footer Note -->
-        <footer class="mt-32 border-t border-outline-variant/10 pt-16 max-w-4xl">
-            <h3 class="font-headline text-3xl mb-6 italic text-primary">The Precision Principle</h3>
-            <p class="font-body text-on-surface-variant leading-relaxed text-lg italic">
-                "In the forge of the digital age, a tool is only as effective as the hands that wield it. I prioritize
-                'Clean Architecture' not just as a pattern, but as a commitment to the longevity and clarity of
-                human-machine interaction."
+
+        <section class="mt-16 p-8 md:p-12 bg-surface-container-low border border-outline-variant/40 rounded-2xl">
+            <h3 class="font-headline text-2xl md:text-3xl mb-4">How I pick tools</h3>
+            <p class="text-on-surface-variant leading-relaxed max-w-3xl">
+                Prefer boring reliability over novelty when the path is hot. Use Go when concurrency and binary
+                deployment matter; Next.js when product velocity and typed UI matter; managed Firebase when
+                realtime collaboration beats owning every infra knob; LLMs only behind clear retrieval, truncation,
+                and sanitization boundaries. Architecture should still make sense six months later — not just in the demo.
             </p>
-        </footer>
+        </section>
     </main>
-    <!-- Global Footer -->
-    <footer class="bg-[#1d1b18] dark:bg-[#1d1b18] w-full py-16 px-12 mt-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center w-full max-w-screen-2xl mx-auto gap-8">
-            <div class="font-['Inter'] font-bold text-[#e7e2db] text-lg uppercase tracking-wider">Kennedy Chinwo</div>
-            <div class="flex gap-12 font-['Manrope'] text-xs tracking-widest uppercase">
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-opacity" href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-opacity" href="projects.html">Projects</a>
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-opacity" href="mailto:chinwokennedy9@gmail.com">Email</a>
-            </div>
-            <div class="text-[#a18d79] font-['Manrope'] text-xs tracking-widest uppercase">
-                © 2026 Kennedy Chinwo. Port Harcourt, Nigeria.
+
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026 · Port Harcourt, Nigeria</p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="projects.html">Projects</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="mailto:chinwokennedy9@gmail.com">Email</a>
             </div>
         </div>
     </footer>

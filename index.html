@@ -1,437 +1,468 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Kennedy Chinwo | Fullstack Developer &amp; AI Engineer</title>
+    <title>Kennedy Chinwo | Fullstack &amp; AI Engineer</title>
+    <meta name="description"
+        content="Kennedy Chinwo — Fullstack and AI engineer specializing in Go backends, Next.js, RAG systems, and production-grade cloud-native applications." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;family=Inter:wght@400;500;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "surface-tint": "#d9c3ad",
-                        "on-error-container": "#ffdad6",
-                        "surface-container-lowest": "#0f0e0b",
-                        "tertiary-fixed-dim": "#c7c6c5",
-                        "surface-dim": "#151310",
-                        "on-secondary-fixed-variant": "#4c463c",
-                        "secondary-container": "#4e483e",
-                        "error": "#ffb4ab",
-                        "surface-container-low": "#1d1b18",
-                        "on-primary-fixed": "#25190b",
-                        "on-primary-fixed-variant": "#544433",
-                        "on-tertiary-fixed-variant": "#464746",
-                        "on-tertiary": "#2f3130",
-                        "surface-container-high": "#2c2a26",
-                        "on-tertiary-fixed": "#1a1c1b",
-                        "tertiary-fixed": "#e3e2e0",
-                        "inverse-primary": "#6d5b49",
-                        "secondary-fixed-dim": "#cfc5b8",
-                        "on-surface": "#e7e2db",
-                        "primary": "#d9c3ad",
-                        "on-primary-container": "#352718",
-                        "outline-variant": "#4d453e",
-                        "secondary": "#cfc5b8",
-                        "on-secondary-fixed": "#201b13",
-                        "secondary-fixed": "#ebe1d3",
-                        "on-primary": "#3c2e1e",
-                        "inverse-on-surface": "#32302c",
-                        "surface-bright": "#3b3935",
-                        "primary-fixed-dim": "#d9c3ad",
-                        "primary-container": "#a18d79",
-                        "background": "#151310",
-                        "on-secondary-container": "#c0b7aa",
-                        "outline": "#998f86",
-                        "on-surface-variant": "#d0c4ba",
-                        "on-error": "#690005",
-                        "error-container": "#93000a",
-                        "tertiary": "#c7c6c5",
-                        "surface": "#151310",
-                        "surface-container": "#211f1c",
-                        "surface-container-highest": "#373430",
-                        "inverse-surface": "#e7e2db",
-                        "on-background": "#e7e2db",
-                        "tertiary-container": "#90918f",
-                        "surface-variant": "#373430",
-                        "on-secondary": "#353026",
-                        "on-tertiary-container": "#292a29",
-                        "primary-fixed": "#f6dec8"
+                        background: "#faf7f2",
+                        surface: "#faf7f2",
+                        "surface-dim": "#e8e2d9",
+                        "surface-bright": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "surface-container-high": "#e9e2d9",
+                        "surface-container-highest": "#e3dbd1",
+                        "surface-variant": "#e3dbd1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        "on-background": "#1c1916",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#25190b",
+                        "primary-fixed": "#f6dec8",
+                        "primary-fixed-dim": "#c4a88a",
+                        secondary: "#6b6358",
+                        "secondary-container": "#ebe1d3",
+                        "on-secondary-container": "#3d372e",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0",
+                        ink: "#1c1916",
+                        paper: "#faf7f2"
                     },
                     fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Inter"]
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
                     },
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                },
-            },
+                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", full: "9999px" }
+                }
+            }
         }
     </script>
     <style>
         .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 
-        .glass-panel {
-            background: rgba(21, 19, 16, 0.6);
-            backdrop-filter: blur(12px);
+        html {
+            scroll-behavior: smooth;
         }
 
-        .text-gradient {
-            background: linear-gradient(135deg, #d9c3ad 0%, #a18d79 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
 
-<body
-    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
-            <a href="index.html" class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Kennedy Chinwo</a>
-            <div class="hidden md:flex gap-10">
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
-                    href="index.html">Home</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="projects.html">Projects</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="stack.html">Stack</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="#experience">Experience</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="#contact">Contact</a>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container paper-grain">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium text-on-surface tracking-tight">
+                Kennedy Chinwo
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="index.html">Home</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#experience">Experience</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#contact">Contact</a>
             </div>
+            <a href="mailto:chinwokennedy9@gmail.com"
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                Get in touch
+            </a>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center pt-20 px-8 max-w-7xl mx-auto overflow-hidden">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-8 space-y-8">
-                <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full">
-                    <span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
-                    <span class="font-label text-xs uppercase tracking-[0.05em] text-on-surface-variant">Port Harcourt, Nigeria &middot; Open to Opportunities</span>
+
+    <!-- Hero -->
+    <section class="relative min-h-[90vh] flex items-center pt-24 pb-20 px-6 md:px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-full shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    <span class="font-label text-[11px] uppercase tracking-[0.12em] text-on-surface-variant">
+                        Port Harcourt · Open to opportunities
+                    </span>
                 </div>
-                <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl leading-tight text-on-surface">
-                    Kennedy Chinwo <br />
-                    <span class="italic text-primary">Fullstack &amp; AI Engineer</span>
+                <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.08] text-on-surface tracking-tight">
+                    Fullstack &amp; AI engineer building systems that ship.
                 </h1>
-                <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
-                    Results-driven engineer specializing in Go backends, Next.js frontends, and production-grade AI integrations.
-                    I build secure, cloud-native systems — from real-time fraud detection to enterprise RAG platforms — with clean architecture and measurable impact.
+                <p class="text-lg md:text-xl text-on-surface-variant max-w-xl font-light leading-relaxed">
+                    I design and implement Go backends, Next.js frontends, and production AI pipelines —
+                    from real-time fraud scoring to enterprise RAG — with clean architecture, security-first
+                    defaults, and measurable outcomes.
                 </p>
-                <div class="flex flex-wrap gap-6 pt-4">
+                <div class="flex flex-wrap gap-4 pt-2">
                     <a href="projects.html"
-                        class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-md font-semibold text-base hover:scale-[0.98] transition-all">View Projects</a>
+                        class="bg-primary text-on-primary px-7 py-3.5 rounded-lg font-semibold text-sm md:text-base hover:bg-on-surface transition-colors">
+                        View case studies
+                    </a>
                     <a href="Kennedy_Chinwo_Resume.pdf"
-                        class="text-primary border border-outline-variant/20 hover:border-primary/40 px-8 py-4 rounded-md font-semibold text-base transition-all">Download CV</a>
+                        class="border border-outline-variant bg-surface-container-lowest text-on-surface px-7 py-3.5 rounded-lg font-semibold text-sm md:text-base hover:border-primary/50 transition-colors">
+                        Download CV
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-x-8 gap-y-3 pt-4 border-t border-outline-variant/50">
+                    <div>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Focus</p>
+                        <p class="text-sm text-on-surface">Backend · AI · Fullstack</p>
+                    </div>
+                    <div>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Core stack</p>
+                        <p class="text-sm text-on-surface">Go · Next.js · PostgreSQL · LLMs</p>
+                    </div>
+                    <div>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Background</p>
+                        <p class="text-sm text-on-surface">B.Tech Cybersecurity, FUTO</p>
+                    </div>
                 </div>
             </div>
-            <div class="hidden lg:block lg:col-span-4 relative">
-                <div class="aspect-[3/4] rounded-xl overflow-hidden bg-surface-container-low group">
-                    <img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                        data-alt="Professional portrait of Kennedy Chinwo in a minimalist setting"
+            <div class="lg:col-span-5 relative">
+                <div class="aspect-[4/5] max-w-md mx-auto lg:ml-auto rounded-2xl overflow-hidden bg-surface-container border border-outline-variant/50 shadow-sm">
+                    <img class="w-full h-full object-cover"
+                        alt="Portrait of Kennedy Chinwo"
                         src="IMG_E7983.JPG" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
                 </div>
-                <!-- Abstract Geometric Overlay -->
-                <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-4 -left-2 sm:left-4 lg:-left-6 bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-5 py-4 shadow-md max-w-[220px]">
+                    <p class="font-label text-[10px] uppercase tracking-widest text-primary mb-1">Currently</p>
+                    <p class="font-headline text-sm leading-snug">Building production AI tooling &amp; cloud-native backends</p>
+                </div>
             </div>
         </div>
     </section>
-    <!-- Expertise Section: What I Do -->
-    <section class="py-32 px-8 bg-surface-container-low">
+
+    <!-- Snapshot metrics -->
+    <section class="border-y border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">5</p>
+                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Shipped projects</p>
+            </div>
+            <div>
+                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">Go + TS</p>
+                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Primary languages</p>
+            </div>
+            <div>
+                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">RAG / LLM</p>
+                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Production AI systems</p>
+            </div>
+            <div>
+                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">Security</p>
+                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Cybersecurity degree</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I build -->
+    <section class="py-24 md:py-32 px-6 md:px-8">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
                 <div class="max-w-2xl">
-                    <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Core
-                        Competencies</span>
-                    <h2 class="font-headline text-4xl md:text-5xl text-on-surface">The Digital <span
-                            class="italic">Atelier</span></h2>
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Capabilities</span>
+                    <h2 class="font-headline text-3xl md:text-5xl text-on-surface leading-tight">
+                        Engineering depth across the full product surface
+                    </h2>
                 </div>
-                <p class="font-body text-on-surface-variant max-w-md text-sm md:text-base leading-relaxed">
-                    A multi-disciplinary approach to engineering, bridging the gap between hardware-level efficiency and
-                    cloud-scale intelligence.
+                <p class="text-on-surface-variant max-w-sm text-sm md:text-base leading-relaxed">
+                    Recruiter-ready range: high-throughput APIs, typed frontends, and AI systems that respect latency, cost, and data safety.
                 </p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-1">
-                <!-- Backend -->
-                <div
-                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors group">
-                    <span class="material-symbols-outlined text-primary mb-6 text-4xl"
-                        data-icon="database">database</span>
-                    <h3 class="font-headline text-xl mb-4">Backend Architecture</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">Go services with Gin &amp; GORM, RESTful APIs, microservices, PostgreSQL, and Firebase for high-throughput backends.</p>
-                </div>
-                <!-- Full Stack -->
-                <div
-                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-                    <span class="material-symbols-outlined text-primary mb-6 text-4xl" data-icon="layers">layers</span>
-                    <h3 class="font-headline text-xl mb-4">Full Stack Development</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">Next.js 15+, React 19, TypeScript, and Tailwind CSS — polished PWAs with responsive, production-ready UIs.</p>
-                </div>
-                <!-- AI Engineering -->
-                <div
-                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-                    <span class="material-symbols-outlined text-primary mb-6 text-4xl"
-                        data-icon="psychology">psychology</span>
-                    <h3 class="font-headline text-xl mb-4">AI &amp; LLM Integration</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">RAG pipelines, LLM integration via Groq &amp; Llama 3/4, semantic search, and real-time AI inference workflows.</p>
-                </div>
-                <!-- Blockchain -->
-                <div
-                    class="p-10 bg-surface-container border border-outline-variant/10 hover:bg-surface-container-high transition-colors">
-                    <span class="material-symbols-outlined text-primary mb-6 text-4xl" data-icon="token">token</span>
-                    <h3 class="font-headline text-xl mb-4">Blockchain &amp; Web3</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">Sui blockchain, Solidity smart contracts, and Storj decentralized storage for secure, distributed applications.</p>
-                </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-5">database</span>
+                    <h3 class="font-headline text-xl mb-3">Backend architecture</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        Go services with Gin &amp; GORM, REST APIs, microservices patterns, PostgreSQL, and Firebase for durable, high-throughput backends.
+                    </p>
+                </article>
+                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-5">layers</span>
+                    <h3 class="font-headline text-xl mb-3">Fullstack product UI</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        Next.js 15+, React 19, TypeScript, and Tailwind — responsive PWAs and dashboards with production-grade UX and type safety.
+                    </p>
+                </article>
+                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-5">psychology</span>
+                    <h3 class="font-headline text-xl mb-3">AI &amp; LLM systems</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        RAG pipelines, embedding search, Groq/Llama inference, multi-provider routing, and real-time AI workflows with citation and safety controls.
+                    </p>
+                </article>
+                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-5">shield</span>
+                    <h3 class="font-headline text-xl mb-3">Security mindset</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        OAuth/JWT, secure API design, secret sanitization before LLM calls, and a cybersecurity foundation for threat-aware engineering.
+                    </p>
+                </article>
             </div>
         </div>
     </section>
-    <!-- Featured Projects: Bento Grid -->
-    <section class="py-32 px-8 max-w-7xl mx-auto">
-        <div class="mb-20">
-            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Selected Works</span>
-            <h2 class="font-headline text-4xl md:text-5xl text-on-surface">Architecting <span
-                    class="italic">Solutions</span></h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <!-- Project 1: Asguard -->
-            <div class="md:col-span-8 group cursor-pointer">
-                <div class="aspect-[16/9] overflow-hidden rounded-xl bg-surface-container-high relative mb-6">
-                    <img class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000"
-                        data-alt="Digital representation of complex security nodes and AI pathways"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE7WrucZ1isaBvO4oQQSd0T7Y8VDqGdDd1jUh6UH5QqB2zWiiB_apzb5zUTCWkUHkiZcpB80GuSWUuH6tpaTYZySwwpogIZ9APKT5W9QYJPneUAT2OCS4Bw4o-ycZS9Ry42zmRlhlnd5KiCCewU4Gn-RfMcEYo8Va_2zx0s65ngraQG6-hjBtNNwxOIlqkkrwXfvYrKbULzWiiFcMC5j2FwxSD7PXE2C5adbri2nFdrAqnlM3LNK36nkTTJR4-7DOKS5GvBCC1jmCi" />
-                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
-                        <div
-                            class="bg-surface-container-low/60 backdrop-blur-md p-8 max-w-md border border-outline-variant/20">
-                            <h3 class="font-headline text-3xl mb-2 text-on-surface">Asguard</h3>
-                            <p class="text-sm text-on-surface-variant mb-4">Real-time fraud detection with rule-based scoring, AI risk assessment, and sub-second latency for high-volume streams.</p>
-                            <div class="flex gap-2 flex-wrap">
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary border border-primary/20">Go</span>
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary border border-primary/20">Gin</span>
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary border border-primary/20">Firebase</span>
+
+    <!-- Featured projects -->
+    <section class="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low border-y border-outline-variant/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+                <div>
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Selected work</span>
+                    <h2 class="font-headline text-3xl md:text-5xl text-on-surface">Case studies worth opening</h2>
+                </div>
+                <a href="projects.html" class="inline-flex items-center gap-2 text-primary font-medium text-sm group">
+                    Full project index
+                    <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Asguard -->
+                <a href="asguard.html" class="group block bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden hover:border-primary/35 hover:shadow-md transition-all">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-5 aspect-video lg:aspect-auto lg:min-h-[280px] bg-surface-container relative overflow-hidden">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
+                                src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">01 · Fraud detection</span>
+                                <span class="text-outline-variant">·</span>
+                                <span class="font-label text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">Go · Gin · Firebase · LLM</span>
                             </div>
+                            <h3 class="font-headline text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">Asguard</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
+                                Real-time transaction fraud pipeline combining rule-based scoring with AI risk assessment.
+                                Flags high-risk events, auto-categorizes severity, and generates natural-language summaries
+                                for investigators at sub-second latency under load.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                                Read architecture notes
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </span>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- Project 2: Azeru -->
-            <div class="md:col-span-4 group cursor-pointer">
-                <div
-                    class="aspect-square md:aspect-auto md:h-full overflow-hidden rounded-xl bg-surface-container-high relative mb-6">
-                    <img class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000"
-                        data-alt="Stacks of documents transformed into glowing digital data bits"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ux3up6bHYgluMsojfOypFsitomz2mweS1G71TqdbH2SoWDSYZWjhLguKs52MS3z0onkQOZS9FTiT1bAq-NfREJvuZ0Qvieltwyhx4KOTgfTeiCe2C4NFmwfTT4cLIP0iPOhmSB0MTr7YqCbcWs8CHfSUhxur_oACRWHd9QMytjyvtBvbtBp4mlM1EYaOXX8kpLwK37t1gvXX7gb-D-YiS55g9QAKiCZDjyZEFq00-NMHn_r2jb-2kIW28b_eu-MIJvTb6boUjaHQ" />
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
-                        <div class="bg-surface-container-low/60 backdrop-blur-md p-6 border border-outline-variant/20">
-                            <h3 class="font-headline text-2xl mb-2 text-on-surface">Azeru</h3>
-                            <p class="text-sm text-on-surface-variant mb-4">Enterprise RAG platform ingesting PDFs into searchable knowledge bases with citation-backed AI responses.</p>
-                            <div class="flex gap-2 flex-wrap">
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Go</span>
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Next.js</span>
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Groq AI</span>
-                                <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">RAG</span>
+                </a>
+
+                <!-- Azeru -->
+                <a href="azeru.html" class="group block bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden hover:border-primary/35 hover:shadow-md transition-all">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-5 aspect-video lg:aspect-auto lg:min-h-[280px] bg-surface-container relative overflow-hidden order-1 lg:order-2">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
+                                src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center order-2 lg:order-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">02 · Enterprise RAG</span>
+                                <span class="text-outline-variant">·</span>
+                                <span class="font-label text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">Go · Next.js · Groq · Vectors</span>
                             </div>
+                            <h3 class="font-headline text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">Azeru</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
+                                Document intelligence platform that ingests PDFs into chunked, embedded knowledge bases.
+                                Semantic retrieval powers citation-backed conversational answers — reducing manual document
+                                triage for knowledge-heavy workflows.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                                Read architecture notes
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </span>
                         </div>
                     </div>
-                </div>
+                </a>
+
+                <!-- Hauser -->
+                <a href="hauser.html" class="group block bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden hover:border-primary/35 hover:shadow-md transition-all">
+                    <div class="grid lg:grid-cols-12">
+                        <div class="lg:col-span-5 aspect-video lg:aspect-auto lg:min-h-[280px] bg-surface-container relative overflow-hidden">
+                            <video class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
+                                src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">03 · Real estate SaaS</span>
+                                <span class="text-outline-variant">·</span>
+                                <span class="font-label text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">Next.js · Firebase · Cloud Functions</span>
+                            </div>
+                            <h3 class="font-headline text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">Hauser</h3>
+                            <p class="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
+                                Property marketplace for the Nigerian market with role-aware onboarding, dynamic listings,
+                                real-time Firestore sync, image optimization, and click analytics for premium tiers —
+                                built as a serverless SaaS control plane for agents and landlords.
+                            </p>
+                            <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                                Read architecture notes
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <!-- Project 3: Hauser -->
-            <div class="md:col-span-12 group cursor-pointer">
-                <div class="aspect-[21/9] overflow-hidden rounded-xl bg-surface-container-high relative">
-                    <img class="w-full h-full object-cover grayscale opacity-30 group-hover:scale-105 group-hover:opacity-50 transition-all duration-1000"
-                        data-alt="Modern luxury architecture with clean lines and glass surfaces"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuABCveVvxMlvxAIYPP0Oo4odE3sh2wGPEBEkoxy3GScDOcTdONmf5X-Jt8ixWWneO_Gurx6Cgyr6MWR3vW0tvGiw9zvI7_aWpSIVlcO0uzgJpN3SeVDpkjUavuzV5Kn6ZnBswBeVvrSGYBLzYNrcm5AepzCh_AdwKCP5ImXf3FWpl7H0NKDnva2ofKBBHndlvfZKUGDQcdvqDu7Ql1J67NGclIGXr5Onl_CsnE97no8I9FReuSiBsoMCtMJYOtue0phJAQO_9AkBfBa" />
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="text-center max-w-xl px-8">
-                            <h3 class="font-headline text-4xl md:text-5xl mb-4 text-on-surface">Hauser</h3>
-                            <p class="text-lg text-on-surface-variant italic mb-8">Real estate marketplace with automated role detection, dynamic listings, and real-time Firebase-powered updates.</p>
-                            <button
-                                class="inline-flex items-center gap-2 text-primary uppercase font-label text-xs tracking-[0.2em] group-hover:translate-x-2 transition-transform">
-                                <a href="projects.html"> Explore projects</a> <span
-                                    class="material-symbols-outlined text-sm"
-                                    data-icon="arrow_forward">arrow_forward</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Secondary projects -->
+            <div class="grid md:grid-cols-2 gap-4 mt-6">
+                <a href="koe.html" class="group p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
+                    <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary mb-3 block">04 · AI audio</span>
+                    <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">Koe</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                        Dual-engine TTS studio: Azure Neural voices plus offline Piper via Docker, with WebSocket streaming
+                        and runtime engine switching for cost, latency, and privacy tradeoffs.
+                    </p>
+                    <span class="text-sm font-medium text-primary inline-flex items-center gap-1">
+                        Case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </span>
+                </a>
+                <a href="vpipe.html" class="group p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
+                    <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary mb-3 block">05 · Developer tools</span>
+                    <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">Vpipe</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                        Go CLI that pipes build errors into multi-provider LLMs, auto-sanitizes 20+ secret patterns,
+                        and truncates context to stay inside token budgets — safer AI-assisted debugging.
+                    </p>
+                    <span class="text-sm font-medium text-primary inline-flex items-center gap-1">
+                        Case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
-    <!-- More Projects -->
-    <section class="py-16 px-8 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="p-10 bg-surface-container border border-outline-variant/10 rounded-xl group hover:bg-surface-container-high transition-colors">
-                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">AI / Audio</span>
-                <h3 class="font-headline text-3xl mb-3 text-on-surface">Koe</h3>
-                <p class="text-sm text-on-surface-variant leading-relaxed mb-4">Dual-engine TTS studio — Microsoft Azure Neural voices plus offline Piper TTS via Docker, with real-time WebSocket audio streaming.</p>
-                <div class="flex gap-2 flex-wrap">
-                    <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Next.js</span>
-                    <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">WebSocket</span>
-                    <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Docker</span>
-                </div>
-            </div>
-            <div class="p-10 bg-surface-container border border-outline-variant/10 rounded-xl group hover:bg-surface-container-high transition-colors">
-                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Developer Tools</span>
-                <h3 class="font-headline text-3xl mb-3 text-on-surface">Vpipe</h3>
-                <p class="text-sm text-on-surface-variant leading-relaxed mb-4">CLI debugger piping build errors into multi-provider LLM APIs with auto-sanitization of 20+ sensitive patterns before external calls.</p>
-                <div class="flex gap-2 flex-wrap">
-                    <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Go</span>
-                    <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">Groq</span>
-                    <span class="text-[10px] uppercase font-label tracking-widest px-2 py-1 bg-primary/10 text-primary">OpenAI</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Skills & Experience -->
-    <section id="experience" class="py-32 px-8 bg-surface-container-lowest">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24">
-            <!-- Skills Grid -->
+
+    <!-- Experience + skills -->
+    <section id="experience" class="py-24 md:py-32 px-6 md:px-8">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24">
             <div>
-                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">The Stack</span>
-                <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-12">Technological <span
-                        class="italic">Foundry</span></h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    <div class="space-y-4">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Backend</h4>
-                        <ul class="text-on-surface-variant text-sm space-y-2">
-                            <li>Go (Gin, GORM)</li>
-                            <li>Node.js</li>
-                            <li>RESTful APIs</li>
-                            <li>Microservices</li>
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Experience</span>
+                <h2 class="font-headline text-3xl md:text-4xl mb-10">Professional timeline</h2>
+                <div class="space-y-10">
+                    <div class="relative pl-8 border-l-2 border-primary/30">
+                        <div class="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-primary"></div>
+                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Jan 2024 — Oct 2024</span>
+                        <h3 class="font-headline text-xl mt-1">Fullstack Developer Intern</h3>
+                        <p class="text-primary text-sm mb-3">Dmiebi IT Ventures</p>
+                        <ul class="text-sm text-on-surface-variant space-y-2 leading-relaxed">
+                            <li class="flex gap-2"><span class="text-primary mt-1">·</span> Architected Go backend services and REST APIs for high-throughput data operations.</li>
+                            <li class="flex gap-2"><span class="text-primary mt-1">·</span> Shipped TypeScript web apps with cloud-native architecture and real-time data sync.</li>
+                            <li class="flex gap-2"><span class="text-primary mt-1">·</span> Implemented OAuth/JWT authentication and AI features via external LLM APIs.</li>
                         </ul>
                     </div>
-                    <div class="space-y-4">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Frontend</h4>
-                        <ul class="text-on-surface-variant text-sm space-y-2">
+                    <div class="relative pl-8 border-l-2 border-outline-variant">
+                        <div class="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-outline"></div>
+                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Education</span>
+                        <h3 class="font-headline text-xl mt-1">B.Tech in Cybersecurity</h3>
+                        <p class="text-primary text-sm mb-3">Federal University of Technology, Owerri (FUTO)</p>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Focused on secure system design, ethical hacking foundations, and defensive engineering —
+                            grounding product work in threat models and least-privilege defaults.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Stack snapshot</span>
+                <h2 class="font-headline text-3xl md:text-4xl mb-10">Tools I use in production</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Backend</h4>
+                        <ul class="text-sm text-on-surface-variant space-y-1.5">
+                            <li>Go (Gin, GORM)</li>
+                            <li>Node.js</li>
+                            <li>REST / microservices</li>
+                            <li>PostgreSQL · Firebase</li>
+                        </ul>
+                    </div>
+                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Frontend</h4>
+                        <ul class="text-sm text-on-surface-variant space-y-1.5">
                             <li>Next.js 15+</li>
                             <li>React 19</li>
                             <li>TypeScript</li>
                             <li>Tailwind CSS</li>
                         </ul>
                     </div>
-                    <div class="space-y-4">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">AI &amp; Automation</h4>
-                        <ul class="text-on-surface-variant text-sm space-y-2">
-                            <li>RAG Architecture</li>
-                            <li>Groq / Llama 3/4</li>
-                            <li>Semantic Search</li>
-                            <li>NLP</li>
+                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">AI</h4>
+                        <ul class="text-sm text-on-surface-variant space-y-1.5">
+                            <li>RAG &amp; embeddings</li>
+                            <li>Groq / Llama 3–4</li>
+                            <li>Semantic search</li>
+                            <li>Multi-provider LLM APIs</li>
                         </ul>
                     </div>
-                    <div class="space-y-4">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Data &amp; Cloud</h4>
-                        <ul class="text-on-surface-variant text-sm space-y-2">
-                            <li>PostgreSQL</li>
-                            <li>Firebase / Firestore</li>
-                            <li>Docker</li>
-                            <li>CI/CD</li>
-                        </ul>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Security</h4>
-                        <ul class="text-on-surface-variant text-sm space-y-2">
+                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
+                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Ops &amp; security</h4>
+                        <ul class="text-sm text-on-surface-variant space-y-1.5">
+                            <li>Docker · CI/CD</li>
                             <li>OAuth / JWT</li>
-                            <li>Secure API Design</li>
-                            <li>Kali Linux</li>
-                            <li>Ethical Hacking</li>
-                        </ul>
-                    </div>
-                    <div class="space-y-4">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary">Web3</h4>
-                        <ul class="text-on-surface-variant text-sm space-y-2">
-                            <li>Sui Blockchain</li>
-                            <li>Solidity</li>
-                            <li>Storj Storage</li>
-                            <li>Git / Postman</li>
+                            <li>API hardening</li>
+                            <li>Web3 (Sui, Solidity)</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <!-- Experience Timeline -->
-            <div>
-                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4 block">Journey</span>
-                <h2 class="font-headline text-3xl md:text-4xl text-on-surface mb-12">Professional <span
-                        class="italic">Lineage</span></h2>
-                <div class="space-y-12">
-                    <div
-                        class="relative pl-10 before:content-[''] before:absolute before:left-0 before:top-2 before:w-px before:h-[calc(100%+48px)] before:bg-outline-variant/30">
-                        <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary"></div>
-                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block">Jan 2024 — Oct 2024</span>
-                        <h4 class="font-headline text-lg text-on-surface">Fullstack Developer Intern</h4>
-                        <p class="text-primary text-xs mb-3 italic">Dmiebi IT Ventures</p>
-                        <ul class="text-sm text-on-surface-variant leading-relaxed space-y-2 list-disc list-inside">
-                            <li>Architected Go backend services with RESTful APIs for high-throughput data operations.</li>
-                            <li>Built TypeScript web apps with cloud-native architecture and real-time data sync.</li>
-                            <li>Implemented OAuth/JWT auth flows and AI-powered features via external LLM APIs.</li>
-                        </ul>
-                    </div>
-                    <div class="relative pl-10">
-                        <div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-outline"></div>
-                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant mb-1 block">Education</span>
-                        <h4 class="font-headline text-lg text-on-surface">B.Tech in Cybersecurity</h4>
-                        <p class="text-primary text-xs mb-3 italic">Federal University of Technology, Owerri (FUTO)</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">Specialized in security engineering, ethical hacking foundations, and secure system design.</p>
-                    </div>
-                </div>
+                <a href="stack.html" class="inline-flex items-center gap-2 mt-6 text-primary font-medium text-sm group">
+                    Full technology map
+                    <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
             </div>
         </div>
     </section>
-    <!-- Let's Build Section -->
-    <section id="contact" class="py-32 px-8">
-        <div
-            class="max-w-4xl mx-auto bg-surface-container-high rounded-2xl p-12 md:p-20 text-center relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -mr-32 -mt-32"></div>
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -ml-32 -mb-32"></div>
-            <div class="relative z-10">
-                <span class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-6 block">Inquiry</span>
-                <h2 class="font-headline text-4xl md:text-6xl text-on-surface mb-8">Let’s Build <br /> Something <span
-                        class="italic">Meaningful</span></h2>
-                <p class="text-on-surface-variant mb-12 max-w-lg mx-auto leading-relaxed">
-                    Open to fullstack, AI engineering, and backend roles. Whether it's a RAG platform, fraud detection system, or cloud-native app — let's connect.
-                </p>
-                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                    <a class="bg-primary text-on-primary px-10 py-4 rounded-md font-semibold text-lg hover:scale-[0.98] transition-all"
-                        href="mailto:chinwokennedy9@gmail.com">chinwokennedy9@gmail.com</a>
-                    <a class="text-on-surface hover:text-primary transition-colors font-semibold"
-                        href="tel:+2349137068463">+234 913 706 8463</a>
-                    <a class="text-on-surface hover:text-primary transition-colors font-semibold border-b border-transparent hover:border-primary pb-1"
-                        href="Kennedy_Chinwo_Resume.pdf">Download CV</a>
-                </div>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low border-t border-outline-variant/40">
+        <div class="max-w-3xl mx-auto text-center">
+            <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Contact</span>
+            <h2 class="font-headline text-3xl md:text-5xl mb-6">Let’s talk about the next role</h2>
+            <p class="text-on-surface-variant leading-relaxed mb-10 max-w-xl mx-auto">
+                Open to fullstack, backend, and AI engineering roles. Happy to walk through architecture decisions
+                on Asguard, Azeru, or any system in the portfolio.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:chinwokennedy9@gmail.com"
+                    class="bg-primary text-on-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-on-surface transition-colors">
+                    chinwokennedy9@gmail.com
+                </a>
+                <a href="tel:+2349137068463"
+                    class="border border-outline-variant bg-surface-container-lowest px-8 py-3.5 rounded-lg font-semibold hover:border-primary/40 transition-colors">
+                    +234 913 706 8463
+                </a>
+                <a href="Kennedy_Chinwo_Resume.pdf"
+                    class="text-primary font-semibold border-b border-primary/30 pb-0.5 hover:border-primary">
+                    Download CV
+                </a>
             </div>
         </div>
     </section>
+
     <!-- Footer -->
-    <footer
-        class="bg-[#1d1b18] dark:bg-[#1d1b18] w-full py-12 mt-20 transition-all duration-500 opacity-80 hover:opacity-100">
-        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto px-8 gap-6">
-            <div class="font-['Noto_Serif'] text-lg text-[#e7e2db]">Kennedy Chinwo</div>
-            <div class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40">
-                © 2026 Kennedy Chinwo. Port Harcourt, Nigeria.
-            </div>
-            <div class="flex gap-8">
-                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg text-on-surface">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">
+                © 2026 · Port Harcourt, Nigeria
+            </p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
                     href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
-                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
-                    href="https://pixelpro001.netlify.app" target="_blank" rel="noopener">Portfolio</a>
-                <a class="font-['Manrope'] text-xs uppercase tracking-[0.05em] text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
                     href="mailto:chinwokennedy9@gmail.com">Email</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
+                    href="projects.html">Projects</a>
             </div>
         </div>
     </footer>

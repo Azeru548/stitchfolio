@@ -1,331 +1,319 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Projects | Kennedy Chinwo</title>
+    <meta name="description"
+        content="Selected engineering work by Kennedy Chinwo — fraud detection, enterprise RAG, real estate SaaS, TTS systems, and developer tooling." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@300;400;500&amp;family=Manrope:wght@300;400;600&amp;family=Inter:wght@400;500&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "surface-variant": "#373430",
-                        "tertiary-container": "#90918f",
-                        "secondary-fixed-dim": "#cfc5b8",
-                        "outline-variant": "#4d453e",
-                        "secondary-fixed": "#ebe1d3",
-                        "on-tertiary-fixed": "#1a1c1b",
-                        "on-primary": "#3c2e1e",
-                        "surface-container-low": "#1d1b18",
-                        "surface-bright": "#3b3935",
-                        "on-tertiary-fixed-variant": "#464746",
-                        "primary-fixed-dim": "#d9c3ad",
-                        "on-primary-container": "#352718",
-                        "surface-container-highest": "#373430",
-                        "on-tertiary": "#2f3130",
-                        "on-secondary-fixed-variant": "#4c463c",
-                        "inverse-on-surface": "#32302c",
-                        "surface-tint": "#d9c3ad",
-                        "primary": "#d9c3ad",
-                        "inverse-surface": "#e7e2db",
-                        "secondary": "#cfc5b8",
-                        "primary-container": "#a18d79",
-                        "surface": "#151310",
-                        "on-primary-fixed": "#25190b",
-                        "inverse-primary": "#6d5b49",
-                        "surface-container-lowest": "#0f0e0b",
-                        "error-container": "#93000a",
-                        "outline": "#998f86",
-                        "tertiary-fixed-dim": "#c7c6c5",
-                        "on-secondary-container": "#c0b7aa",
-                        "on-surface": "#e7e2db",
-                        "on-secondary": "#353026",
-                        "background": "#151310",
-                        "on-surface-variant": "#d0c4ba",
-                        "on-background": "#e7e2db",
-                        "surface-dim": "#151310",
-                        "primary-fixed": "#f6dec8",
-                        "secondary-container": "#4e483e",
-                        "tertiary-fixed": "#e3e2e0",
-                        "surface-container": "#211f1c",
-                        "error": "#ffb4ab",
-                        "tertiary": "#c7c6c5",
-                        "on-secondary-fixed": "#201b13",
-                        "on-primary-fixed-variant": "#544433",
-                        "on-error": "#690005",
-                        "surface-container-high": "#2c2a26",
-                        "on-tertiary-container": "#292a29",
-                        "on-error-container": "#ffdad6"
+                        background: "#faf7f2",
+                        surface: "#faf7f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "surface-container-high": "#e9e2d9",
+                        "surface-container-highest": "#e3dbd1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        secondary: "#6b6358",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0"
                     },
                     fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                },
-            },
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
         }
     </script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-
-        .glass-effect {
-            backdrop-filter: blur(20px);
-        }
-
-        .editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
 
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-    <!-- Top Navigation -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
-            <a href="index.html" class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Kennedy Chinwo</a>
-            <div class="hidden md:flex gap-10">
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="index.html">Home</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
-                    href="projects.html">Projects</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="stack.html">Stack</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="index.html#experience">Experience</a>
-                <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                    href="index.html#contact">Contact</a>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container paper-grain">
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#experience">Experience</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#contact">Contact</a>
             </div>
             <a href="mailto:chinwokennedy9@gmail.com"
-                class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
-                Get in Touch
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                Get in touch
             </a>
         </div>
     </nav>
-    <main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
-        <!-- Hero Header -->
-        <header class="mb-32 max-w-4xl">
-            <h1
-                class="text-6xl md:text-8xl font-headline font-light tracking-tighter text-on-surface mb-8 leading-none">
-                Selected <span class="italic text-primary">Works</span>
+
+    <main class="pt-28 md:pt-36 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+        <header class="mb-16 md:mb-24 max-w-3xl">
+            <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Portfolio index</span>
+            <h1 class="font-headline text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-6">
+                Selected systems &amp; case studies
             </h1>
-            <p class="text-xl md:text-2xl font-body text-on-surface-variant font-light leading-relaxed max-w-2xl">
-                Production-grade systems spanning AI fraud detection, enterprise RAG, real-time TTS, real estate platforms, and developer tooling.
+            <p class="text-lg md:text-xl text-on-surface-variant font-light leading-relaxed">
+                Five production-minded projects spanning fraud detection, document RAG, real estate SaaS,
+                dual-engine TTS, and AI-assisted CLI tooling. Each write-up covers problem framing,
+                architecture choices, and engineering tradeoffs.
             </p>
         </header>
-        <!-- Catalog Grid -->
-        <div class="space-y-48">
-            <!-- Project 1: Asguard (Large Asymmetric Layout) -->
-            <section class="editorial-grid gap-8 group">
-                <div
-                    class="col-span-12 md:col-span-7 relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-container-low">
-                    <video alt="Asguard Project"
-                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                        data-alt="Abstract glowing network nodes representing digital security"
-                        src="screen_1773947235709.mp4" autoplay loop muted playsinline />
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-                </div>
-                <div class="col-span-12 md:col-span-5 flex flex-col justify-center space-y-6 md:pl-12">
-                    <div class="flex items-center gap-4">
-                        <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">01 / Artificial
-                            Intelligence</span>
-                        <div class="h-px flex-grow bg-outline-variant/30"></div>
+
+        <div class="space-y-8 md:space-y-10">
+            <!-- 01 Asguard -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-6 aspect-[16/10] lg:aspect-auto lg:min-h-[340px] bg-surface-container overflow-hidden">
+                        <video class="w-full h-full object-cover" src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
                     </div>
-                    <h2 class="text-5xl font-headline text-on-surface">Asguard</h2>
-                    <p class="text-lg text-on-surface-variant leading-relaxed">
-                        Real-time fraud detection pipeline analyzing financial transactions with rule-based scoring and AI risk assessment.
-                        Auto-categorizes risk levels and generates natural language summaries for flagged events with sub-second latency.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Go</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Gin</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Firebase</span>
-                    </div>
-                    <div class="pt-8">
-                        <a class="inline-flex items-center group/link text-primary font-medium tracking-tight"
-                            href="asguard.html">
-                            <span
-                                class="border-b border-primary/30 group-hover/link:border-primary transition-all pb-1">View
-                                Project</span>
-                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            <!-- Project 2: Azeru (Reversed Asymmetric Layout) -->
-            <section class="editorial-grid gap-8 group">
-                <div
-                    class="col-span-12 md:col-span-5 order-2 md:order-1 flex flex-col justify-center space-y-6 md:pr-12">
-                    <div class="flex items-center gap-4">
-                        <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">02 / NLP &amp;
-                            OCR</span>
-                        <div class="h-px flex-grow bg-outline-variant/30"></div>
-                    </div>
-                    <h2 class="text-5xl font-headline text-on-surface">Azeru</h2>
-                    <p class="text-lg text-on-surface-variant leading-relaxed">
-                        Enterprise RAG platform ingesting PDFs into searchable knowledge bases via semantic vector search.
-                        Features intelligent text chunking and context-aware conversational interfaces for citation-backed AI responses.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Go</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Next.js</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Groq AI</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Vector Search</span>
-                    </div>
-                    <div class="pt-8">
-                        <a class="inline-flex items-center group/link text-primary font-medium tracking-tight"
-                            href="azeru.html">
-                            <span
-                                class="border-b border-primary/30 group-hover/link:border-primary transition-all pb-1">View
-                                Project</span>
-                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
-                <div
-                    class="col-span-12 md:col-span-7 order-1 md:order-2 relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-container-low">
-                    <video alt="Azeru Interface"
-                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                        data-alt="Monochrome close up of a clean digital interface code" src="screen_1774120316927.mp4"
-                        autoplay loop muted playsinline />
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-                </div>
-            </section>
-            <!-- Project 3: Hauser (Centered Editorial Layout) -->
-            <section class="max-w-5xl mx-auto group">
-                <div class="relative overflow-hidden rounded-xl aspect-[21/9] mb-12 bg-surface-container-low">
-                    <video alt="Hauser Real Estate"
-                        class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                        data-alt="Architectural minimalist building against a dark sky" src="screen_1774120647093.mp4"
-                        autoplay loop muted playsinline />
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80">
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="md:col-span-2 space-y-6">
-                        <div class="flex items-center gap-4">
-                            <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">Real Estate</span>
+                    <div class="lg:col-span-6 p-8 md:p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">01</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">AI · Fintech risk</span>
                         </div>
-                        <h2 class="text-5xl font-headline text-on-surface">Hauser</h2>
-                        <p class="text-lg text-on-surface-variant leading-relaxed">
-                            Real estate marketplace with automated role detection, dynamic listings, and real-time updates.
-                            Features auto image optimization, click analytics for premium tiers, and serverless Firebase Cloud Functions.
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Asguard</h2>
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            High-volume fintech environments need fraud decisions that are fast enough for live
+                            payment flows and explainable enough for compliance review. Asguard is a real-time
+                            fraud detection pipeline that scores transactions with layered rules, enriches them
+                            with AI risk assessment, and emits structured alerts with natural-language summaries.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">
+                            The system prioritizes low-latency paths for clear-cut decisions, escalates ambiguous
+                            events for deeper model analysis, and keeps investigator context in-band so teams
+                            spend less time reconstructing “why” a transfer was flagged.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Go</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Gin</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firebase</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">LLM inference</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">PostgreSQL</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="asguard.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="https://asguard.netlify.app" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                Live site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 02 Azeru -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-6 order-1 lg:order-2 aspect-[16/10] lg:aspect-auto lg:min-h-[340px] bg-surface-container overflow-hidden">
+                        <video class="w-full h-full object-cover" src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="lg:col-span-6 order-2 lg:order-1 p-8 md:p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">02</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">RAG · Document intelligence</span>
+                        </div>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Azeru</h2>
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            Unstructured PDFs are slow to search and easy to misread under time pressure. Azeru
+                            is an enterprise RAG platform that ingests documents, chunks them for embedding quality,
+                            stores vectors for semantic retrieval, and answers questions through a conversational
+                            interface with source-aware responses.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">
+                            Backend processing is built in Go for throughput; the operator UI is Next.js for
+                            fast iteration and validation loops. Inference is routed through high-speed LLM
+                            providers so retrieval + generation stays interactive rather than batch-only.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Go</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Groq AI</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Vector search</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Docker</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="azeru.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="https://github.com/org-cyber/azeru" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 03 Hauser -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-6 aspect-[16/10] lg:aspect-auto lg:min-h-[340px] bg-surface-container overflow-hidden">
+                        <video class="w-full h-full object-cover" src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="lg:col-span-6 p-8 md:p-10 flex flex-col justify-center">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">03</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">SaaS · Real estate</span>
+                        </div>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Hauser</h2>
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            Hauser is a real estate marketplace oriented toward Nigerian property professionals —
+                            agents, landlords, and tenants. The product combines listing discovery with
+                            role-aware onboarding so each persona lands in the right workflow without manual admin setup.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed mb-6">
+                            Built on Next.js with Firebase (Firestore, Cloud Functions), it supports dynamic
+                            listings, real-time updates, automated image optimization, and click analytics for
+                            premium tiers. The goal: reduce agency friction and give operators a lightweight
+                            SaaS control plane instead of a static directory.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firebase</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firestore</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Cloud Functions</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="hauser.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="https://hauserhomes.xyz" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                Live site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 04 Koe -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">04</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">AI audio · TTS</span>
+                        </div>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Koe</h2>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Azure TTS</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">WebSocket</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Docker · Piper</span>
+                        </div>
+                        <a href="koe.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                            Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="lg:col-span-7 p-8 md:p-10">
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            Text-to-speech products usually force a single vendor tradeoff: cloud quality and cost,
+                            or offline privacy with weaker voices. Koe is a dual-engine TTS studio that runs both —
+                            Microsoft Azure Neural voices for premium cloud synthesis, and offline Piper TTS via
+                            Dockerized local inference when data should not leave the machine.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Audio is streamed in real time over WebSockets. Engine selection is modular so operators
+                            can switch at runtime based on latency budget, per-character cost, or privacy requirements —
+                            useful for content studios, accessibility tools, and air-gapped environments.
                         </p>
                     </div>
-                    <div class="flex flex-col justify-end space-y-6">
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Next.js</span>
-                            <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Firebase</span>
-                            <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Firestore</span>
-                            <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Cloud Functions</span>
+                </div>
+            </article>
+
+            <!-- 05 Vpipe -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40 order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">05</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">CLI · Devtools</span>
                         </div>
-                        <a class="inline-flex items-center group/link text-primary font-medium tracking-tight"
-                            href="hauser.html">
-                            <span
-                                class="border-b border-primary/30 group-hover/link:border-primary transition-all pb-1">View
-                                Project</span>
-                            <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Vpipe</h2>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Go</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Groq</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">OpenAI</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Anthropic</span>
+                        </div>
+                        <a href="vpipe.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                            Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
-                </div>
-            </section>
-            <!-- Project 4: Koe -->
-            <section class="editorial-grid gap-8 group">
-                <div class="col-span-12 md:col-span-7 relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-container-low">
-                    <img class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
-                        alt="Abstract audio waveform visualization"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7ux3up6bHYgluMsojfOypFsitomz2mweS1G71TqdbH2SoWDSYZWjhLguKs52MS3z0onkQOZS9FTiT1bAq-NfREJvuZ0Qvieltwyhx4KOTgfTeiCe2C4NFmwfTT4cLIP0iPOhmSB0MTr7YqCbcWs8CHfSUhxur_oACRWHd9QMytjyvtBvbtBp4mlM1EYaOXX8kpLwK37t1gvXX7gb-D-YiS55g9QAKiCZDjyZEFq00-NMHn_r2jb-2kIW28b_eu-MIJvTb6boUjaHQ" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-                </div>
-                <div class="col-span-12 md:col-span-5 flex flex-col justify-center space-y-6 md:pl-12">
-                    <div class="flex items-center gap-4">
-                        <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">04 / AI Audio</span>
-                        <div class="h-px flex-grow bg-outline-variant/30"></div>
-                    </div>
-                    <h2 class="text-5xl font-headline text-on-surface">Koe</h2>
-                    <p class="text-lg text-on-surface-variant leading-relaxed">
-                        Dual-engine text-to-speech studio combining Microsoft Azure Neural voices with offline Piper TTS via Dockerized local inference.
-                        Real-time audio streaming via WebSocket with modular engine switching for latency, cost, and privacy tradeoffs.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Next.js</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Azure TTS</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">WebSocket</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Docker</span>
+                    <div class="lg:col-span-7 p-8 md:p-10 order-2">
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            Pasting build logs into a chat model is common — and dangerous when secrets hide in
+                            stack traces. Vpipe is a Go CLI that pipes compiler and runtime errors into multi-provider
+                            LLM APIs (Groq, OpenAI, Anthropic) and returns actionable fix suggestions without
+                            requiring a browser workflow.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Before any external call, auto-sanitization masks 20+ sensitive patterns (keys, tokens,
+                            connection strings). Smart truncation respects provider token limits so large logs remain
+                            usable without silent context blowouts — a security-aware take on AI-assisted debugging.
+                        </p>
                     </div>
                 </div>
-            </section>
-            <!-- Project 5: Vpipe -->
-            <section class="editorial-grid gap-8 group">
-                <div class="col-span-12 md:col-span-5 order-2 md:order-1 flex flex-col justify-center space-y-6 md:pr-12">
-                    <div class="flex items-center gap-4">
-                        <span class="font-label text-xs uppercase tracking-[0.2em] text-primary">05 / Developer Tools</span>
-                        <div class="h-px flex-grow bg-outline-variant/30"></div>
-                    </div>
-                    <h2 class="text-5xl font-headline text-on-surface">Vpipe</h2>
-                    <p class="text-lg text-on-surface-variant leading-relaxed">
-                        CLI assistant that pipes build errors into multi-provider LLM APIs for instant, actionable fix suggestions.
-                        Auto-sanitization masks 20+ sensitive patterns before external calls, with smart truncation respecting token limits.
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2">
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Go</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Groq</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">OpenAI</span>
-                        <span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs font-label uppercase tracking-wider rounded">Anthropic</span>
-                    </div>
-                </div>
-                <div class="col-span-12 md:col-span-7 order-1 md:order-2 relative overflow-hidden rounded-xl aspect-[16/10] bg-surface-container-low">
-                    <img class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
-                        alt="Terminal interface with code"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAE7WrucZ1isaBvO4oQQSd0T7Y8VDqGdDd1jUh6UH5QqB2zWiiB_apzb5zUTCWkUHkiZcpB80GuSWUuH6tpaTYZySwwpogIZ9APKT5W9QYJPneUAT2OCS4Bw4o-ycZS9Ry42zmRlhlnd5KiCCewU4Gn-RfMcEYo8Va_2zx0s65ngraQG6-hjBtNNwxOIlqkkrwXfvYrKbULzWiiFcMC5j2FwxSD7PXE2C5adbri2nFdrAqnlM3LNK36nkTTJR4-7DOKS5GvBCC1jmCi" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
-                </div>
-            </section>
+            </article>
         </div>
+
+        <section class="mt-20 p-8 md:p-12 bg-surface-container-low border border-outline-variant/40 rounded-2xl text-center">
+            <h2 class="font-headline text-2xl md:text-3xl mb-3">Want the architecture walkthrough live?</h2>
+            <p class="text-on-surface-variant mb-6 max-w-lg mx-auto">
+                Happy to discuss tradeoffs, stack choices, and what I’d harden next in a technical interview.
+            </p>
+            <a href="mailto:chinwokennedy9@gmail.com"
+                class="inline-flex bg-primary text-on-primary px-7 py-3.5 rounded-lg font-semibold hover:bg-on-surface transition-colors">
+                Email Kennedy
+            </a>
+        </section>
     </main>
-    <!-- Footer -->
-    <footer class="w-full border-t border-[#373430]/20 bg-[#151310]">
-        <div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full max-w-screen-2xl mx-auto">
-            <div class="mb-8 md:mb-0">
-                <div class="font-['Noto_Serif'] text-lg text-[#e7e2db] mb-2">Kennedy Chinwo</div>
-                <p class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40">© 2026 Kennedy Chinwo. Port Harcourt, Nigeria.</p>
-            </div>
-            <div class="flex gap-8">
-                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
-                    href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
-                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
-                    href="index.html">Home</a>
-                <a class="font-['Manrope'] text-sm tracking-wide text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-all duration-300"
-                    href="mailto:chinwokennedy9@gmail.com">Email</a>
+
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026 · Port Harcourt, Nigeria</p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="index.html">Home</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="mailto:chinwokennedy9@gmail.com">Email</a>
             </div>
         </div>
     </footer>
-    <!-- FAB (Suppressed as per rules for Catalog/List screens, but if needed for 'Top' action) -->
-    <div class="fixed bottom-8 right-8 z-40 hidden md:block">
-        <button
-            class="w-12 h-12 rounded-full bg-surface-container-highest text-primary flex items-center justify-center hover:bg-surface-bright transition-colors duration-300 shadow-xl border border-outline-variant/20">
-            <span class="material-symbols-outlined">expand_less</span>
-        </button>
-    </div>
 </body>
 
 </html>

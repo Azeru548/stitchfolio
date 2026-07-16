@@ -1,350 +1,277 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Hauser — Real Estate SaaS | Kennedy Chinwo</title>
+    <meta name="description"
+        content="Case study: Hauser — Nigerian real estate marketplace with Next.js, Firebase, role-aware onboarding, and realtime listings." />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;600&amp;family=Inter:wght@400;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "inverse-primary": "#6d5b49",
-                        "background": "#151310",
-                        "secondary-fixed": "#ebe1d3",
-                        "secondary-container": "#4e483e",
-                        "surface-tint": "#d9c3ad",
-                        "on-tertiary-container": "#292a29",
-                        "on-secondary": "#353026",
-                        "primary-container": "#a18d79",
-                        "outline": "#998f86",
-                        "tertiary": "#c7c6c5",
-                        "surface-dim": "#151310",
-                        "on-secondary-fixed": "#201b13",
-                        "on-primary-fixed-variant": "#544433",
-                        "on-tertiary": "#2f3130",
-                        "primary-fixed": "#f6dec8",
-                        "on-primary-container": "#352718",
-                        "tertiary-fixed": "#e3e2e0",
-                        "on-primary-fixed": "#25190b",
-                        "outline-variant": "#4d453e",
-                        "on-background": "#e7e2db",
-                        "on-error-container": "#ffdad6",
-                        "on-secondary-fixed-variant": "#4c463c",
-                        "surface-container-highest": "#373430",
-                        "tertiary-fixed-dim": "#c7c6c5",
-                        "on-primary": "#3c2e1e",
-                        "on-tertiary-fixed-variant": "#464746",
-                        "tertiary-container": "#90918f",
-                        "secondary": "#cfc5b8",
-                        "inverse-on-surface": "#32302c",
-                        "on-secondary-container": "#c0b7aa",
-                        "on-error": "#690005",
-                        "inverse-surface": "#e7e2db",
-                        "surface-bright": "#3b3935",
-                        "primary": "#d9c3ad",
-                        "on-surface": "#e7e2db",
-                        "surface": "#151310",
-                        "surface-container-lowest": "#0f0e0b",
-                        "surface-variant": "#373430",
-                        "error": "#ffb4ab",
-                        "surface-container": "#211f1c",
-                        "secondary-fixed-dim": "#cfc5b8",
-                        "primary-fixed-dim": "#d9c3ad",
-                        "surface-container-high": "#2c2a26",
-                        "on-tertiary-fixed": "#1a1c1b",
-                        "surface-container-low": "#1d1b18",
-                        "on-surface-variant": "#d0c4ba",
-                        "error-container": "#93000a"
+                        background: "#faf7f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0"
                     },
                     fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
-                },
-            },
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
         }
     </script>
     <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-
-        .editorial-gradient {
-            background: linear-gradient(135deg, #d9c3ad 0%, #a18d79 100%);
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
 
-<body class="bg-background text-on-background font-body selection:bg-primary-container/30">
-    <!-- TopAppBar -->
-    <header
-        class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl border-b border-[#373430]/20 shadow-2xl shadow-black/20">
-        <!-- Top Navigation -->
-        <nav
-            class="fixed top-0 w-full z-50 bg-[#151310]/80 backdrop-blur-xl dark:bg-[#151310]/80 transition-all duration-300">
-            <div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
-                <div class="font-['Noto_Serif'] text-xl font-bold text-[#e7e2db] tracking-tighter">Editorial
-                    Intelligence
-                </div>
-                <div class="hidden md:flex gap-10">
-                    <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#d9c3ad] border-b border-[#d9c3ad]/30 pb-1"
-                        href="work.html">Work</a>
-                    <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                        href="projects.html">Projects</a>
-                    <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                        href="stack.html">Stack</a>
-                    <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                        href="lab.html">Lab</a>
-                    <a class="font-['Noto_Serif'] font-medium text-sm tracking-tight text-[#e7e2db]/60 hover:text-[#e7e2db] transition-colors"
-                        href="index.html">Home</a>
-                </div>
-                <button
-                    class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-6 py-2 rounded-md font-medium text-sm transition-transform hover:scale-[0.98]">
-                    <a href="https://hauserhomes.xyz"> visit site</a>
-                </button>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container paper-grain">
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html">Home</a>
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html#contact">Contact</a>
             </div>
-        </nav>
-    </header>
-    <main class="pt-24">
-        <!-- Hero Section -->
-        <section class="relative min-h-[819px] flex items-center px-8 md:px-24 overflow-hidden">
-            <div class="absolute inset-0 z-0 opacity-40 grayscale"
-                data-alt="Modern architectural luxury building facade in black and white"
-                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWhSepwIRiG3agebrF8j6eIlp_K3KKKeD2F0ryfx0FL02hvpLaGlWmxfuCPK8IcycSZ0EBaCRrjHjZU6FpGoPlG8RR5KBWrj1UfYMlftCx6ky5UuHEZRTW78OoYNgrQdnYwp-mdp6NqS3KhDqQfLEUGBwt1mdNi76TRyY5CXJ7Lnc_JlzghBUpdfBDw3pQgJaj53Mwbn3M61Iu4UBLSI-CrYDRta62KQnwCQhV9Zr_ZoqCn0Fj41FoUbzJLBS_CZliNvHEE--_6jvq'); background-size: cover; background-position: center;">
-            </div>
-            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10"></div>
-            <div class="relative z-20 max-w-4xl">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="h-[1px] w-12 bg-primary"></span>
-                    <span class="font-label text-xs tracking-[0.3em] text-primary uppercase">Nigeria's #1 Property
-                        Platform</span>
-                </div>
-                <h1
-                    class="font-headline text-6xl md:text-8xl lg:text-[9rem] leading-[0.9] tracking-tighter mb-8 italic">
-                    HAUSER
-                </h1>
-                <p
-                    class="font-headline text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
-                    Transforming the property business landscape by connecting quality tenants with Nigeria's premier
-                    listing platforms.
-                </p>
-            </div>
-        </section>
-        <!-- Mission & Overview -->
-        <section class="py-32 px-8 bg-surface-container-low">
-            <div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-                <div class="lg:col-span-5">
-                    <h2 class="font-headline text-4xl mb-8">Empowering property professionals through digital logic.
-                    </h2>
-                    <div class="space-y-6 text-on-surface-variant leading-loose font-light">
-                        <p>In a rapidly evolving market, Hauser stands as a bastion of innovation. We provide the
-                            structural integrity required for agents and landlords to scale their operations with
-                            surgical precision.</p>
-                        <p>Our platform is more than a directory; it is a full-stack SaaS infrastructure designed to
-                            mitigate risk and maximize ROI for the Nigerian real estate elite.</p>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 grid grid-cols-2 gap-px bg-[#373430]/20">
-                    <div class="bg-surface p-12 hover:bg-surface-container-high transition-all">
-                        <div class="font-headline text-5xl text-primary mb-2">10K+</div>
-                        <div class="font-label text-[10px] tracking-[0.2em] text-on-surface/40 uppercase">Active
-                            Listings</div>
-                    </div>
-                    <div class="bg-surface p-12 hover:bg-surface-container-high transition-all">
-                        <div class="font-headline text-5xl text-primary mb-2">2K+</div>
-                        <div class="font-label text-[10px] tracking-[0.2em] text-on-surface/40 uppercase">Verified
-                            Agents</div>
-                    </div>
-                    <div class="bg-surface p-12 hover:bg-surface-container-high transition-all">
-                        <div class="font-headline text-5xl text-primary mb-2">50K+</div>
-                        <div class="font-label text-[10px] tracking-[0.2em] text-on-surface/40 uppercase">Monthly
-                            Visitors</div>
-                    </div>
-                    <div class="bg-surface p-12 hover:bg-surface-container-high transition-all">
-                        <div class="font-headline text-5xl text-primary mb-2">95%</div>
-                        <div class="font-label text-[10px] tracking-[0.2em] text-on-surface/40 uppercase">Success Rate
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Features Grid - Bento Style -->
-        <section class="py-32 px-8">
-            <div class="max-w-screen-2xl mx-auto">
-                <div class="mb-20 text-center">
-                    <h3 class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-4">Core Ecosystem</h3>
-                    <h2 class="font-headline text-5xl italic">Designed for Impact</h2>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[800px]">
-                    <!-- Large Feature -->
-                    <div
-                        class="md:col-span-2 bg-surface-container-high rounded-xl p-12 flex flex-col justify-between group overflow-hidden relative">
-                        <div class="relative z-10">
-                            <span class="material-symbols-outlined text-4xl text-primary mb-8"
-                                style="font-variation-settings: 'FILL' 1;">dashboard_customize</span>
-                            <h4 class="font-headline text-3xl mb-4">Analytics Dashboard</h4>
-                            <p class="text-on-surface-variant max-w-md font-light">Real-time data visualization
-                                providing actionable insights into listing performance, visitor demographics, and market
-                                trends.</p>
-                        </div>
-                        <div class="mt-12 relative z-10">
-                            <button
-                                class="text-primary font-label text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">
-                                Explore Module <span class="material-symbols-outlined">trending_flat</span>
-                            </button>
-                        </div>
-                        <!-- Abstract Glass Element -->
-                        <div
-                            class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-all">
-                        </div>
-                    </div>
-                    <!-- Small Features Stack -->
-                    <div
-                        class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/10 flex flex-col justify-center items-center text-center">
-                        <span class="material-symbols-outlined text-3xl text-primary mb-6">smartphone</span>
-                        <h4 class="font-headline text-xl mb-2">Mobile-First Design</h4>
-                        <p class="text-on-surface-variant text-sm font-light">Seamless property browsing and management
-                            on any device.</p>
-                    </div>
-                    <div class="bg-surface-container-high rounded-xl p-10 flex flex-col justify-end">
-                        <span class="material-symbols-outlined text-3xl text-primary mb-6">bolt</span>
-                        <h4 class="font-headline text-2xl mb-4">Quick Setup</h4>
-                        <p class="text-on-surface-variant font-light">Go from registration to live listings in under 10
-                            minutes with our optimized onboarding.</p>
-                    </div>
-                    <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div
-                            class="bg-surface-container rounded-xl p-10 hover:bg-surface-container-highest transition-all">
-                            <span class="material-symbols-outlined text-3xl text-primary mb-6">verified_user</span>
-                            <h4 class="font-headline text-xl mb-3">Quality Leads</h4>
-                            <p class="text-on-surface-variant text-sm font-light">Advanced filtering ensures you only
-                                deal with verified, high-intent prospects.</p>
-                        </div>
-                        <div class="bg-primary rounded-xl p-10 flex flex-col justify-between">
-                            <h4 class="font-headline text-2xl text-on-primary italic">Cost-Effective Marketing</h4>
-                            <p class="text-on-primary/80 font-light text-sm">Eliminate bloated agency fees with our
-                                direct-to-market digital funnel.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Technical Foundry (SaaS Infrastructure) -->
-        <section class="py-32 px-8 relative overflow-hidden bg-surface-container-lowest">
-            <div class="max-w-screen-2xl mx-auto flex flex-col lg:flex-row items-center gap-24">
-                <div class="w-full lg:w-1/2 order-2 lg:order-1">
-                    <div
-                        class="aspect-square bg-surface rounded-xl overflow-hidden relative border border-outline-variant/20">
-                        <div class="absolute inset-0 opacity-30 mix-blend-overlay"
-                            data-alt="Technical dashboard UI on a dark screen"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAAPBA-vkx0ywrubwIrtBYxlEiv9Rv4rniefwRpqeZccIYVO9fNQ0aG92fXPR1B7Ry56zPa1i02Pefmf7DGNT7cyQdYyYp_50U6a0GBfom6R28zuvbxqqqLGtqYHsn_Y3ZaZAHt07pgwvUE3fPuRk28KhryLzzwpVXqobBXKBeK3a0rvuOsvVgQLRRRYfTgNyk8F2Aet0AyGzD0QJl0txXzVryk9XrvpFtMGZr7YUhA3QIwrJ8nIGUv5mwPKoerGWUWXeMauPD0GQL'); background-size: cover;">
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div
-                                class="p-8 bg-surface-container/60 backdrop-blur-xl rounded-lg border border-primary/20 max-w-xs shadow-2xl">
-                                <div class="flex gap-2 mb-4">
-                                    <div class="w-2 h-2 rounded-full bg-error"></div>
-                                    <div class="w-2 h-2 rounded-full bg-primary-container"></div>
-                                    <div class="w-2 h-2 rounded-full bg-primary"></div>
-                                </div>
-                                <div
-                                    class="space-y-3 font-label text-[10px] tracking-widest text-on-surface-variant uppercase">
-                                    <div class="flex justify-between border-b border-outline-variant/10 pb-2">
-                                        <span>Status</span> <span class="text-primary">Operational</span>
-                                    </div>
-                                    <div class="flex justify-between border-b border-outline-variant/10 pb-2">
-                                        <span>Latency</span> <span class="text-primary">24ms</span>
-                                    </div>
-                                    <div class="flex justify-between"><span>Region</span> <span
-                                            class="text-primary">Lagos Central</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full lg:w-1/2 order-1 lg:order-2">
-                    <h3 class="font-label text-xs tracking-[0.4em] text-primary uppercase mb-6">Technical Foundry</h3>
-                    <h2 class="font-headline text-5xl mb-8">Infrastructure for Professionals</h2>
-                    <p class="text-on-surface-variant font-light mb-12 leading-loose">
-                        Hauser provides a robust SaaS infrastructure for landlords and agents. Our tech stack is built
-                        for high availability and instant deployment, providing an enterprise-grade control center for
-                        your property portfolio.
+            <a href="https://hauserhomes.xyz" target="_blank" rel="noopener"
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                Visit site
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-36">
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-16">
+            <a href="projects.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary mb-8">
+                <span class="material-symbols-outlined text-base">arrow_back</span> All projects
+            </a>
+            <div class="grid lg:grid-cols-12 gap-10 items-end">
+                <div class="lg:col-span-8">
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Case study 03 · Real estate SaaS</span>
+                    <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6">Hauser</h1>
+                    <p class="font-headline text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-snug">
+                        A property marketplace and operator control plane for agents, landlords, and tenants in the Nigerian market.
                     </p>
-                    <ul class="space-y-8">
-                        <li class="flex items-start gap-6">
+                </div>
+                <div class="lg:col-span-4 space-y-4 text-sm">
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Role</span>
+                        <span>Fullstack engineer</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Stack</span>
+                        <span class="text-right">Next.js · Firebase</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Live</span>
+                        <span>hauserhomes.xyz</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-20">
+            <div class="aspect-[21/9] w-full rounded-2xl overflow-hidden bg-surface-container border border-outline-variant/40">
+                <video class="w-full h-full object-cover" src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-20">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-6">
+                    <h2 class="font-headline text-2xl md:text-3xl mb-5">Product context</h2>
+                    <p class="text-on-surface-variant leading-relaxed mb-4">
+                        Hauser is more than a listing directory. It is a full-stack SaaS surface for property
+                        professionals who need to publish inventory, capture demand, and manage relationships
+                        without stitching together ad hoc tools.
+                    </p>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        The platform connects quality tenants with verified agents and landlords, using automated
+                        role detection so onboarding routes each user into the correct product path — reducing
+                        admin overhead and mistaken permissions.
+                    </p>
+                </div>
+                <div class="lg:col-span-6 grid grid-cols-2 gap-3">
+                    <div class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <p class="font-headline text-3xl md:text-4xl text-primary mb-1">10K+</p>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Active listings capacity / target</p>
+                    </div>
+                    <div class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <p class="font-headline text-3xl md:text-4xl text-primary mb-1">2K+</p>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Verified agents</p>
+                    </div>
+                    <div class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <p class="font-headline text-3xl md:text-4xl text-primary mb-1">50K+</p>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Monthly visitors</p>
+                    </div>
+                    <div class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <p class="font-headline text-3xl md:text-4xl text-primary mb-1">95%</p>
+                        <p class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Success rate (ops metric)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-surface-container-low border-y border-outline-variant/40">
+            <div class="px-6 md:px-8 max-w-7xl mx-auto">
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">System design</span>
+                <h2 class="font-headline text-3xl md:text-4xl mb-12">Serverless product architecture</h2>
+                <div class="grid md:grid-cols-2 gap-5 mb-5">
+                    <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4">dashboard_customize</span>
+                        <h3 class="font-headline text-xl mb-3">Next.js application layer</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            The client/app surface handles listing discovery, mobile-first browsing, and operator
+                            dashboards. Dynamic routes and SSR/SSG patterns keep property pages fast while still
+                            reflecting live inventory changes.
+                        </p>
+                    </article>
+                    <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <span class="material-symbols-outlined text-primary text-3xl mb-4">bolt</span>
+                        <h3 class="font-headline text-xl mb-3">Firebase realtime backend</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Firestore stores listings, roles, and engagement data with realtime listeners.
+                            Cloud Functions handle server-side workflows: image optimization pipelines, analytics
+                            for premium click tracking, and privileged operations that should not run in the browser.
+                        </p>
+                    </article>
+                </div>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-lg mb-2">Role-aware onboarding</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Automated role detection routes agents, landlords, and tenants into the correct
+                            permissions and UI — fewer manual admin steps, fewer privilege mistakes.
+                        </p>
+                    </article>
+                    <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-lg mb-2">Media &amp; performance</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Auto image optimization keeps listing pages light. Edge/CDN-friendly delivery targets
+                            sub-second property page loads on consumer networks.
+                        </p>
+                    </article>
+                    <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-lg mb-2">Leads &amp; analytics</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Click analytics on premium tiers give operators signal on which listings convert —
+                            a lightweight CRM loop from impression to inquiry.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-20 md:py-24">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Infrastructure</span>
+                    <h2 class="font-headline text-3xl mb-5">Built for operator velocity</h2>
+                    <p class="text-on-surface-variant leading-relaxed mb-8">
+                        Choosing Firebase was deliberate: realtime collaboration and serverless functions reduce
+                        time-to-ship for marketplace features, while Next.js keeps the product surface modern and typed.
+                        The tradeoff is clear — less custom infra ownership, more product iteration — appropriate for
+                        a growth-stage property platform.
+                    </p>
+                    <ul class="space-y-5">
+                        <li class="flex gap-4">
                             <span class="material-symbols-outlined text-primary">terminal</span>
                             <div>
-                                <h5 class="font-headline text-xl mb-1">Instant Deployment</h5>
-                                <p class="text-sm text-on-surface-variant font-light">Global CDN edge caching for
-                                    sub-second property page loads.</p>
+                                <h4 class="font-headline text-lg">Instant deployment path</h4>
+                                <p class="text-sm text-on-surface-variant">Global CDN edge caching for listing pages; ship UI without standing up VMs for every feature.</p>
                             </div>
                         </li>
-                        <li class="flex items-start gap-6">
+                        <li class="flex gap-4">
                             <span class="material-symbols-outlined text-primary">admin_panel_settings</span>
                             <div>
-                                <h5 class="font-headline text-xl mb-1">Admin Control Center</h5>
-                                <p class="text-sm text-on-surface-variant font-light">Unified hub for team permissions,
-                                    billing, and listing auditing.</p>
+                                <h4 class="font-headline text-lg">Admin control center</h4>
+                                <p class="text-sm text-on-surface-variant">Unified hub for permissions, listing audit, and operational checks.</p>
                             </div>
                         </li>
-                        <li class="flex items-start gap-6">
+                        <li class="flex gap-4">
                             <span class="material-symbols-outlined text-primary">diversity_3</span>
                             <div>
-                                <h5 class="font-headline text-xl mb-1">CRM &amp; Lead Management</h5>
-                                <p class="text-sm text-on-surface-variant font-light">Proprietary logic to track tenant
-                                    lifecycle from click to contract.</p>
+                                <h4 class="font-headline text-lg">Lead lifecycle</h4>
+                                <p class="text-sm text-on-surface-variant">Track tenant interest from click through contact — not just static catalog views.</p>
                             </div>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </section>
-        <!-- Up Next / Transition -->
-        <section class="py-40 px-8 text-center bg-surface">
-            <div class="max-w-2xl mx-auto group cursor-pointer">
-                <span class="font-label text-xs tracking-[0.4em] text-on-surface/40 uppercase block mb-8">Next
-                    Destination</span>
-                <h2
-                    class="font-headline text-6xl md:text-8xl italic group-hover:text-primary transition-all duration-500 mb-12">
-                    Research Lab</h2>
-                <div class="flex justify-center">
-                    <div
-                        class="w-16 h-16 rounded-full border border-outline-variant flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                        <span class="material-symbols-outlined group-hover:text-on-primary"><a
-                                href="lab.html">arrow_downward</a></span>
+                <div class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl">
+                    <h3 class="font-headline text-xl mb-6">Stack map</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                            <span class="text-on-surface-variant">Frontend</span>
+                            <span class="font-medium">Next.js · TypeScript · Tailwind</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                            <span class="text-on-surface-variant">Database</span>
+                            <span class="font-medium">Cloud Firestore</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                            <span class="text-on-surface-variant">Compute</span>
+                            <span class="font-medium">Firebase Cloud Functions</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant/50 pb-3">
+                            <span class="text-on-surface-variant">Auth / realtime</span>
+                            <span class="font-medium">Firebase Auth · listeners</span>
+                        </div>
+                        <div class="flex justify-between pb-1">
+                            <span class="text-on-surface-variant">Product features</span>
+                            <span class="font-medium text-right">Roles · media · analytics</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto pb-24">
+            <a href="koe.html" class="group block border-t border-outline-variant/60 pt-12">
+                <span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-3 block">Next case study</span>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <h2 class="font-headline text-4xl md:text-6xl group-hover:text-primary transition-colors">Koe</h2>
+                        <p class="text-on-surface-variant mt-2">Dual-engine text-to-speech studio</p>
+                    </div>
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </a>
+        </section>
     </main>
-    <!-- Footer -->
-    <footer
-        class="w-full py-12 px-8 mt-auto bg-[#1d1b18] border-t border-[#373430]/30 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="font-headline italic text-[#e7e2db] text-xl">HAUSER DIGITAL ATELIER.</div>
-        <div class="flex flex-col md:flex-row gap-8 md:justify-end items-center">
-            <div class="flex gap-6 font-label text-[10px] tracking-[0.2em] uppercase">
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">Privacy Policy</a>
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">Terms of Service</a>
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">Architecture</a>
-                <a class="text-[#e7e2db]/40 hover:text-[#d9c3ad] transition-colors" href="#">Contact</a>
-            </div>
-            <div class="font-body text-sm tracking-wide text-[#a18d79] text-[10px]">
-                © 2024 HAUSER DIGITAL ATELIER. ALL RIGHTS RESERVED.
+
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026</p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="projects.html">Projects</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="mailto:chinwokennedy9@gmail.com">Email</a>
             </div>
         </div>
     </footer>

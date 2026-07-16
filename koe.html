@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Koe — Dual-Engine TTS Studio | Kennedy Chinwo</title>
+    <meta name="description"
+        content="Case study: Koe — dual-engine text-to-speech studio with Azure Neural voices, offline Piper TTS, WebSocket streaming, and Docker." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#faf7f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-container paper-grain">
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html">Home</a>
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html#contact">Contact</a>
+            </div>
+            <a href="mailto:chinwokennedy9@gmail.com"
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                Get in touch
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-36">
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-16">
+            <a href="projects.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary mb-8">
+                <span class="material-symbols-outlined text-base">arrow_back</span> All projects
+            </a>
+            <div class="grid lg:grid-cols-12 gap-10 items-end">
+                <div class="lg:col-span-8">
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Case study 04 · AI audio</span>
+                    <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6">Koe</h1>
+                    <p class="font-headline text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-snug">
+                        Dual-engine text-to-speech studio: cloud neural quality and offline local inference in one product surface.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 space-y-4 text-sm">
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Role</span>
+                        <span>Fullstack / AI engineer</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Stack</span>
+                        <span class="text-right">Next.js · Azure · Docker</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Domain</span>
+                        <span>TTS / accessibility</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-20">
+            <div class="rounded-2xl border border-outline-variant/50 bg-surface-container-low p-10 md:p-16">
+                <div class="max-w-3xl">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6">graphic_eq</span>
+                    <h2 class="font-headline text-2xl md:text-3xl mb-4">Why dual engines?</h2>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Single-vendor TTS forces a hard tradeoff. Cloud neural voices (Microsoft Azure) deliver
+                        high naturalness and broad language coverage — at recurring cost and with data leaving
+                        the machine. Offline engines (Piper via Docker) keep audio generation local for privacy
+                        and predictable unit economics — with different quality and hardware constraints.
+                        Koe exposes both behind one studio UX so the choice is operational, not architectural.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-24">
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl">
+                    <h2 class="font-headline text-2xl mb-4">Problem framing</h2>
+                    <p class="text-on-surface-variant leading-relaxed mb-4">
+                        Content teams, accessibility products, and internal tools all need speech synthesis, but
+                        not under the same constraints. Some workloads can spend on Azure Neural quality; others
+                        must run air-gapped or minimize per-character spend.
+                    </p>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Without a modular design, products either lock to one provider or fork two separate apps.
+                        Koe’s goal: one interface, swappable synthesis backends, and streaming playback that feels
+                        live rather than “download when finished.”
+                    </p>
+                </div>
+                <div class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl">
+                    <h2 class="font-headline text-2xl mb-4">Solution shape</h2>
+                    <p class="text-on-surface-variant leading-relaxed mb-4">
+                        A Next.js studio UI orchestrates synthesis jobs. The cloud path calls Azure Neural TTS.
+                        The offline path runs Piper inside Docker so local inference is reproducible across machines.
+                    </p>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Audio streams over WebSockets for progressive playback. Engine selection is modular —
+                        operators switch based on latency budget, cost ceiling, or privacy requirements without
+                        changing the rest of the product flow.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-surface-container-low border-y border-outline-variant/40">
+            <div class="px-6 md:px-8 max-w-7xl mx-auto">
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Architecture</span>
+                <h2 class="font-headline text-3xl md:text-4xl mb-12">Component responsibilities</h2>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Studio UI (Next.js)</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Script input, voice/engine selection, playback controls, and job state. TypeScript keeps
+                            engine contracts explicit so UI never assumes a single provider response shape.
+                        </p>
+                    </article>
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Azure Neural path</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Premium cloud synthesis for production voice quality. Best when network access is
+                            available and naturalness is the primary KPI.
+                        </p>
+                    </article>
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Piper + Docker path</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Offline inference containerized for consistent local runtime. Prefer when text is
+                            sensitive, connectivity is limited, or cloud spend must stay near zero.
+                        </p>
+                    </article>
+                </div>
+                <div class="mt-5 p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                    <h3 class="font-headline text-xl mb-3">Realtime audio streaming</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed max-w-3xl">
+                        WebSocket transport streams audio chunks as they become available, reducing perceived
+                        latency versus waiting for full file generation. This matters for long scripts and for
+                        validating voice choice quickly during creative iteration.
+                    </p>
+                </div>
+
+                <div class="mt-10 flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/50 text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
+                    <span class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/50 text-xs font-label uppercase tracking-wider rounded-md">Azure TTS</span>
+                    <span class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/50 text-xs font-label uppercase tracking-wider rounded-md">Piper TTS</span>
+                    <span class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/50 text-xs font-label uppercase tracking-wider rounded-md">WebSocket</span>
+                    <span class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/50 text-xs font-label uppercase tracking-wider rounded-md">Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-20 md:py-24">
+            <h2 class="font-headline text-3xl mb-8">Decision matrix operators can actually use</h2>
+            <div class="overflow-x-auto border border-outline-variant/50 rounded-xl bg-surface-container-lowest">
+                <table class="w-full text-left text-sm">
+                    <thead class="bg-surface-container-low font-label text-[10px] uppercase tracking-widest text-on-surface-variant">
+                        <tr>
+                            <th class="px-6 py-4">Constraint</th>
+                            <th class="px-6 py-4">Prefer Azure Neural</th>
+                            <th class="px-6 py-4">Prefer Piper (local)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-on-surface-variant">
+                        <tr class="border-t border-outline-variant/40">
+                            <td class="px-6 py-4 font-medium text-on-surface">Privacy</td>
+                            <td class="px-6 py-4">Acceptable data egress</td>
+                            <td class="px-6 py-4">Sensitive / air-gapped text</td>
+                        </tr>
+                        <tr class="border-t border-outline-variant/40">
+                            <td class="px-6 py-4 font-medium text-on-surface">Cost</td>
+                            <td class="px-6 py-4">Budget for cloud usage</td>
+                            <td class="px-6 py-4">Minimize recurring spend</td>
+                        </tr>
+                        <tr class="border-t border-outline-variant/40">
+                            <td class="px-6 py-4 font-medium text-on-surface">Quality priority</td>
+                            <td class="px-6 py-4">Maximum naturalness</td>
+                            <td class="px-6 py-4">Good-enough offline fidelity</td>
+                        </tr>
+                        <tr class="border-t border-outline-variant/40">
+                            <td class="px-6 py-4 font-medium text-on-surface">Connectivity</td>
+                            <td class="px-6 py-4">Stable network</td>
+                            <td class="px-6 py-4">Unreliable or offline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-10 max-w-3xl">
+                <h3 class="font-headline text-xl mb-3">Engineering takeaways</h3>
+                <ul class="space-y-2 text-on-surface-variant">
+                    <li class="flex gap-2"><span class="text-primary mt-1">·</span> Treat TTS providers as interchangeable backends behind a shared interface.</li>
+                    <li class="flex gap-2"><span class="text-primary mt-1">·</span> Stream early — perceived latency drives whether the studio feels usable.</li>
+                    <li class="flex gap-2"><span class="text-primary mt-1">·</span> Dockerize offline models so “works on my laptop” becomes a deployable unit.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto pb-24">
+            <a href="vpipe.html" class="group block border-t border-outline-variant/60 pt-12">
+                <span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-3 block">Next case study</span>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <h2 class="font-headline text-4xl md:text-6xl group-hover:text-primary transition-colors">Vpipe</h2>
+                        <p class="text-on-surface-variant mt-2">Security-aware AI CLI for build errors</p>
+                    </div>
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026</p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="projects.html">Projects</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="mailto:chinwokennedy9@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
