@@ -80,13 +80,152 @@
                 Selected systems &amp; case studies
             </h1>
             <p class="text-lg md:text-xl text-on-surface-variant font-light leading-relaxed">
-                Five production-minded projects spanning fraud detection, document RAG, real estate SaaS,
-                dual-engine TTS, and AI-assisted CLI tooling. Each write-up covers problem framing,
-                architecture choices, and engineering tradeoffs.
+                Eight production-minded projects spanning Sui Web3 (agent treasuries &amp; social dApps),
+                fraud detection, document RAG, real estate SaaS, dual-engine TTS, and AI-assisted CLI tooling.
+                Each write-up covers problem framing, architecture choices, and engineering tradeoffs.
             </p>
         </header>
 
         <div class="space-y-8 md:space-y-10">
+            <!-- Web3 intro label -->
+            <div class="flex items-center gap-3 pt-2">
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary">Web3 · Sui</span>
+                <span class="h-px flex-1 bg-outline-variant"></span>
+            </div>
+
+            <!-- SEAL -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">W1</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">AI billing · Move</span>
+                        </div>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">SEAL</h2>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Sui Move</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">TypeScript</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">x402</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="seal.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="https://github.com/org-cyber/SEAL" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 p-8 md:p-10">
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            SEAL is a non-custodial billing layer for AI teams on Sui. Deposit once, set hard spend
+                            caps enforced by Move smart contracts, and route API calls to Groq, OpenAI, Anthropic,
+                            or x402-compatible services through a single API key.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Architecture splits into three layers: a TypeScript gateway (auth, provider routing,
+                            velocity tracking, batch settlement), on-chain contracts (deposit/withdraw, caps,
+                            authorize_call, pause), and a Next.js dashboard for wallet connect, treasury setup PTBs,
+                            key management, and anomaly alerts. Users sign treasury ops; the gateway only settles.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Otter -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40 order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">W2</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">Agent treasuries</span>
+                        </div>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Otter</h2>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Sui Move</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Node/TS gateway</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">TS + Python SDK</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="otter.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="https://github.com/org-cyber/otter" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 p-8 md:p-10 order-2">
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            Otter (Autonomous Agent Treasury Protocol) gives every AI agent its own on-chain
+                            treasury — a Sui object that holds <code class="text-on-surface text-sm">Coin&lt;SUI&gt;</code>,
+                            enforces spending policies, and can be reclaimed atomically. No central custodian;
+                            no opaque credit-card billing for agents.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Master treasuries spawn child agents with sub-budgets; daily/monthly/single-spend caps
+                            and provider allowlists are enforced in Move. The gateway settles each inference via
+                            <code class="text-on-surface text-sm">authorize_agent_call</code>, serializes per-treasury
+                            writes to avoid object locks, and exposes TypeScript and Python SDKs for agent developers.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- DSpace -->
+            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
+                <div class="grid lg:grid-cols-12">
+                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">W3</span>
+                            <span class="h-px flex-1 bg-outline-variant"></span>
+                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">Social dApp</span>
+                        </div>
+                        <h2 class="font-headline text-3xl md:text-4xl mb-4">DSpace</h2>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">React 19</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Sui dapp-kit</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firebase</span>
+                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Vite</span>
+                        </div>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <a href="dspace.html" class="inline-flex items-center gap-2 text-primary font-medium">
+                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </a>
+                            <a href="https://github.com/org-cyber/dspace" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                GitHub
+                            </a>
+                            <a href="https://dspace1.netlify.app/" target="_blank" rel="noopener"
+                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
+                                Live site
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 p-8 md:p-10">
+                        <p class="text-on-surface-variant leading-relaxed mb-4">
+                            DSpace (SuiPod Chat) is a hybrid decentralized collaboration platform: Sui wallet
+                            identity and on-chain pod membership, plus Firebase Realtime Database for instant messaging.
+                        </p>
+                        <p class="text-on-surface-variant leading-relaxed">
+                            Users create pods, add members by wallet address, chat in real time, and send SUI
+                            directly to pod members without leaving the UI — bridging social product UX with
+                            on-chain payments and access control via <code class="text-on-surface text-sm">@mysten/dapp-kit</code>.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <div class="flex items-center gap-3 pt-6">
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary">AI · Fullstack · Tools</span>
+                <span class="h-px flex-1 bg-outline-variant"></span>
+            </div>
+
             <!-- 01 Asguard -->
             <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
                 <div class="grid lg:grid-cols-12">

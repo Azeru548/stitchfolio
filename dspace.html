@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DSpace — SuiPod Chat | Kennedy Chinwo</title>
+    <meta name="description"
+        content="Case study: DSpace — hybrid decentralized chat on Sui with wallet identity, pods, Firebase messaging, and SUI payments." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#faf7f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-container paper-grain">
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html">Home</a>
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html#contact">Contact</a>
+            </div>
+            <a href="https://dspace1.netlify.app/" target="_blank" rel="noopener"
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                Live site
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-36">
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-16">
+            <a href="projects.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary mb-8">
+                <span class="material-symbols-outlined text-base">arrow_back</span> All projects
+            </a>
+            <div class="grid lg:grid-cols-12 gap-10 items-end">
+                <div class="lg:col-span-8">
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Case study · Web3 · Social</span>
+                    <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6">DSpace</h1>
+                    <p class="font-headline text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-snug">
+                        SuiPod Chat — hybrid decentralized collaboration: wallet identity, on-chain pods, realtime messaging, in-chat SUI payments.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 space-y-4 text-sm">
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Role</span>
+                        <span>Web3 / frontend engineer</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Stack</span>
+                        <span class="text-right">React · Sui · Firebase</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Live</span>
+                        <a href="https://dspace1.netlify.app/" class="text-primary hover:underline" target="_blank" rel="noopener">dspace1.netlify.app</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-20">
+            <div class="max-w-3xl">
+                <h2 class="font-headline text-2xl md:text-3xl mb-5">Overview</h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                    DSpace is a hybrid dApp: Sui for identity, membership, and payments; Firebase Realtime Database
+                    for chat latency that feels like a modern messenger. The product centers on “Pods” — collaborative
+                    spaces created on-chain, with members addressed by wallet.
+                </p>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-24">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">account_balance_wallet</span>
+                    <h3 class="font-headline text-lg mb-2">Decentralized identity</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        Connect with standard Sui wallets (Suiet, Ethos, etc.) via <code class="text-on-surface">@mysten/dapp-kit</code>. Pod access is verified on-chain.
+                    </p>
+                </article>
+                <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">groups</span>
+                    <h3 class="font-headline text-lg mb-2">Pods &amp; groups</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        Create pods with a single transaction, add contributors by wallet address, manage lifecycle from the dashboard.
+                    </p>
+                </article>
+                <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">chat</span>
+                    <h3 class="font-headline text-lg mb-2">Realtime chat</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        Firebase Realtime Database powers live messaging; only active pod members interact. Admins can clear history or delete pods.
+                    </p>
+                </article>
+                <article class="p-6 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-4">payments</span>
+                    <h3 class="font-headline text-lg mb-2">Crypto payments</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        Send SUI directly to pod members without leaving chat. Payments and fund controls live in the pod UI.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-surface-container-low border-y border-outline-variant/40">
+            <div class="px-6 md:px-8 max-w-7xl mx-auto">
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Technical design</span>
+                <h2 class="font-headline text-3xl md:text-4xl mb-8">Hybrid stack on purpose</h2>
+                <p class="text-on-surface-variant max-w-3xl leading-relaxed mb-10">
+                    Pure on-chain chat is slow and expensive for message fan-out. DSpace keeps membership and money
+                    where chain guarantees matter, and keeps high-frequency message traffic on Firebase — a common,
+                    practical pattern for Web3 social products.
+                </p>
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Frontend</h3>
+                        <ul class="space-y-2 text-sm text-on-surface-variant">
+                            <li class="flex gap-2"><span class="text-primary">·</span> React 19 + TypeScript + Vite</li>
+                            <li class="flex gap-2"><span class="text-primary">·</span> <code class="text-on-surface">@mysten/dapp-kit</code> + <code class="text-on-surface">@mysten/sui</code></li>
+                            <li class="flex gap-2"><span class="text-primary">·</span> Semantic CSS / glassmorphism UI (Lucide icons)</li>
+                            <li class="flex gap-2"><span class="text-primary">·</span> Components: Chat, Pod, Providers (Sui + React Query context)</li>
+                        </ul>
+                    </div>
+                    <div class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Chain + backend</h3>
+                        <ul class="space-y-2 text-sm text-on-surface-variant">
+                            <li class="flex gap-2"><span class="text-primary">·</span> Sui network package constants in <code class="text-on-surface">lib/sui.ts</code></li>
+                            <li class="flex gap-2"><span class="text-primary">·</span> On-chain pod create / member management</li>
+                            <li class="flex gap-2"><span class="text-primary">·</span> Firebase Realtime Database for messages</li>
+                            <li class="flex gap-2"><span class="text-primary">·</span> Deployed demo: Netlify (+ pxxl.click)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-20">
+            <div class="flex flex-wrap gap-4 mb-10">
+                <a href="https://github.com/org-cyber/dspace" target="_blank" rel="noopener"
+                    class="bg-primary text-on-primary px-6 py-3 rounded-lg font-semibold text-sm hover:bg-on-surface transition-colors">
+                    View repository
+                </a>
+                <a href="https://dspace1.netlify.app/" target="_blank" rel="noopener"
+                    class="border border-outline-variant bg-surface-container-lowest px-6 py-3 rounded-lg font-semibold text-sm hover:border-primary/40 transition-colors">
+                    Open live app
+                </a>
+            </div>
+            <h2 class="font-headline text-3xl mb-6">Engineering takeaways</h2>
+            <ul class="space-y-2 text-on-surface-variant max-w-3xl">
+                <li class="flex gap-2"><span class="text-primary mt-1">·</span> Hybrid is a feature: chain for trust, Firebase for chat UX.</li>
+                <li class="flex gap-2"><span class="text-primary mt-1">·</span> Wallet-native identity removes password onboarding for crypto-native users.</li>
+                <li class="flex gap-2"><span class="text-primary mt-1">·</span> Payments inside the same surface as chat reduces context switching for collab workflows.</li>
+            </ul>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto pb-24">
+            <a href="seal.html" class="group block border-t border-outline-variant/60 pt-12">
+                <span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-3 block">Related Web3 work</span>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <h2 class="font-headline text-4xl md:text-6xl group-hover:text-primary transition-colors">SEAL</h2>
+                        <p class="text-on-surface-variant mt-2">Non-custodial AI billing on Sui</p>
+                    </div>
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026</p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="projects.html">Projects</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="https://github.com/org-cyber/dspace" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

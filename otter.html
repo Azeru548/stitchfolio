@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Otter — Agent Treasury Protocol | Kennedy Chinwo</title>
+    <meta name="description"
+        content="Case study: Otter — programmable bank accounts for AI agents on Sui with hierarchical treasuries and on-chain settlement." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#faf7f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4efe8",
+                        "surface-container": "#efe9e1",
+                        "on-surface": "#1c1916",
+                        "on-surface-variant": "#5a5248",
+                        primary: "#6b5644",
+                        "primary-container": "#e8d4bc",
+                        "on-primary": "#ffffff",
+                        outline: "#8a8076",
+                        "outline-variant": "#d4cbc0"
+                    },
+                    fontFamily: {
+                        headline: ["Noto Serif", "serif"],
+                        body: ["Manrope", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .paper-grain {
+            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-primary-container paper-grain">
+    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
+            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html">Home</a>
+                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="stack.html">Stack</a>
+                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html#contact">Contact</a>
+            </div>
+            <a href="https://github.com/org-cyber/otter" target="_blank" rel="noopener"
+                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
+                GitHub
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-28 md:pt-36">
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-16">
+            <a href="projects.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary mb-8">
+                <span class="material-symbols-outlined text-base">arrow_back</span> All projects
+            </a>
+            <div class="grid lg:grid-cols-12 gap-10 items-end">
+                <div class="lg:col-span-8">
+                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Case study · Web3 · Sui</span>
+                    <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl tracking-tight mb-6">Otter</h1>
+                    <p class="font-headline text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl leading-snug">
+                        Programmable bank accounts for AI agents — hierarchical treasuries, on-chain settlement, atomic reclaim.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 space-y-4 text-sm">
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Role</span>
+                        <span>Web3 / systems engineer</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Stack</span>
+                        <span class="text-right">Move · Node · SDK</span>
+                    </div>
+                    <div class="flex justify-between border-b border-outline-variant/60 pb-2">
+                        <span class="text-outline uppercase font-label text-[10px] tracking-wider">Repo</span>
+                        <a href="https://github.com/org-cyber/otter" class="text-primary hover:underline" target="_blank" rel="noopener">org-cyber/otter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-20">
+            <div class="max-w-3xl">
+                <h2 class="font-headline text-2xl md:text-3xl mb-5">What this is</h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed mb-4">
+                    Otter implements the Autonomous Agent Treasury Protocol on Sui: every AI agent gets a first-class
+                    <code class="text-on-surface text-base">AgentTreasury</code> object that physically holds
+                    <code class="text-on-surface text-base">Coin&lt;SUI&gt;</code>, enforces policy, and settles inference
+                    spend with an on-chain digest — no opaque SaaS billing ledger as the source of truth.
+                </p>
+                <p class="text-on-surface-variant leading-relaxed">
+                    This architecture leans on Sui’s object model: parent objects can own child coin balances,
+                    independent agent treasuries settle in parallel, and reclaim can destroy a child and return
+                    budget to the parent in a single PTB.
+                </p>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto mb-24">
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl">
+                    <h2 class="font-headline text-2xl mb-4">Why it exists</h2>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        Agents today run on shared developer keys. If an agent goes rogue, gets prompt-injected,
+                        or spawns sub-agents, the bill spikes with no ceiling. There is no clean way to hand a
+                        sub-agent a capped budget, reclaim unused funds, or audit spend per agent on-chain.
+                    </p>
+                </div>
+                <div class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl">
+                    <h2 class="font-headline text-2xl mb-4">Object-native control</h2>
+                    <ul class="space-y-2 text-on-surface-variant text-sm">
+                        <li class="flex gap-2"><span class="text-primary">·</span> Owned balance on the treasury object</li>
+                        <li class="flex gap-2"><span class="text-primary">·</span> Daily / monthly / single-spend caps + provider allowlist</li>
+                        <li class="flex gap-2"><span class="text-primary">·</span> Hierarchical budgeting — master spawns children</li>
+                        <li class="flex gap-2"><span class="text-primary">·</span> Atomic reclaim of remaining child budget</li>
+                        <li class="flex gap-2"><span class="text-primary">·</span> On-chain settlement per inference call</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 md:py-24 bg-surface-container-low border-y border-outline-variant/40">
+            <div class="px-6 md:px-8 max-w-7xl mx-auto">
+                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Architecture</span>
+                <h2 class="font-headline text-3xl md:text-4xl mb-12">Contract · gateway · dashboard · SDK</h2>
+                <div class="grid md:grid-cols-2 gap-5 mb-5">
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Move contract</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                            Core objects: <code class="text-on-surface">AgentTreasury</code>,
+                            <code class="text-on-surface">PolicySet</code>, <code class="text-on-surface">TreasuryOwnerCap</code>.
+                            Entry points include create_master_treasury, spawn_child_agent, reclaim_child_budget,
+                            authorize_agent_call, pause/resume, deposit/withdraw, update_policy.
+                        </p>
+                    </article>
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Gateway</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
+                            Maps API keys to treasury IDs, routes providers (Groq live + stubs), tracks velocity,
+                            soft-pauses agents, settles immediately via authorize_agent_call, serializes per-treasury
+                            to avoid object-lock collisions, and classifies retryable vs non-retryable errors.
+                        </p>
+                    </article>
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">Dashboard</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            Next.js wallet UX: treasury tree, spawn/reclaim, API key generation, realtime balances,
+                            SuiScan links, and PTB construction for user-signed ops.
+                        </p>
+                    </article>
+                    <article class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                        <h3 class="font-headline text-xl mb-3">OtterAgent SDK</h3>
+                        <p class="text-sm text-on-surface-variant leading-relaxed">
+                            TypeScript and Python clients for chat, status, resume, and health — returning content,
+                            MIST cost, and settlement digest so agent apps can treat on-chain spend as first-class data.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl">
+                    <h3 class="font-headline text-xl mb-4">Security model (layers)</h3>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm text-on-surface-variant">
+                        <p><strong class="text-on-surface">Ownership</strong> — TreasuryOwnerCap for mutations</p>
+                        <p><strong class="text-on-surface">Non-custodial</strong> — user signs treasury ops</p>
+                        <p><strong class="text-on-surface">Policy</strong> — caps enforced in Move</p>
+                        <p><strong class="text-on-surface">Providers</strong> — per-agent whitelist</p>
+                        <p><strong class="text-on-surface">Velocity</strong> — off-chain auto-pause</p>
+                        <p><strong class="text-on-surface">Keys</strong> — one key → one treasury</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto py-20">
+            <h2 class="font-headline text-3xl mb-6">Engineering takeaways</h2>
+            <ul class="space-y-2 text-on-surface-variant max-w-3xl">
+                <li class="flex gap-2"><span class="text-primary mt-1">·</span> Hierarchical budgets map cleanly to object ownership — hard on account-based chains.</li>
+                <li class="flex gap-2"><span class="text-primary mt-1">·</span> Settlement serialization is required once multiple agent calls hit the same shared object.</li>
+                <li class="flex gap-2"><span class="text-primary mt-1">·</span> Dual SDKs (TS + Python) match how agent teams actually integrate gateways.</li>
+            </ul>
+        </section>
+
+        <section class="px-6 md:px-8 max-w-7xl mx-auto pb-24">
+            <a href="dspace.html" class="group block border-t border-outline-variant/60 pt-12">
+                <span class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-3 block">Next case study</span>
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                    <div>
+                        <h2 class="font-headline text-4xl md:text-6xl group-hover:text-primary transition-colors">DSpace</h2>
+                        <p class="text-on-surface-variant mt-2">SuiPod Chat — hybrid social dApp</p>
+                    </div>
+                    <span class="material-symbols-outlined text-4xl text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-headline text-lg">Kennedy Chinwo</div>
+            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026</p>
+            <div class="flex gap-6">
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="projects.html">Projects</a>
+                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="https://github.com/org-cyber/otter" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
