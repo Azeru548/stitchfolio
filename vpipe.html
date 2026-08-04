@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Vpipe — AI Debugging CLI | Kennedy Chinwo</title>
-    <meta name="description"
-        content="Case study: Vpipe — Go CLI that pipes build errors to multi-provider LLMs with secret sanitization and smart truncation." />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        background: "#faf7f2",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-low": "#f4efe8",
-                        "surface-container": "#efe9e1",
-                        "on-surface": "#1c1916",
-                        "on-surface-variant": "#5a5248",
-                        primary: "#6b5644",
-                        "primary-container": "#e8d4bc",
-                        "on-primary": "#ffffff",
-                        outline: "#8a8076",
-                        "outline-variant": "#d4cbc0"
-                    },
-                    fontFamily: {
-                        headline: ["Noto Serif", "serif"],
-                        body: ["Manrope", "sans-serif"],
-                        label: ["Inter", "sans-serif"]
-                    }
-                }
-            }
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Vpipe — AI Debugging CLI | Kennedy Chinwo</title>
+  <meta name="description" content="Case study: Vpipe — Go CLI that pipes build errors to multi-provider LLMs with secret sanitization and smart truncation." />
+  <meta name="theme-color" content="#08090c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/portfolio.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: "#08090c",
+            "surface-container-lowest": "#12151c",
+            "surface-container-low": "#0e1015",
+            "surface-container": "#181c26",
+            "on-surface": "#f2f0ea",
+            "on-surface-variant": "#9a9fa8",
+            primary: "#d4a574",
+            "primary-container": "#2a2218",
+            "on-primary": "#1a1208",
+            outline: "#7d8490",
+            "outline-variant": "#2a2f3a"
+          },
+          fontFamily: {
+            headline: ["Syne", "system-ui", "sans-serif"],
+            body: ["DM Sans", "system-ui", "sans-serif"],
+            label: ["JetBrains Mono", "ui-monospace", "monospace"]
+          }
         }
-    </script>
-    <style>
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        .paper-grain {
-            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        .code-panel {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; }
+    body { background: #08090c !important; color: #f2f0ea; }
+    .paper-grain { background-image: none !important; }
+    code { color: #e8c9a0; }
+  </style>
 </head>
+<body class="bg-background text-on-surface font-body">
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__grid"></div>
+    <div class="ambient__orb ambient__orb--1"></div>
+    <div class="ambient__orb ambient__orb--2"></div>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill"></div></div>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-container paper-grain">
-    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
-            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html">Home</a>
-                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="stack.html">Stack</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface" href="index.html#contact">Contact</a>
-            </div>
-            <a href="mailto:chinwokennedy9@gmail.com"
-                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
-                Get in touch
-            </a>
-        </div>
-    </nav>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__mark">K</span>
+        Kennedy Chinwo
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="is-active">Projects</a>
+        <a href="stack.html">Stack</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="mailto:chinwokennedy9@gmail.com" class="nav__cta pressable">Get in touch</a>
+      <button class="nav__menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+    <main class="cs-main" style="position:relative;z-index:1;">
 
-    <main class="pt-28 md:pt-36">
         <section class="px-6 md:px-8 max-w-7xl mx-auto mb-16">
             <a href="projects.html" class="inline-flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary mb-8">
                 <span class="material-symbols-outlined text-base">arrow_back</span> All projects
@@ -121,7 +125,7 @@ $ cat err.log | vpipe --provider groq
         <section class="px-6 md:px-8 max-w-7xl mx-auto mb-24">
             <div class="grid md:grid-cols-2 gap-5">
                 <div class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-2xl">
-                    <h2 class="font-headline text-2xl mb-4">The real risk of “paste into ChatGPT”</h2>
+                    <h2 class="font-headline text-2xl mb-4">The real risk of "paste into ChatGPT"</h2>
                     <p class="text-on-surface-variant leading-relaxed mb-4">
                         Developers already pipe errors into LLMs. Stack traces and env dumps routinely contain
                         API keys, JWTs, connection strings, and private paths. Browser workflows make that leakage
@@ -205,7 +209,7 @@ $ cat err.log | vpipe --provider groq
         <section class="px-6 md:px-8 max-w-7xl mx-auto py-20 md:py-24">
             <h2 class="font-headline text-3xl mb-6">Sanitization as a product feature</h2>
             <p class="text-on-surface-variant leading-relaxed max-w-3xl mb-8">
-                Most AI-for-devs demos treat security as documentation (“please don’t paste secrets”).
+                Most AI-for-devs demos treat security as documentation ("please don't paste secrets").
                 Vpipe treats redaction as a mandatory stage in the pipeline. That design choice comes from a
                 cybersecurity background: assume error output is hostile and may contain credentials, then
                 minimize blast radius before egress.
@@ -246,18 +250,19 @@ $ cat err.log | vpipe --provider groq
                 </div>
             </a>
         </section>
+    
     </main>
-
-    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-headline text-lg">Kennedy Chinwo</div>
-            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026</p>
-            <div class="flex gap-6">
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="projects.html">Projects</a>
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="mailto:chinwokennedy9@gmail.com">Email</a>
-            </div>
-        </div>
-    </footer>
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <div class="footer__brand">Kennedy Chinwo</div>
+      <p class="footer__copy">© 2026 · Port Harcourt, Nigeria</p>
+      <div class="footer__links">
+        <a href="projects.html">Projects</a>
+        <a href="mailto:chinwokennedy9@gmail.com">Email</a>
+        <a href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/portfolio.js"></script>
 </body>
-
 </html>

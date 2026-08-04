@@ -1,458 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Projects | Kennedy Chinwo</title>
-    <meta name="description"
-        content="Selected engineering work by Kennedy Chinwo — fraud detection, enterprise RAG, real estate SaaS, TTS systems, and developer tooling." />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        background: "#faf7f2",
-                        surface: "#faf7f2",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-low": "#f4efe8",
-                        "surface-container": "#efe9e1",
-                        "surface-container-high": "#e9e2d9",
-                        "surface-container-highest": "#e3dbd1",
-                        "on-surface": "#1c1916",
-                        "on-surface-variant": "#5a5248",
-                        primary: "#6b5644",
-                        "primary-container": "#e8d4bc",
-                        "on-primary": "#ffffff",
-                        secondary: "#6b6358",
-                        outline: "#8a8076",
-                        "outline-variant": "#d4cbc0"
-                    },
-                    fontFamily: {
-                        headline: ["Noto Serif", "serif"],
-                        body: ["Manrope", "sans-serif"],
-                        label: ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-        .paper-grain {
-            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Kennedy Chinwo</title>
+  <meta name="description"
+    content="Selected engineering work by Kennedy Chinwo — Sui agent treasuries, fraud detection, enterprise RAG, real estate SaaS, TTS systems, and developer tooling." />
+  <meta name="theme-color" content="#08090c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/portfolio.css" />
+  <style>
+    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; font-size: inherit; line-height: 1; }
+    .study {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 0;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .study__side {
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .study__body {
+      padding: 2rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .study__body p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 0.9rem;
+    }
+    .study__body p:last-child { margin-bottom: 0; }
+    .study__body code {
+      font-family: var(--font-mono);
+      font-size: 0.8em;
+      color: var(--accent-soft);
+      background: var(--accent-dim);
+      padding: 0.1em 0.35em;
+      border-radius: 0;
+    }
+    .study__num {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .study__num::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--glass-border);
+    }
+    .study h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 3vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+    .study__media {
+      min-height: 280px;
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .study__media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+      transition: transform 0.9s var(--ease-out), opacity 0.4s;
+    }
+    .study:hover .study__media video {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+    .study--media .study__side { display: none; }
+    .study--media {
+      grid-template-columns: 1fr 1fr;
+    }
+    .study--media .study__media { border-right: 1px solid var(--glass-border); }
+    .study--media.flip { direction: rtl; }
+    .study--media.flip > * { direction: ltr; }
+    .study__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1.25rem;
+    }
+    .study__links .ext {
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--glass-border);
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .study__links .ext:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    @media (max-width: 860px) {
+      .study, .study--media, .study--media.flip {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .study__side {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+      }
+      .study--media .study__media {
+        border-right: none;
+        aspect-ratio: 16 / 10;
+      }
+    }
+  </style>
 </head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__grid"></div>
+    <div class="ambient__orb ambient__orb--1"></div>
+    <div class="ambient__orb ambient__orb--2"></div>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill"></div></div>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container paper-grain">
-    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
-            <a href="index.html" class="font-headline text-lg md:text-xl font-medium tracking-tight">Kennedy Chinwo</a>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
-                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="projects.html">Projects</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="stack.html">Stack</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#experience">Experience</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#contact">Contact</a>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__mark">K</span>
+        Kennedy Chinwo
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="is-active">Projects</a>
+        <a href="stack.html">Stack</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <a href="mailto:chinwokennedy9@gmail.com" class="nav__cta pressable">Get in touch</a>
+      <button class="nav__menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-hero">
+      <div class="shell">
+        <span class="eyebrow reveal">Portfolio index</span>
+        <h1 class="display reveal reveal-d1">Selected systems &amp; case studies</h1>
+        <p class="lead reveal reveal-d2">
+          Eight production-minded projects spanning Sui Web3 (agent treasuries &amp; social dApps),
+          fraud detection, document RAG, real estate SaaS, dual-engine TTS, and AI-assisted CLI tooling.
+          Each write-up covers problem framing, architecture choices, and engineering tradeoffs.
+        </p>
+      </div>
+    </header>
+
+    <section class="section--tight" style="padding-top:0;">
+      <div class="shell">
+        <div class="div-label reveal"><span>Web3 · Sui</span></div>
+
+        <!-- SEAL -->
+        <article class="card study reveal">
+          <div class="study__side">
+            <div class="study__num">W1 · AI billing · Move</div>
+            <h2>SEAL</h2>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Sui Move</span>
+              <span class="chip chip--neutral">TypeScript</span>
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">x402</span>
             </div>
-            <a href="mailto:chinwokennedy9@gmail.com"
-                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
-                Get in touch
-            </a>
+            <div class="study__links">
+              <a href="seal.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://github.com/org-cyber/SEAL" target="_blank" rel="noopener" class="ext">GitHub</a>
+            </div>
+          </div>
+          <div class="study__body">
+            <p>SEAL is a non-custodial billing layer for AI teams on Sui. Deposit once, set hard spend caps enforced by Move smart contracts, and route API calls to Groq, OpenAI, Anthropic, or x402-compatible services through a single API key.</p>
+            <p>Architecture splits into three layers: a TypeScript gateway (auth, provider routing, velocity tracking, batch settlement), on-chain contracts (deposit/withdraw, caps, authorize_call, pause), and a Next.js dashboard for wallet connect, treasury setup PTBs, key management, and anomaly alerts.</p>
+          </div>
+        </article>
+
+        <!-- Otter -->
+        <article class="card study reveal">
+          <div class="study__side">
+            <div class="study__num">W2 · Agent treasuries</div>
+            <h2>Otter</h2>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Sui Move</span>
+              <span class="chip chip--neutral">Node/TS gateway</span>
+              <span class="chip chip--neutral">TS + Python SDK</span>
+            </div>
+            <div class="study__links">
+              <a href="otter.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://github.com/org-cyber/otter" target="_blank" rel="noopener" class="ext">GitHub</a>
+            </div>
+          </div>
+          <div class="study__body">
+            <p>Otter (Autonomous Agent Treasury Protocol) gives every AI agent its own on-chain treasury — a Sui object that holds <code>Coin&lt;SUI&gt;</code>, enforces spending policies, and can be reclaimed atomically. No central custodian; no opaque credit-card billing for agents.</p>
+            <p>Master treasuries spawn child agents with sub-budgets; daily/monthly/single-spend caps and provider allowlists are enforced in Move. The gateway settles each inference via <code>authorize_agent_call</code> and exposes TypeScript and Python SDKs.</p>
+          </div>
+        </article>
+
+        <!-- DSpace -->
+        <article class="card study reveal">
+          <div class="study__side">
+            <div class="study__num">W3 · Social dApp</div>
+            <h2>DSpace</h2>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">React 19</span>
+              <span class="chip chip--neutral">Sui dapp-kit</span>
+              <span class="chip chip--neutral">Firebase</span>
+              <span class="chip chip--neutral">Vite</span>
+            </div>
+            <div class="study__links">
+              <a href="dspace.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://github.com/org-cyber/dspace" target="_blank" rel="noopener" class="ext">GitHub</a>
+              <a href="https://dspace1.netlify.app/" target="_blank" rel="noopener" class="ext">Live site</a>
+            </div>
+          </div>
+          <div class="study__body">
+            <p>DSpace (SuiPod Chat) is a hybrid decentralized collaboration platform: Sui wallet identity and on-chain pod membership, plus Firebase Realtime Database for instant messaging.</p>
+            <p>Users create pods, add members by wallet address, chat in real time, and send SUI directly to pod members without leaving the UI — bridging social product UX with on-chain payments via <code>@mysten/dapp-kit</code>.</p>
+          </div>
+        </article>
+
+        <div class="div-label reveal"><span>AI · Fullstack · Tools</span></div>
+
+        <!-- Asguard -->
+        <article class="card study study--media reveal">
+          <div class="study__media">
+            <video src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="study__body">
+            <div class="study__num">01 · AI · Fintech risk</div>
+            <h2>Asguard</h2>
+            <p>High-volume fintech environments need fraud decisions that are fast enough for live payment flows and explainable enough for compliance. Asguard scores transactions with layered rules, enriches them with AI risk assessment, and emits structured alerts with natural-language summaries.</p>
+            <p>Clear-cut decisions stay on a low-latency path; ambiguous events escalate for deeper model analysis with investigator context in-band.</p>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Go</span>
+              <span class="chip chip--neutral">Gin</span>
+              <span class="chip chip--neutral">Firebase</span>
+              <span class="chip chip--neutral">LLM</span>
+              <span class="chip chip--neutral">PostgreSQL</span>
+            </div>
+            <div class="study__links">
+              <a href="asguard.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://asguard.netlify.app" target="_blank" rel="noopener" class="ext">Live site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Azeru -->
+        <article class="card study study--media flip reveal">
+          <div class="study__media">
+            <video src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="study__body">
+            <div class="study__num">02 · RAG · Document intelligence</div>
+            <h2>Azeru</h2>
+            <p>Enterprise RAG platform that ingests PDFs, chunks them for embedding quality, stores vectors for semantic retrieval, and answers questions with source-aware conversational responses.</p>
+            <p>Backend processing in Go for throughput; operator UI in Next.js. Inference routes through high-speed LLM providers so retrieval + generation stays interactive.</p>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Go</span>
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">Groq AI</span>
+              <span class="chip chip--neutral">Vector search</span>
+              <span class="chip chip--neutral">Docker</span>
+            </div>
+            <div class="study__links">
+              <a href="azeru.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://github.com/org-cyber/azeru" target="_blank" rel="noopener" class="ext">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hauser -->
+        <article class="card study study--media reveal">
+          <div class="study__media">
+            <video src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="study__body">
+            <div class="study__num">03 · SaaS · Real estate</div>
+            <h2>Hauser</h2>
+            <p>Real estate marketplace for Nigerian property professionals — agents, landlords, and tenants. Role-aware onboarding lands each persona in the right workflow without manual admin setup.</p>
+            <p>Next.js + Firebase (Firestore, Cloud Functions): dynamic listings, real-time updates, image optimization, and click analytics for premium tiers.</p>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">Firebase</span>
+              <span class="chip chip--neutral">Firestore</span>
+              <span class="chip chip--neutral">Cloud Functions</span>
+            </div>
+            <div class="study__links">
+              <a href="hauser.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://hauserhomes.xyz" target="_blank" rel="noopener" class="ext">Live site</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Koe -->
+        <article class="card study reveal">
+          <div class="study__side">
+            <div class="study__num">04 · AI audio · TTS</div>
+            <h2>Koe</h2>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">Azure TTS</span>
+              <span class="chip chip--neutral">WebSocket</span>
+              <span class="chip chip--neutral">Docker · Piper</span>
+            </div>
+            <div class="study__links">
+              <a href="koe.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+          <div class="study__body">
+            <p>Dual-engine TTS studio: Microsoft Azure Neural voices for premium cloud synthesis, and offline Piper TTS via Dockerized local inference when data should not leave the machine.</p>
+            <p>Audio streams in real time over WebSockets. Engine selection is modular so operators can switch at runtime based on latency, cost, or privacy — useful for content studios, accessibility tools, and air-gapped environments.</p>
+          </div>
+        </article>
+
+        <!-- Vpipe -->
+        <article class="card study reveal">
+          <div class="study__side">
+            <div class="study__num">05 · CLI · Devtools</div>
+            <h2>Vpipe</h2>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Go</span>
+              <span class="chip chip--neutral">Groq</span>
+              <span class="chip chip--neutral">OpenAI</span>
+              <span class="chip chip--neutral">Anthropic</span>
+            </div>
+            <div class="study__links">
+              <a href="vpipe.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+          <div class="study__body">
+            <p>Go CLI that pipes compiler and runtime errors into multi-provider LLM APIs and returns actionable fix suggestions without a browser workflow.</p>
+            <p>Before any external call, auto-sanitization masks 20+ sensitive patterns. Smart truncation respects provider token limits — a security-aware take on AI-assisted debugging.</p>
+          </div>
+        </article>
+
+        <div class="contact-panel reveal" style="margin-top: 3rem;">
+          <h2 class="display" style="font-size:clamp(1.5rem,3vw,2.25rem);">Want the architecture walkthrough live?</h2>
+          <p class="lead">Happy to discuss tradeoffs, stack choices, and what I’d harden next in a technical interview.</p>
+          <div class="contact-actions">
+            <a href="mailto:chinwokennedy9@gmail.com" class="btn btn--primary pressable">Email Kennedy</a>
+            <a href="index.html#contact" class="btn btn--ghost pressable">More ways to connect</a>
+          </div>
         </div>
-    </nav>
+      </div>
+    </section>
+  </main>
 
-    <main class="pt-28 md:pt-36 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
-        <header class="mb-16 md:mb-24 max-w-3xl">
-            <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Portfolio index</span>
-            <h1 class="font-headline text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-6">
-                Selected systems &amp; case studies
-            </h1>
-            <p class="text-lg md:text-xl text-on-surface-variant font-light leading-relaxed">
-                Eight production-minded projects spanning Sui Web3 (agent treasuries &amp; social dApps),
-                fraud detection, document RAG, real estate SaaS, dual-engine TTS, and AI-assisted CLI tooling.
-                Each write-up covers problem framing, architecture choices, and engineering tradeoffs.
-            </p>
-        </header>
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <div class="footer__brand">Kennedy Chinwo</div>
+      <p class="footer__copy">© 2026 · Port Harcourt, Nigeria</p>
+      <div class="footer__links">
+        <a href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
+        <a href="index.html">Home</a>
+        <a href="mailto:chinwokennedy9@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
 
-        <div class="space-y-8 md:space-y-10">
-            <!-- Web3 intro label -->
-            <div class="flex items-center gap-3 pt-2">
-                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary">Web3 · Sui</span>
-                <span class="h-px flex-1 bg-outline-variant"></span>
-            </div>
-
-            <!-- SEAL -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">W1</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">AI billing · Move</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">SEAL</h2>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Sui Move</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">TypeScript</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">x402</span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center">
-                            <a href="seal.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="https://github.com/org-cyber/SEAL" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-7 p-8 md:p-10">
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            SEAL is a non-custodial billing layer for AI teams on Sui. Deposit once, set hard spend
-                            caps enforced by Move smart contracts, and route API calls to Groq, OpenAI, Anthropic,
-                            or x402-compatible services through a single API key.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed">
-                            Architecture splits into three layers: a TypeScript gateway (auth, provider routing,
-                            velocity tracking, batch settlement), on-chain contracts (deposit/withdraw, caps,
-                            authorize_call, pause), and a Next.js dashboard for wallet connect, treasury setup PTBs,
-                            key management, and anomaly alerts. Users sign treasury ops; the gateway only settles.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Otter -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40 order-1">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">W2</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">Agent treasuries</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Otter</h2>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Sui Move</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Node/TS gateway</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">TS + Python SDK</span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center">
-                            <a href="otter.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="https://github.com/org-cyber/otter" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                GitHub
-                            </a>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-7 p-8 md:p-10 order-2">
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            Otter (Autonomous Agent Treasury Protocol) gives every AI agent its own on-chain
-                            treasury — a Sui object that holds <code class="text-on-surface text-sm">Coin&lt;SUI&gt;</code>,
-                            enforces spending policies, and can be reclaimed atomically. No central custodian;
-                            no opaque credit-card billing for agents.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed">
-                            Master treasuries spawn child agents with sub-budgets; daily/monthly/single-spend caps
-                            and provider allowlists are enforced in Move. The gateway settles each inference via
-                            <code class="text-on-surface text-sm">authorize_agent_call</code>, serializes per-treasury
-                            writes to avoid object locks, and exposes TypeScript and Python SDKs for agent developers.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- DSpace -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">W3</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">Social dApp</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">DSpace</h2>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">React 19</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Sui dapp-kit</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firebase</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Vite</span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center">
-                            <a href="dspace.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="https://github.com/org-cyber/dspace" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                GitHub
-                            </a>
-                            <a href="https://dspace1.netlify.app/" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                Live site
-                            </a>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-7 p-8 md:p-10">
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            DSpace (SuiPod Chat) is a hybrid decentralized collaboration platform: Sui wallet
-                            identity and on-chain pod membership, plus Firebase Realtime Database for instant messaging.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed">
-                            Users create pods, add members by wallet address, chat in real time, and send SUI
-                            directly to pod members without leaving the UI — bridging social product UX with
-                            on-chain payments and access control via <code class="text-on-surface text-sm">@mysten/dapp-kit</code>.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <div class="flex items-center gap-3 pt-6">
-                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary">AI · Fullstack · Tools</span>
-                <span class="h-px flex-1 bg-outline-variant"></span>
-            </div>
-
-            <!-- 01 Asguard -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-6 aspect-[16/10] lg:aspect-auto lg:min-h-[340px] bg-surface-container overflow-hidden">
-                        <video class="w-full h-full object-cover" src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
-                    </div>
-                    <div class="lg:col-span-6 p-8 md:p-10 flex flex-col justify-center">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">01</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">AI · Fintech risk</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Asguard</h2>
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            High-volume fintech environments need fraud decisions that are fast enough for live
-                            payment flows and explainable enough for compliance review. Asguard is a real-time
-                            fraud detection pipeline that scores transactions with layered rules, enriches them
-                            with AI risk assessment, and emits structured alerts with natural-language summaries.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed mb-6">
-                            The system prioritizes low-latency paths for clear-cut decisions, escalates ambiguous
-                            events for deeper model analysis, and keeps investigator context in-band so teams
-                            spend less time reconstructing “why” a transfer was flagged.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Go</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Gin</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firebase</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">LLM inference</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">PostgreSQL</span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center">
-                            <a href="asguard.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="https://asguard.netlify.app" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                Live site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 02 Azeru -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-6 order-1 lg:order-2 aspect-[16/10] lg:aspect-auto lg:min-h-[340px] bg-surface-container overflow-hidden">
-                        <video class="w-full h-full object-cover" src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
-                    </div>
-                    <div class="lg:col-span-6 order-2 lg:order-1 p-8 md:p-10 flex flex-col justify-center">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">02</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">RAG · Document intelligence</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Azeru</h2>
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            Unstructured PDFs are slow to search and easy to misread under time pressure. Azeru
-                            is an enterprise RAG platform that ingests documents, chunks them for embedding quality,
-                            stores vectors for semantic retrieval, and answers questions through a conversational
-                            interface with source-aware responses.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed mb-6">
-                            Backend processing is built in Go for throughput; the operator UI is Next.js for
-                            fast iteration and validation loops. Inference is routed through high-speed LLM
-                            providers so retrieval + generation stays interactive rather than batch-only.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Go</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Groq AI</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Vector search</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Docker</span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center">
-                            <a href="azeru.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="https://github.com/org-cyber/azeru" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                Source
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 03 Hauser -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-6 aspect-[16/10] lg:aspect-auto lg:min-h-[340px] bg-surface-container overflow-hidden">
-                        <video class="w-full h-full object-cover" src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
-                    </div>
-                    <div class="lg:col-span-6 p-8 md:p-10 flex flex-col justify-center">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">03</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">SaaS · Real estate</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Hauser</h2>
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            Hauser is a real estate marketplace oriented toward Nigerian property professionals —
-                            agents, landlords, and tenants. The product combines listing discovery with
-                            role-aware onboarding so each persona lands in the right workflow without manual admin setup.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed mb-6">
-                            Built on Next.js with Firebase (Firestore, Cloud Functions), it supports dynamic
-                            listings, real-time updates, automated image optimization, and click analytics for
-                            premium tiers. The goal: reduce agency friction and give operators a lightweight
-                            SaaS control plane instead of a static directory.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firebase</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Firestore</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Cloud Functions</span>
-                        </div>
-                        <div class="flex flex-wrap gap-4 items-center">
-                            <a href="hauser.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                                Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </a>
-                            <a href="https://hauserhomes.xyz" target="_blank" rel="noopener"
-                                class="text-sm text-on-surface-variant hover:text-primary border-b border-outline-variant hover:border-primary transition-colors">
-                                Live site
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 04 Koe -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">04</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">AI audio · TTS</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Koe</h2>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Next.js</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Azure TTS</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">WebSocket</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Docker · Piper</span>
-                        </div>
-                        <a href="koe.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                            Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-7 p-8 md:p-10">
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            Text-to-speech products usually force a single vendor tradeoff: cloud quality and cost,
-                            or offline privacy with weaker voices. Koe is a dual-engine TTS studio that runs both —
-                            Microsoft Azure Neural voices for premium cloud synthesis, and offline Piper TTS via
-                            Dockerized local inference when data should not leave the machine.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed">
-                            Audio is streamed in real time over WebSockets. Engine selection is modular so operators
-                            can switch at runtime based on latency budget, per-character cost, or privacy requirements —
-                            useful for content studios, accessibility tools, and air-gapped environments.
-                        </p>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 05 Vpipe -->
-            <article class="bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden">
-                <div class="grid lg:grid-cols-12">
-                    <div class="lg:col-span-5 bg-surface-container-low p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-outline-variant/40 order-1">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="font-label text-[10px] uppercase tracking-[0.2em] text-primary">05</span>
-                            <span class="h-px flex-1 bg-outline-variant"></span>
-                            <span class="font-label text-[10px] uppercase tracking-[0.15em] text-on-surface-variant">CLI · Devtools</span>
-                        </div>
-                        <h2 class="font-headline text-3xl md:text-4xl mb-4">Vpipe</h2>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Go</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Groq</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">OpenAI</span>
-                            <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-label uppercase tracking-wider rounded-md">Anthropic</span>
-                        </div>
-                        <a href="vpipe.html" class="inline-flex items-center gap-2 text-primary font-medium">
-                            Full case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="lg:col-span-7 p-8 md:p-10 order-2">
-                        <p class="text-on-surface-variant leading-relaxed mb-4">
-                            Pasting build logs into a chat model is common — and dangerous when secrets hide in
-                            stack traces. Vpipe is a Go CLI that pipes compiler and runtime errors into multi-provider
-                            LLM APIs (Groq, OpenAI, Anthropic) and returns actionable fix suggestions without
-                            requiring a browser workflow.
-                        </p>
-                        <p class="text-on-surface-variant leading-relaxed">
-                            Before any external call, auto-sanitization masks 20+ sensitive patterns (keys, tokens,
-                            connection strings). Smart truncation respects provider token limits so large logs remain
-                            usable without silent context blowouts — a security-aware take on AI-assisted debugging.
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
-
-        <section class="mt-20 p-8 md:p-12 bg-surface-container-low border border-outline-variant/40 rounded-2xl text-center">
-            <h2 class="font-headline text-2xl md:text-3xl mb-3">Want the architecture walkthrough live?</h2>
-            <p class="text-on-surface-variant mb-6 max-w-lg mx-auto">
-                Happy to discuss tradeoffs, stack choices, and what I’d harden next in a technical interview.
-            </p>
-            <a href="mailto:chinwokennedy9@gmail.com"
-                class="inline-flex bg-primary text-on-primary px-7 py-3.5 rounded-lg font-semibold hover:bg-on-surface transition-colors">
-                Email Kennedy
-            </a>
-        </section>
-    </main>
-
-    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-headline text-lg">Kennedy Chinwo</div>
-            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">© 2026 · Port Harcourt, Nigeria</p>
-            <div class="flex gap-6">
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="index.html">Home</a>
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary" href="mailto:chinwokennedy9@gmail.com">Email</a>
-            </div>
-        </div>
-    </footer>
+  <script src="assets/js/portfolio.js"></script>
 </body>
-
 </html>

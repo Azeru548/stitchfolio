@@ -1,549 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Kennedy Chinwo | Fullstack, AI &amp; Web3 Engineer</title>
-    <meta name="description"
-        content="Kennedy Chinwo — Fullstack, AI, and Web3 engineer specializing in Go backends, Next.js, Sui Move, agent treasuries, RAG systems, and production cloud-native apps." />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        background: "#faf7f2",
-                        surface: "#faf7f2",
-                        "surface-dim": "#e8e2d9",
-                        "surface-bright": "#ffffff",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-container-low": "#f4efe8",
-                        "surface-container": "#efe9e1",
-                        "surface-container-high": "#e9e2d9",
-                        "surface-container-highest": "#e3dbd1",
-                        "surface-variant": "#e3dbd1",
-                        "on-surface": "#1c1916",
-                        "on-surface-variant": "#5a5248",
-                        "on-background": "#1c1916",
-                        primary: "#6b5644",
-                        "primary-container": "#e8d4bc",
-                        "on-primary": "#ffffff",
-                        "on-primary-container": "#25190b",
-                        "primary-fixed": "#f6dec8",
-                        "primary-fixed-dim": "#c4a88a",
-                        secondary: "#6b6358",
-                        "secondary-container": "#ebe1d3",
-                        "on-secondary-container": "#3d372e",
-                        outline: "#8a8076",
-                        "outline-variant": "#d4cbc0",
-                        ink: "#1c1916",
-                        paper: "#faf7f2"
-                    },
-                    fontFamily: {
-                        headline: ["Noto Serif", "serif"],
-                        body: ["Manrope", "sans-serif"],
-                        label: ["Inter", "sans-serif"]
-                    },
-                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", full: "9999px" }
-                }
-            }
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .paper-grain {
-            background-image: radial-gradient(rgba(107, 86, 68, 0.03) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kennedy Chinwo | Fullstack, AI &amp; Web3 Engineer</title>
+  <meta name="description"
+    content="Kennedy Chinwo — Fullstack, AI &amp; Web3 engineer. Building secure digital systems across product, intelligence, and on-chain applications." />
+  <meta name="theme-color" content="#08090c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/portfolio.css" />
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      font-size: inherit;
+      line-height: 1;
+    }
+  </style>
 </head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__grid"></div>
+    <div class="ambient__orb ambient__orb--1"></div>
+    <div class="ambient__orb ambient__orb--2"></div>
+    <div class="ambient__orb ambient__orb--3"></div>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill"></div></div>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container paper-grain">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 border-b border-outline-variant/40 bg-background/85 backdrop-blur-xl">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-16 md:h-20">
-            <a href="index.html" class="font-headline text-lg md:text-xl font-medium text-on-surface tracking-tight">
-                Kennedy Chinwo
+  <nav class="step-dots" aria-label="Section progress">
+    <a href="#top" data-label="Intro" class="is-active"></a>
+    <a href="#capabilities" data-label="Craft"></a>
+    <a href="#work" data-label="Work"></a>
+    <a href="#experience" data-label="Path"></a>
+    <a href="#contact" data-label="Connect"></a>
+  </nav>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__mark">K</span>
+        Kennedy Chinwo
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html" class="is-active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="stack.html">Stack</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="mailto:chinwokennedy9@gmail.com" class="nav__cta pressable">Get in touch</a>
+      <button class="nav__menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO — onboarding-style first screen -->
+    <section class="hero" data-step>
+      <div class="shell hero__grid">
+        <div>
+          <div class="hero__badge reveal">
+            <span class="live-dot" aria-hidden="true"></span>
+            Port Harcourt · Open to opportunities
+          </div>
+          <h1 class="display reveal reveal-d1">
+            <span class="line">Systems that hold</span>
+            <span class="line"><span class="accent">under real load.</span></span>
+          </h1>
+          <p class="lead reveal reveal-d2" style="max-width: 38ch;">
+            Fullstack, AI &amp; Web3 engineer building secure product platforms,
+            intelligent automation, and on-chain agent infrastructure —
+            with clean architecture and measurable outcomes.
+          </p>
+          <div class="hero__actions reveal reveal-d3">
+            <a href="projects.html" class="btn btn--primary pressable">
+              View case studies
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="font-headline text-sm text-primary border-b border-primary/40 pb-0.5" href="index.html">Home</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="projects.html">Projects</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="stack.html">Stack</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#experience">Experience</a>
-                <a class="font-headline text-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#contact">Contact</a>
+            <a href="Kennedy_Chinwo_Resume.pdf" class="btn btn--ghost pressable">Download CV</a>
+          </div>
+          <dl class="hero__meta reveal reveal-d4">
+            <div>
+              <dt>Focus</dt>
+              <dd>Fullstack · AI · Web3</dd>
             </div>
-            <a href="mailto:chinwokennedy9@gmail.com"
-                class="hidden sm:inline-flex bg-primary text-on-primary px-5 py-2.5 rounded-lg font-label text-sm font-medium hover:bg-on-surface transition-colors">
-                Get in touch
+            <div>
+              <dt>Domains</dt>
+              <dd>Products · Intelligence · On-chain</dd>
+            </div>
+            <div>
+              <dt>Background</dt>
+              <dd>B.Tech Cybersecurity, FUTO</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="portrait-stack reveal reveal-d2">
+          <div class="portrait-stack__glow" aria-hidden="true"></div>
+          <div class="portrait-stack__frame">
+            <img src="IMG_E7983.JPG" alt="Portrait of Kennedy Chinwo" width="800" height="1000" />
+          </div>
+          <div class="portrait-stack__float portrait-stack__float--tr">
+            <small>Status</small>
+            <p>Available for roles</p>
+          </div>
+          <div class="portrait-stack__float portrait-stack__float--bl">
+            <small>Currently</small>
+            <p>Sui agent treasuries, AI gateways &amp; cloud-native backends</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="section--tight">
+      <div class="shell">
+        <div class="metrics reveal">
+          <div class="metrics__item">
+            <div class="metrics__value" data-count="8">0</div>
+            <div class="metrics__label">Shipped projects</div>
+          </div>
+          <div class="metrics__item">
+            <div class="metrics__value">Sui Move</div>
+            <div class="metrics__label">On-chain Web3</div>
+          </div>
+          <div class="metrics__item">
+            <div class="metrics__value">RAG / LLM</div>
+            <div class="metrics__label">Production AI</div>
+          </div>
+          <div class="metrics__item">
+            <div class="metrics__value">Security</div>
+            <div class="metrics__label">Cybersecurity degree</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="section" id="capabilities" data-step>
+      <div class="shell">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Capabilities</span>
+            <h2 class="display">Depth across the full product surface</h2>
+          </div>
+          <p class="aside reveal reveal-d1">
+            High-throughput APIs, typed frontends, production AI, and Sui Move protocols
+            that respect latency, cost, and security.
+          </p>
+        </div>
+        <div class="cap-grid">
+          <article class="card card--lift card--tilt cap-card reveal">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">database</span></div>
+            <h3>Backend architecture</h3>
+            <p>Go services with Gin &amp; GORM, Node/TS gateways, REST APIs, microservices patterns, PostgreSQL, and Firebase for durable, high-throughput backends.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">layers</span></div>
+            <h3>Fullstack product UI</h3>
+            <p>Next.js 15+, React 19, TypeScript, and Tailwind — responsive PWAs, wallets, and dashboards with production-grade UX and type safety.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d2">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">psychology</span></div>
+            <h3>AI &amp; LLM systems</h3>
+            <p>RAG pipelines, embedding search, Groq/Llama inference, multi-provider routing, and real-time AI workflows with citation and safety controls.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">token</span></div>
+            <h3>Web3 &amp; Sui Move</h3>
+            <p>Sui-native smart contracts, programmable agent treasuries, on-chain spend policies, wallet auth via Mysten dapp-kit, PTBs, and hybrid dApps.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">account_tree</span></div>
+            <h3>AI × on-chain settlement</h3>
+            <p>Gateways that settle LLM spend on-chain (SEAL / Otter): non-custodial caps, velocity pause, multi-provider routing, and agent SDKs.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d2">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">shield</span></div>
+            <h3>Security mindset</h3>
+            <p>OAuth/JWT, secure API design, secret sanitization before LLM calls, capability-based ownership on Sui, and threat-aware engineering.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work" data-step>
+      <div class="shell">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Selected work</span>
+            <h2 class="display">Case studies worth opening</h2>
+          </div>
+          <a href="projects.html" class="btn btn--link reveal reveal-d1">
+            Full project index
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="div-label reveal"><span>Web3 · Sui</span></div>
+        <div class="proj-row">
+          <a href="seal.html" class="card card--lift proj-mini reveal">
+            <span class="chip">Agent treasury</span>
+            <h3>SEAL</h3>
+            <p>Non-custodial AI billing on Sui: one API key, multi-provider routing, hard spend caps enforced by Move, velocity pause, and x402-ready gateway.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">Move</span>
+              <span class="chip chip--neutral">TypeScript</span>
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">x402</span>
+            </div>
+            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a href="otter.html" class="card card--lift proj-mini reveal reveal-d1">
+            <span class="chip">Hierarchical agents</span>
+            <h3>Otter</h3>
+            <p>Programmable bank accounts for AI agents: master/child treasuries, on-chain settlement per inference, atomic reclaim, and TypeScript/Python SDKs.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">Sui Move</span>
+              <span class="chip chip--neutral">Node gateway</span>
+              <span class="chip chip--neutral">Python SDK</span>
+            </div>
+            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a href="dspace.html" class="card card--lift proj-mini reveal reveal-d2">
+            <span class="chip">Social dApp</span>
+            <h3>DSpace</h3>
+            <p>SuiPod Chat — hybrid decentralized collab: wallet identity, on-chain pods, Firebase realtime messaging, and in-chat SUI transfers.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">React</span>
+              <span class="chip chip--neutral">Sui dapp-kit</span>
+              <span class="chip chip--neutral">Firebase</span>
+            </div>
+            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+
+        <div class="div-label reveal"><span>AI · Fullstack · Tools</span></div>
+
+        <a href="asguard.html" class="card card--lift proj-feature reveal">
+          <div class="proj-feature__media">
+            <video src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="proj-feature__body">
+            <span class="chip chip--teal">01 · Fraud detection</span>
+            <h3>Asguard</h3>
+            <p>Real-time transaction fraud pipeline combining rule-based scoring with AI risk assessment. Flags high-risk events and generates natural-language summaries at sub-second latency.</p>
+            <span class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a href="azeru.html" class="card card--lift proj-feature proj-feature--flip reveal">
+          <div class="proj-feature__media">
+            <video src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="proj-feature__body">
+            <span class="chip chip--teal">02 · Enterprise RAG</span>
+            <h3>Azeru</h3>
+            <p>Document intelligence that ingests PDFs into chunked, embedded knowledge bases. Semantic retrieval powers citation-backed answers for knowledge-heavy workflows.</p>
+            <span class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <a href="hauser.html" class="card card--lift proj-feature reveal">
+          <div class="proj-feature__media">
+            <video src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="proj-feature__body">
+            <span class="chip chip--teal">03 · Real estate SaaS</span>
+            <h3>Hauser</h3>
+            <p>Property marketplace for the Nigerian market with role-aware onboarding, dynamic listings, real-time Firestore sync, and click analytics for premium tiers.</p>
+            <span class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
+        </a>
+
+        <div class="proj-row" style="margin-top: 1rem;">
+          <a href="koe.html" class="card card--lift proj-mini reveal">
+            <span class="chip">04 · AI audio</span>
+            <h3>Koe</h3>
+            <p>Dual-engine TTS studio: Azure Neural voices plus offline Piper via Docker, with WebSocket streaming and runtime engine switching.</p>
+            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a href="vpipe.html" class="card card--lift proj-mini reveal reveal-d1">
+            <span class="chip">05 · Developer tools</span>
+            <h3>Vpipe</h3>
+            <p>Go CLI that pipes build errors into multi-provider LLMs, auto-sanitizes 20+ secret patterns, and truncates context to stay inside token budgets.</p>
+            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <div class="card proj-mini reveal reveal-d2" style="display:flex;align-items:center;justify-content:center;text-align:center;border-style:dashed;">
+            <div>
+              <p class="muted" style="font-size:0.9rem;margin-bottom:1rem;">Eight systems. Full write-ups on architecture and tradeoffs.</p>
+              <a href="projects.html" class="btn btn--ghost pressable">Browse all projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience" data-step>
+      <div class="shell">
+        <div class="exp-grid">
+          <div class="reveal">
+            <span class="eyebrow">Experience</span>
+            <h2 class="display" style="font-size:clamp(1.75rem,3vw,2.4rem);margin-bottom:2rem;">Professional timeline</h2>
+            <div class="timeline">
+              <div class="timeline__item">
+                <time>Jan 2024 — Oct 2024</time>
+                <h3>Fullstack Developer Intern</h3>
+                <p class="org">Dmiebi IT Ventures</p>
+                <ul>
+                  <li>Architected Go backend services and REST APIs for high-throughput data operations.</li>
+                  <li>Shipped TypeScript web apps with cloud-native architecture and real-time data sync.</li>
+                  <li>Implemented OAuth/JWT authentication and AI features via external LLM APIs.</li>
+                </ul>
+              </div>
+              <div class="timeline__item">
+                <time>Education</time>
+                <h3>B.Tech in Cybersecurity</h3>
+                <p class="org">Federal University of Technology, Owerri (FUTO)</p>
+                <ul>
+                  <li>Secure system design, ethical hacking foundations, and defensive engineering — grounding product work in threat models and least-privilege defaults.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-d1">
+            <span class="eyebrow">Stack snapshot</span>
+            <h2 class="display" style="font-size:clamp(1.75rem,3vw,2.4rem);margin-bottom:2rem;">Tools I use in production</h2>
+            <div class="stack-tiles">
+              <div class="card stack-tile">
+                <h4>Backend</h4>
+                <ul>
+                  <li>Go (Gin, GORM)</li>
+                  <li>Node.js</li>
+                  <li>REST / microservices</li>
+                  <li>PostgreSQL · Firebase</li>
+                </ul>
+              </div>
+              <div class="card stack-tile">
+                <h4>Frontend</h4>
+                <ul>
+                  <li>Next.js 15+</li>
+                  <li>React 19</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind CSS</li>
+                </ul>
+              </div>
+              <div class="card stack-tile">
+                <h4>AI</h4>
+                <ul>
+                  <li>RAG &amp; embeddings</li>
+                  <li>Groq / Llama 3–4</li>
+                  <li>Semantic search</li>
+                  <li>Multi-provider LLM APIs</li>
+                </ul>
+              </div>
+              <div class="card stack-tile">
+                <h4>Web3 · Sui</h4>
+                <ul>
+                  <li>Move smart contracts</li>
+                  <li>Mysten dapp-kit · PTBs</li>
+                  <li>Agent treasuries · x402</li>
+                  <li>Wallet auth · settlement</li>
+                </ul>
+              </div>
+              <div class="card stack-tile" style="grid-column: 1 / -1;">
+                <h4>Ops &amp; security</h4>
+                <ul style="display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;">
+                  <li>Docker · CI/CD</li>
+                  <li>OAuth / JWT</li>
+                  <li>API hardening</li>
+                  <li>Solidity · Storj</li>
+                </ul>
+              </div>
+            </div>
+            <a href="stack.html" class="btn btn--link mt-3">
+              Full technology map
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
+          </div>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="relative min-h-[90vh] flex items-center pt-24 pb-20 px-6 md:px-8 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
-            <div class="lg:col-span-7 space-y-8">
-                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-full shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-                    <span class="font-label text-[11px] uppercase tracking-[0.12em] text-on-surface-variant">
-                        Port Harcourt · Open to opportunities
-                    </span>
-                </div>
-                <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] leading-[1.08] text-on-surface tracking-tight">
-                    Fullstack, AI &amp; Web3 engineer building systems that ship.
-                </h1>
-                <p class="text-lg md:text-xl text-on-surface-variant max-w-xl font-light leading-relaxed">
-                    I design Go backends, Next.js frontends, production AI pipelines, and Sui-native Web3 systems —
-                    from agent treasuries with on-chain spend caps to real-time fraud scoring and enterprise RAG —
-                    with clean architecture, security-first defaults, and measurable outcomes.
-                </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="projects.html"
-                        class="bg-primary text-on-primary px-7 py-3.5 rounded-lg font-semibold text-sm md:text-base hover:bg-on-surface transition-colors">
-                        View case studies
-                    </a>
-                    <a href="Kennedy_Chinwo_Resume.pdf"
-                        class="border border-outline-variant bg-surface-container-lowest text-on-surface px-7 py-3.5 rounded-lg font-semibold text-sm md:text-base hover:border-primary/50 transition-colors">
-                        Download CV
-                    </a>
-                </div>
-                <div class="flex flex-wrap gap-x-8 gap-y-3 pt-4 border-t border-outline-variant/50">
-                    <div>
-                        <p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Focus</p>
-                        <p class="text-sm text-on-surface">Backend · AI · Web3 · Fullstack</p>
-                    </div>
-                    <div>
-                        <p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Core stack</p>
-                        <p class="text-sm text-on-surface">Go · Next.js · Sui Move · LLMs</p>
-                    </div>
-                    <div>
-                        <p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Background</p>
-                        <p class="text-sm text-on-surface">B.Tech Cybersecurity, FUTO</p>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:col-span-5 relative">
-                <div class="aspect-[4/5] max-w-md mx-auto lg:ml-auto rounded-2xl overflow-hidden bg-surface-container border border-outline-variant/50 shadow-sm">
-                    <img class="w-full h-full object-cover"
-                        alt="Portrait of Kennedy Chinwo"
-                        src="IMG_E7983.JPG" />
-                </div>
-                <div class="absolute -bottom-4 -left-2 sm:left-4 lg:-left-6 bg-surface-container-lowest border border-outline-variant/60 rounded-xl px-5 py-4 shadow-md max-w-[240px]">
-                    <p class="font-label text-[10px] uppercase tracking-widest text-primary mb-1">Currently</p>
-                    <p class="font-headline text-sm leading-snug">Building Sui agent treasuries, AI gateways &amp; cloud-native backends</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Snapshot metrics -->
-    <section class="border-y border-outline-variant/50 bg-surface-container-lowest">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">8</p>
-                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Shipped projects</p>
-            </div>
-            <div>
-                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">Sui Move</p>
-                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">On-chain Web3 systems</p>
-            </div>
-            <div>
-                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">RAG / LLM</p>
-                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Production AI systems</p>
-            </div>
-            <div>
-                <p class="font-headline text-3xl md:text-4xl text-primary mb-1">Security</p>
-                <p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Cybersecurity degree</p>
-            </div>
+    <!-- CONTACT -->
+    <section class="section" id="contact" data-step>
+      <div class="shell">
+        <div class="contact-panel reveal">
+          <span class="eyebrow" style="justify-content:center;">Contact</span>
+          <h2 class="display">Let’s talk about the next role</h2>
+          <p class="lead">
+            Open to fullstack, backend, AI, and Web3/Sui roles. Happy to walk through
+            architecture on SEAL, Otter, DSpace, Asguard, or any system in the portfolio.
+          </p>
+          <div class="contact-actions">
+            <a href="mailto:chinwokennedy9@gmail.com" class="btn btn--primary pressable">chinwokennedy9@gmail.com</a>
+            <a href="tel:+2349137068463" class="btn btn--ghost pressable">+234 913 706 8463</a>
+            <a href="Kennedy_Chinwo_Resume.pdf" class="btn btn--link">Download CV</a>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- What I build -->
-    <section class="py-24 md:py-32 px-6 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-                <div class="max-w-2xl">
-                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Capabilities</span>
-                    <h2 class="font-headline text-3xl md:text-5xl text-on-surface leading-tight">
-                        Engineering depth across the full product surface
-                    </h2>
-                </div>
-                <p class="text-on-surface-variant max-w-sm text-sm md:text-base leading-relaxed">
-                    High-throughput APIs, typed frontends, production AI, and Sui Move protocols that respect latency, cost, and security.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-3xl mb-5">database</span>
-                    <h3 class="font-headline text-xl mb-3">Backend architecture</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Go services with Gin &amp; GORM, Node/TS gateways, REST APIs, microservices patterns, PostgreSQL, and Firebase for durable, high-throughput backends.
-                    </p>
-                </article>
-                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-3xl mb-5">layers</span>
-                    <h3 class="font-headline text-xl mb-3">Fullstack product UI</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Next.js 15+, React 19, TypeScript, and Tailwind — responsive PWAs, wallets, and dashboards with production-grade UX and type safety.
-                    </p>
-                </article>
-                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-3xl mb-5">psychology</span>
-                    <h3 class="font-headline text-xl mb-3">AI &amp; LLM systems</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        RAG pipelines, embedding search, Groq/Llama inference, multi-provider routing, and real-time AI workflows with citation and safety controls.
-                    </p>
-                </article>
-                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-3xl mb-5">token</span>
-                    <h3 class="font-headline text-xl mb-3">Web3 &amp; Sui Move</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Sui-native smart contracts, programmable agent treasuries, on-chain spend policies, wallet auth via Mysten dapp-kit, PTBs, and hybrid dApps with crypto payments.
-                    </p>
-                </article>
-                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-3xl mb-5">account_tree</span>
-                    <h3 class="font-headline text-xl mb-3">AI × on-chain settlement</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        Gateways that settle LLM spend on-chain (SEAL / Otter): non-custodial caps, velocity pause, multi-provider routing, and TypeScript/Python agent SDKs.
-                    </p>
-                </article>
-                <article class="p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all">
-                    <span class="material-symbols-outlined text-primary text-3xl mb-5">shield</span>
-                    <h3 class="font-headline text-xl mb-3">Security mindset</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed">
-                        OAuth/JWT, secure API design, secret sanitization before LLM calls, capability-based ownership on Sui, and a cybersecurity foundation for threat-aware engineering.
-                    </p>
-                </article>
-            </div>
-        </div>
-    </section>
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <div class="footer__brand">Kennedy Chinwo</div>
+      <p class="footer__copy">© 2026 · Port Harcourt, Nigeria</p>
+      <div class="footer__links">
+        <a href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:chinwokennedy9@gmail.com">Email</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </footer>
 
-    <!-- Featured projects -->
-    <section class="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low border-y border-outline-variant/40">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
-                <div>
-                    <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Selected work</span>
-                    <h2 class="font-headline text-3xl md:text-5xl text-on-surface">Case studies worth opening</h2>
-                </div>
-                <a href="projects.html" class="inline-flex items-center gap-2 text-primary font-medium text-sm group">
-                    Full project index
-                    <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-
-            <!-- Web3 featured -->
-            <div class="mb-10">
-                <div class="flex items-center gap-3 mb-5">
-                    <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">Web3 · Sui</span>
-                    <span class="h-px flex-1 bg-outline-variant"></span>
-                </div>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <a href="seal.html" class="group p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
-                        <span class="font-label text-[10px] uppercase tracking-[0.15em] text-primary mb-3 block">Agent treasury</span>
-                        <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">SEAL</h3>
-                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-                            Non-custodial AI billing layer on Sui: one API key, multi-provider routing, hard spend caps enforced by Move contracts, velocity pause, and x402-ready gateway.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5 mb-4">
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Move</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">TypeScript</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Next.js</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">x402</span>
-                        </div>
-                        <span class="text-sm font-medium text-primary inline-flex items-center gap-1">Case study <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                    </a>
-                    <a href="otter.html" class="group p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
-                        <span class="font-label text-[10px] uppercase tracking-[0.15em] text-primary mb-3 block">Hierarchical agents</span>
-                        <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">Otter</h3>
-                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-                            Programmable bank accounts for AI agents: master/child treasuries, on-chain settlement per inference, atomic reclaim, and TypeScript/Python SDKs.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5 mb-4">
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Sui Move</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Node gateway</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Python SDK</span>
-                        </div>
-                        <span class="text-sm font-medium text-primary inline-flex items-center gap-1">Case study <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                    </a>
-                    <a href="dspace.html" class="group p-7 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
-                        <span class="font-label text-[10px] uppercase tracking-[0.15em] text-primary mb-3 block">Social dApp</span>
-                        <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">DSpace</h3>
-                        <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-                            SuiPod Chat — hybrid decentralized collab: wallet identity, on-chain pods, Firebase realtime messaging, and in-chat SUI transfers.
-                        </p>
-                        <div class="flex flex-wrap gap-1.5 mb-4">
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">React</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Sui dapp-kit</span>
-                            <span class="text-[10px] uppercase font-label tracking-wider px-2 py-1 bg-primary/10 text-primary">Firebase</span>
-                        </div>
-                        <span class="text-sm font-medium text-primary inline-flex items-center gap-1">Case study <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="flex items-center gap-3 mb-5">
-                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">AI · Fullstack · Tools</span>
-                <span class="h-px flex-1 bg-outline-variant"></span>
-            </div>
-
-            <div class="space-y-6">
-                <!-- Asguard -->
-                <a href="asguard.html" class="group block bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden hover:border-primary/35 hover:shadow-md transition-all">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 aspect-video lg:aspect-auto lg:min-h-[280px] bg-surface-container relative overflow-hidden">
-                            <video class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
-                                src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
-                        </div>
-                        <div class="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                            <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">01 · Fraud detection</span>
-                                <span class="text-outline-variant">·</span>
-                                <span class="font-label text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">Go · Gin · Firebase · LLM</span>
-                            </div>
-                            <h3 class="font-headline text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">Asguard</h3>
-                            <p class="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
-                                Real-time transaction fraud pipeline combining rule-based scoring with AI risk assessment.
-                                Flags high-risk events, auto-categorizes severity, and generates natural-language summaries
-                                for investigators at sub-second latency under load.
-                            </p>
-                            <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                                Read architecture notes
-                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Azeru -->
-                <a href="azeru.html" class="group block bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden hover:border-primary/35 hover:shadow-md transition-all">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 aspect-video lg:aspect-auto lg:min-h-[280px] bg-surface-container relative overflow-hidden order-1 lg:order-2">
-                            <video class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
-                                src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
-                        </div>
-                        <div class="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center order-2 lg:order-1">
-                            <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">02 · Enterprise RAG</span>
-                                <span class="text-outline-variant">·</span>
-                                <span class="font-label text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">Go · Next.js · Groq · Vectors</span>
-                            </div>
-                            <h3 class="font-headline text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">Azeru</h3>
-                            <p class="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
-                                Document intelligence platform that ingests PDFs into chunked, embedded knowledge bases.
-                                Semantic retrieval powers citation-backed conversational answers — reducing manual document
-                                triage for knowledge-heavy workflows.
-                            </p>
-                            <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                                Read architecture notes
-                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Hauser -->
-                <a href="hauser.html" class="group block bg-surface-container-lowest border border-outline-variant/50 rounded-2xl overflow-hidden hover:border-primary/35 hover:shadow-md transition-all">
-                    <div class="grid lg:grid-cols-12">
-                        <div class="lg:col-span-5 aspect-video lg:aspect-auto lg:min-h-[280px] bg-surface-container relative overflow-hidden">
-                            <video class="w-full h-full object-cover opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
-                                src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
-                        </div>
-                        <div class="lg:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                            <div class="flex flex-wrap items-center gap-3 mb-4">
-                                <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary">03 · Real estate SaaS</span>
-                                <span class="text-outline-variant">·</span>
-                                <span class="font-label text-[10px] uppercase tracking-[0.12em] text-on-surface-variant">Next.js · Firebase · Cloud Functions</span>
-                            </div>
-                            <h3 class="font-headline text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">Hauser</h3>
-                            <p class="text-on-surface-variant leading-relaxed mb-5 max-w-2xl">
-                                Property marketplace for the Nigerian market with role-aware onboarding, dynamic listings,
-                                real-time Firestore sync, image optimization, and click analytics for premium tiers —
-                                built as a serverless SaaS control plane for agents and landlords.
-                            </p>
-                            <span class="inline-flex items-center gap-2 text-sm font-medium text-primary">
-                                Read architecture notes
-                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                            </span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Secondary projects -->
-            <div class="grid md:grid-cols-2 gap-4 mt-6">
-                <a href="koe.html" class="group p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
-                    <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary mb-3 block">04 · AI audio</span>
-                    <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">Koe</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-                        Dual-engine TTS studio: Azure Neural voices plus offline Piper via Docker, with WebSocket streaming
-                        and runtime engine switching for cost, latency, and privacy tradeoffs.
-                    </p>
-                    <span class="text-sm font-medium text-primary inline-flex items-center gap-1">
-                        Case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </span>
-                </a>
-                <a href="vpipe.html" class="group p-8 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:border-primary/35 hover:shadow-sm transition-all">
-                    <span class="font-label text-[10px] uppercase tracking-[0.18em] text-primary mb-3 block">05 · Developer tools</span>
-                    <h3 class="font-headline text-2xl mb-2 group-hover:text-primary transition-colors">Vpipe</h3>
-                    <p class="text-sm text-on-surface-variant leading-relaxed mb-4">
-                        Go CLI that pipes build errors into multi-provider LLMs, auto-sanitizes 20+ secret patterns,
-                        and truncates context to stay inside token budgets — safer AI-assisted debugging.
-                    </p>
-                    <span class="text-sm font-medium text-primary inline-flex items-center gap-1">
-                        Case study <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience + skills -->
-    <section id="experience" class="py-24 md:py-32 px-6 md:px-8">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24">
-            <div>
-                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Experience</span>
-                <h2 class="font-headline text-3xl md:text-4xl mb-10">Professional timeline</h2>
-                <div class="space-y-10">
-                    <div class="relative pl-8 border-l-2 border-primary/30">
-                        <div class="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-primary"></div>
-                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Jan 2024 — Oct 2024</span>
-                        <h3 class="font-headline text-xl mt-1">Fullstack Developer Intern</h3>
-                        <p class="text-primary text-sm mb-3">Dmiebi IT Ventures</p>
-                        <ul class="text-sm text-on-surface-variant space-y-2 leading-relaxed">
-                            <li class="flex gap-2"><span class="text-primary mt-1">·</span> Architected Go backend services and REST APIs for high-throughput data operations.</li>
-                            <li class="flex gap-2"><span class="text-primary mt-1">·</span> Shipped TypeScript web apps with cloud-native architecture and real-time data sync.</li>
-                            <li class="flex gap-2"><span class="text-primary mt-1">·</span> Implemented OAuth/JWT authentication and AI features via external LLM APIs.</li>
-                        </ul>
-                    </div>
-                    <div class="relative pl-8 border-l-2 border-outline-variant">
-                        <div class="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-outline"></div>
-                        <span class="font-label text-[10px] uppercase tracking-widest text-on-surface-variant">Education</span>
-                        <h3 class="font-headline text-xl mt-1">B.Tech in Cybersecurity</h3>
-                        <p class="text-primary text-sm mb-3">Federal University of Technology, Owerri (FUTO)</p>
-                        <p class="text-sm text-on-surface-variant leading-relaxed">
-                            Focused on secure system design, ethical hacking foundations, and defensive engineering —
-                            grounding product work in threat models and least-privilege defaults.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-3 block">Stack snapshot</span>
-                <h2 class="font-headline text-3xl md:text-4xl mb-10">Tools I use in production</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Backend</h4>
-                        <ul class="text-sm text-on-surface-variant space-y-1.5">
-                            <li>Go (Gin, GORM)</li>
-                            <li>Node.js</li>
-                            <li>REST / microservices</li>
-                            <li>PostgreSQL · Firebase</li>
-                        </ul>
-                    </div>
-                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Frontend</h4>
-                        <ul class="text-sm text-on-surface-variant space-y-1.5">
-                            <li>Next.js 15+</li>
-                            <li>React 19</li>
-                            <li>TypeScript</li>
-                            <li>Tailwind CSS</li>
-                        </ul>
-                    </div>
-                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">AI</h4>
-                        <ul class="text-sm text-on-surface-variant space-y-1.5">
-                            <li>RAG &amp; embeddings</li>
-                            <li>Groq / Llama 3–4</li>
-                            <li>Semantic search</li>
-                            <li>Multi-provider LLM APIs</li>
-                        </ul>
-                    </div>
-                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Web3 · Sui</h4>
-                        <ul class="text-sm text-on-surface-variant space-y-1.5">
-                            <li>Move smart contracts</li>
-                            <li>Mysten dapp-kit · PTBs</li>
-                            <li>Agent treasuries · x402</li>
-                            <li>Wallet auth · settlement</li>
-                        </ul>
-                    </div>
-                    <div class="p-5 bg-surface-container-low rounded-xl border border-outline-variant/40">
-                        <h4 class="font-label text-[10px] uppercase tracking-widest text-primary mb-3">Ops &amp; security</h4>
-                        <ul class="text-sm text-on-surface-variant space-y-1.5">
-                            <li>Docker · CI/CD</li>
-                            <li>OAuth / JWT</li>
-                            <li>API hardening</li>
-                            <li>Solidity · Storj</li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="stack.html" class="inline-flex items-center gap-2 mt-6 text-primary font-medium text-sm group">
-                    Full technology map
-                    <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-24 md:py-32 px-6 md:px-8 bg-surface-container-low border-t border-outline-variant/40">
-        <div class="max-w-3xl mx-auto text-center">
-            <span class="font-label text-[11px] uppercase tracking-[0.2em] text-primary mb-4 block">Contact</span>
-            <h2 class="font-headline text-3xl md:text-5xl mb-6">Let’s talk about the next role</h2>
-            <p class="text-on-surface-variant leading-relaxed mb-10 max-w-xl mx-auto">
-                Open to fullstack, backend, AI, and Web3/Sui roles. Happy to walk through architecture on
-                SEAL, Otter, DSpace, Asguard, or any system in the portfolio.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="mailto:chinwokennedy9@gmail.com"
-                    class="bg-primary text-on-primary px-8 py-3.5 rounded-lg font-semibold hover:bg-on-surface transition-colors">
-                    chinwokennedy9@gmail.com
-                </a>
-                <a href="tel:+2349137068463"
-                    class="border border-outline-variant bg-surface-container-lowest px-8 py-3.5 rounded-lg font-semibold hover:border-primary/40 transition-colors">
-                    +234 913 706 8463
-                </a>
-                <a href="Kennedy_Chinwo_Resume.pdf"
-                    class="text-primary font-semibold border-b border-primary/30 pb-0.5 hover:border-primary">
-                    Download CV
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-outline-variant/50 bg-surface-container-lowest">
-        <div class="max-w-7xl mx-auto px-6 md:px-8 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="font-headline text-lg text-on-surface">Kennedy Chinwo</div>
-            <p class="font-label text-xs uppercase tracking-wider text-on-surface-variant">
-                © 2026 · Port Harcourt, Nigeria
-            </p>
-            <div class="flex gap-6">
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
-                    href="https://github.com/org-cyber" target="_blank" rel="noopener">GitHub</a>
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
-                    href="mailto:chinwokennedy9@gmail.com">Email</a>
-                <a class="font-label text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors"
-                    href="projects.html">Projects</a>
-            </div>
-        </div>
-    </footer>
+  <script src="assets/js/portfolio.js"></script>
 </body>
-
 </html>
