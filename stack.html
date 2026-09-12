@@ -6,14 +6,14 @@
   <title>Stack | Kennedy Chinwo</title>
   <meta name="description"
     content="Technology stack and engineering toolkit used by Kennedy Chinwo — Go, Next.js, AI/RAG, Sui Move, Firebase, Docker, security." />
-  <meta name="theme-color" content="#08090c" />
+  <meta name="theme-color" content="#FFF9E6" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/portfolio.css" />
   <style>
-    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24; font-size: 1.75rem; line-height: 1; }
+    .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; font-size: 1.75rem; line-height: 1; }
     .layer-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
@@ -34,35 +34,44 @@
       margin-bottom: 1.25rem;
     }
     .layer__icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
       display: grid;
       place-items: center;
-      background: var(--accent-dim);
-      color: var(--accent);
+      background: var(--ink);
+      color: #fff;
       margin-bottom: 0.85rem;
+      border: 2.5px solid var(--ink);
+      box-shadow: 2px 2px 0 var(--ink);
+      transform: rotate(-3deg);
     }
     .layer h2 {
       font-family: var(--font-display);
       font-size: clamp(1.35rem, 2.5vw, 1.85rem);
-      font-weight: 600;
-      letter-spacing: -0.03em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
     .layer__tag {
       font-family: var(--font-mono);
       font-size: 0.65rem;
-      letter-spacing: 0.12em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--faint);
+      color: var(--ink);
+      background: var(--yellow);
+      border: 1.5px solid var(--ink);
+      padding: 3px 7px;
+      border-radius: 999px;
       white-space: nowrap;
     }
     .layer p {
-      color: var(--muted);
+      color: #4A4A55;
       font-size: 0.925rem;
       line-height: 1.7;
       margin-bottom: 1.25rem;
       max-width: 52ch;
+      font-weight: 600;
     }
     .kv {
       display: grid;
@@ -72,30 +81,32 @@
     .kv dt {
       font-family: var(--font-mono);
       font-size: 0.6rem;
-      letter-spacing: 0.12em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--coral);
       margin-bottom: 0.3rem;
     }
     .kv dd {
       font-family: var(--font-display);
       font-size: 1.05rem;
-      font-weight: 500;
+      font-weight: 700;
       letter-spacing: -0.02em;
     }
     .kv-stack { display: flex; flex-direction: column; gap: 1.15rem; }
     .kv-stack dt {
       font-family: var(--font-mono);
       font-size: 0.6rem;
-      letter-spacing: 0.12em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--coral);
       margin-bottom: 0.25rem;
     }
     .kv-stack dd {
       font-family: var(--font-display);
       font-size: 1.05rem;
-      font-weight: 500;
+      font-weight: 700;
     }
     .mini-grid {
       display: grid;
@@ -104,23 +115,30 @@
     }
     .mini {
       padding: 1.15rem 1.25rem;
-      border-radius: 0;
-      background: rgba(255,255,255,0.03);
-      border-left: 2px solid var(--accent);
+      border-radius: 14px;
+      background: #fff;
+      border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0 var(--ink);
     }
     .mini h4 {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--ink);
       margin-bottom: 0.55rem;
+      background: var(--yellow);
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1.5px solid var(--ink);
     }
     .mini p {
       font-family: var(--font-display);
       font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-soft);
+      font-weight: 700;
+      color: var(--ink);
       margin: 0 0 0.25rem;
       max-width: none;
     }
@@ -130,17 +148,23 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.85rem 0;
-      border-bottom: 1px solid var(--glass-border);
+      border-bottom: 2px dashed rgba(26,26,30,0.14);
       font-size: 0.925rem;
+      font-weight: 700;
       list-style: none;
     }
     .row-list li:last-child { border-bottom: none; padding-bottom: 0; }
     .row-list span {
       font-family: var(--font-mono);
       font-size: 0.6rem;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--faint);
+      color: var(--muted);
+      background: var(--surface-2);
+      border: 1.5px solid var(--ink);
+      padding: 2px 6px;
+      border-radius: 999px;
     }
     @media (max-width: 900px) {
       .layer--wide, .layer--narrow, .layer--half { grid-column: span 12; }
@@ -154,8 +178,9 @@
 <body>
   <div class="ambient" aria-hidden="true">
     <div class="ambient__grid"></div>
-    <div class="ambient__orb ambient__orb--1"></div>
-    <div class="ambient__orb ambient__orb--2"></div>
+    <div class="ambient__orb ambient__orb--1" data-parallax data-speed="0.12"></div>
+    <div class="ambient__orb ambient__orb--2" data-parallax data-speed="0.22"></div>
+    <div class="ambient__orb ambient__orb--3" data-parallax data-speed="0.30"></div>
   </div>
   <div class="cursor-glow" aria-hidden="true"></div>
   <div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill"></div></div>
