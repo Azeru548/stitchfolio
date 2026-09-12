@@ -279,6 +279,13 @@ button { font: inherit; border: none; background: none; cursor: pointer; color: 
   box-shadow: 2px 2px 0 var(--ink);
   transform: rotate(-8deg);
 }
+img.nav__mark {
+  display: block;
+  object-fit: cover;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
 .nav__links { display: flex; align-items: center; gap: 0.15rem; }
 .nav__links a {
   font-family: var(--font-display);
