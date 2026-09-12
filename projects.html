@@ -3,10 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects | Kennedy Chinwo</title>
-  <meta name="description"
-    content="Selected engineering work by Kennedy Chinwo — Sui agent treasuries, fraud detection, enterprise RAG, real estate SaaS, TTS systems, and developer tooling." />
+  <title>Projects — Kennedy Azeru | Backend, AI & Sui Move Case Studies</title>
+  <meta name="description" content="Eight systems by Kennedy Azeru — Sui treasuries (SEAL, Otter), DSpace, Asguard fraud detection, Azeru RAG, Hauser, Koe TTS and Vpipe CLI." />
+  <meta name="author" content="Kennedy Azeru" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#FFF9E6" />
+  <link rel="canonical" href="https://kennedyazeru.space/projects.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects — Kennedy Azeru | Backend, AI & Sui Move Case Studies" />
+  <meta property="og:description" content="Eight systems by Kennedy Azeru — Sui treasuries (SEAL, Otter), DSpace, Asguard fraud detection, Azeru RAG, Hauser, Koe TTS and Vpipe CLI." />
+  <meta property="og:url" content="https://kennedyazeru.space/projects.html" />
+  <meta property="og:image" content="https://kennedyazeru.space/favicon.png" />
+  <meta property="og:image:alt" content="Kennedy Azeru — Portfolio" />
+  <meta property="og:site_name" content="Kennedy Azeru" />
+  <meta property="og:locale" content="en_NG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects — Kennedy Azeru | Backend, AI & Sui Move Case Studies" />
+  <meta name="twitter:description" content="Eight systems by Kennedy Azeru — Sui treasuries (SEAL, Otter), DSpace, Asguard fraud detection, Azeru RAG, Hauser, Koe TTS and Vpipe CLI." />
+  <meta name="twitter:image" content="https://kennedyazeru.space/favicon.png" />
+  <meta name="twitter:creator" content="@org-cyber" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="favicon.png" />
@@ -151,6 +167,95 @@
       }
     }
   </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://kennedyazeru.space/#person",
+  "name": "Kennedy Azeru",
+  "alternateName": "Kennedy Chinwo",
+  "givenName": "Kennedy",
+  "familyName": "Azeru",
+  "jobTitle": [
+    "Backend Engineer",
+    "AI Engineer"
+  ],
+  "description": "Backend and AI Engineer, B.Tech Cybersecurity (FUTO). Builds production Go backends, RAG and LLM systems, and Sui Move smart contracts for secure on-chain settlement.",
+  "url": "https://kennedyazeru.space/",
+  "image": "https://kennedyazeru.space/IMG_0072.jpeg",
+  "email": "mailto:chinwokennedy9@gmail.com",
+  "telephone": "+2349137068463",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Port Harcourt",
+    "addressCountry": "NG"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Federal University of Technology, Owerri (FUTO)"
+  },
+  "knowsAbout": [
+    "Go",
+    "Gin",
+    "PostgreSQL",
+    "Next.js",
+    "TypeScript",
+    "RAG",
+    "Vector Search",
+    "LLM",
+    "Sui Move",
+    "Firebase",
+    "Docker",
+    "Cybersecurity",
+    "Web3"
+  ],
+  "sameAs": [
+    "https://github.com/org-cyber"
+  ],
+  "knowsLanguage": [
+    "en"
+  ]
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://kennedyazeru.space/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Projects",
+      "item": "https://kennedyazeru.space/projects.html"
+    }
+  ]
+}
+  </script>
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://kennedyazeru.space/sitemap.xml" />
+
+  <!-- Guard: preview / non-canonical hosts -> noindex (keeps kennedyazeru.space as only indexable) -->
+  <script>
+    (function(){
+      var host = location.hostname;
+      var canonicalHosts = ['kennedyazeru.space','www.kennedyazeru.space'];
+      if (canonicalHosts.indexOf(host) === -1 && host !== '' && host !== 'localhost' && host !== '127.0.0.1') {
+        var m=document.querySelector('meta[name="robots"]');
+        if(m) m.setAttribute('content','noindex, nofollow');
+        else { m=document.createElement('meta'); m.name='robots'; m.content='noindex, nofollow'; document.head.appendChild(m); }
+      }
+      // Enforce www -> non-www canonical preference via hint (server 301 should handle, JS fallback)
+      if (host === 'www.kennedyazeru.space') {
+        var c=document.querySelector('link[rel="canonical"]');
+        if(c) c.href='https://kennedyazeru.space' + location.pathname.replace(/index\.html$/,'').replace(/\.html$/,'.html');
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -165,7 +270,7 @@
   <header class="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
-        <img class="nav__mark" src="favicon-32.png" alt="KC" width="32" height="32" style="object-fit:cover; padding:0;" />
+        <img class="nav__mark" src="favicon-32.png" alt="Kennedy Azeru" width="32" height="32" style="object-fit:cover; padding:0;" />
         Kennedy Chinwo
       </a>
       <nav class="nav__links" aria-label="Primary">
@@ -270,7 +375,7 @@
         <!-- Asguard -->
         <article class="card study study--media reveal">
           <div class="study__media">
-            <video src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
+            <video preload="metadata" playsinline src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
           </div>
           <div class="study__body">
             <div class="study__num">01 · AI · Fintech risk</div>
@@ -294,7 +399,7 @@
         <!-- Azeru -->
         <article class="card study study--media flip reveal">
           <div class="study__media">
-            <video src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
+            <video preload="metadata" playsinline src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
           </div>
           <div class="study__body">
             <div class="study__num">02 · RAG · Document intelligence</div>
@@ -318,7 +423,7 @@
         <!-- Hauser -->
         <article class="card study study--media reveal">
           <div class="study__media">
-            <video src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+            <video preload="metadata" playsinline src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
           </div>
           <div class="study__body">
             <div class="study__num">03 · SaaS · Real estate</div>

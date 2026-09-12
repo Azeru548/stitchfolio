@@ -1,0 +1,19 @@
+# robots.txt for https://kennedyazeru.space
+# Production canonical is https://kennedyazeru.space (non-www preferred)
+# www.kennedyazeru.space should 301 redirect to https://kennedyazeru.space via DNS/CDN
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kennedyazeru.space/sitemap.xml
+
+# Host directive for canonical domain (Bing/Yandex)
+Host: https://kennedyazeru.space
+
+# Disallow preview / draft paths if ever present
+User-agent: *
+Disallow: /*?preview=*
+Disallow: /*?draft=*
+
+# Crawl-delay not needed for this site
