@@ -322,32 +322,9 @@
           </a>
         </div>
 
-        <div class="div-label reveal"><span>Web3 · Sui</span></div>
+        <div class="div-label reveal"><span>Shipped &amp; live</span></div>
         <div class="proj-row">
-          <a href="seal.html" class="card card--lift proj-mini reveal">
-            <span class="chip">Agent treasury</span>
-            <h3>SEAL</h3>
-            <p>Non-custodial AI billing on Sui: one API key, multi-provider routing, hard spend caps enforced by Move, velocity pause, and x402-ready gateway.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">Move</span>
-              <span class="chip chip--neutral">TypeScript</span>
-              <span class="chip chip--neutral">Next.js</span>
-              <span class="chip chip--neutral">x402</span>
-            </div>
-            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-          <a href="otter.html" class="card card--lift proj-mini reveal reveal-d1">
-            <span class="chip">Hierarchical agents</span>
-            <h3>Otter</h3>
-            <p>Programmable bank accounts for AI agents: master/child treasuries, on-chain settlement per inference, atomic reclaim, and TypeScript/Python SDKs.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">Sui Move</span>
-              <span class="chip chip--neutral">Node gateway</span>
-              <span class="chip chip--neutral">Python SDK</span>
-            </div>
-            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-          <a href="dspace.html" class="card card--lift proj-mini reveal reveal-d2">
+          <a href="dspace.html" class="card card--lift proj-mini reveal">
             <span class="chip">Social dApp</span>
             <h3>DSpace</h3>
             <p>SuiPod Chat — hybrid decentralized collab: wallet identity, on-chain pods, Firebase realtime messaging, and in-chat SUI transfers.</p>
@@ -358,21 +335,56 @@
             </div>
             <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
+          <a href="projects.html#proj-cgen" class="card card--lift proj-mini reveal reveal-d1">
+            <span class="chip">AI · CAD</span>
+            <h3>Cgen</h3>
+            <p>Natural language → validated STEP/STL CAD files. Groq specs, Pydantic guardrails, deterministic CadQuery geometry.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">Python</span>
+              <span class="chip chip--neutral">Groq</span>
+              <span class="chip chip--neutral">CadQuery</span>
+            </div>
+            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a href="projects.html#proj-present" class="card card--lift proj-mini reveal reveal-d2">
+            <span class="chip">SaaS · Attendance</span>
+            <h3>Present</h3>
+            <p>Geo + face-verified lecture attendance. Next.js and Firebase with on-device recognition — faces never leave the browser.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">Firebase</span>
+              <span class="chip chip--neutral">MediaPipe</span>
+            </div>
+            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
         </div>
 
         <div class="div-label reveal"><span>AI · Fullstack · Tools</span></div>
 
-        <a href="asguard.html" class="card card--lift proj-feature reveal">
+        <article class="card card--lift proj-feature reveal">
           <div class="proj-feature__media">
-            <video preload="metadata" playsinline src="screen_1773947235709.mp4" autoplay loop muted playsinline></video>
+            <div class="live-preview">
+              <div class="live-preview__bar">
+                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="live-preview__url">asguard.netlify.app</span>
+                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
+                <a class="live-preview__open" href="https://asguard.netlify.app" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+              <div class="live-preview__stage">
+                <div class="live-preview__scaler">
+                  <iframe src="https://asguard.netlify.app" title="Live preview of the Asguard website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
+                </div>
+                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+              </div>
+            </div>
           </div>
           <div class="proj-feature__body">
             <span class="chip chip--teal">01 · Fraud detection</span>
             <h3>Asguard</h3>
             <p>Real-time transaction fraud pipeline combining rule-based scoring with AI risk assessment. Flags high-risk events and generates natural-language summaries at sub-second latency.</p>
-            <span class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="asguard.html" class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-        </a>
+        </article>
 
         <a href="azeru.html" class="card card--lift proj-feature proj-feature--flip reveal">
           <div class="proj-feature__media">
@@ -386,34 +398,55 @@
           </div>
         </a>
 
-        <a href="hauser.html" class="card card--lift proj-feature reveal">
+        <article class="card card--lift proj-feature reveal">
           <div class="proj-feature__media">
-            <video preload="metadata" playsinline src="screen_1774120647093.mp4" autoplay loop muted playsinline></video>
+            <div class="live-preview">
+              <div class="live-preview__bar">
+                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="live-preview__url">hauserhomes.xyz</span>
+                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
+                <a class="live-preview__open" href="https://hauserhomes.xyz" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+              <div class="live-preview__stage">
+                <div class="live-preview__scaler">
+                  <iframe src="https://hauserhomes.xyz" title="Live preview of the Hauser website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
+                </div>
+                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+              </div>
+            </div>
           </div>
           <div class="proj-feature__body">
             <span class="chip chip--teal">03 · Real estate SaaS</span>
             <h3>Hauser</h3>
             <p>Property marketplace for the Nigerian market with role-aware onboarding, dynamic listings, real-time Firestore sync, and click analytics for premium tiers.</p>
-            <span class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <a href="hauser.html" class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
-        </a>
+        </article>
 
         <div class="proj-row" style="margin-top: 1rem;">
-          <a href="koe.html" class="card card--lift proj-mini reveal">
-            <span class="chip">04 · AI audio</span>
-            <h3>Koe</h3>
-            <p>Dual-engine TTS studio: Azure Neural voices plus offline Piper via Docker, with WebSocket streaming and runtime engine switching.</p>
-            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <a href="projects.html#proj-vouch" class="card card--lift proj-mini reveal">
+            <span class="chip">Verification</span>
+            <h3>Vouch</h3>
+            <p>Point your phone at a pack: NAFDAC/PPB registry verdicts with vision-AI reads, hazard alerts and community reports.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">JavaScript</span>
+              <span class="chip chip--neutral">Vision AI</span>
+            </div>
+            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
-          <a href="vpipe.html" class="card card--lift proj-mini reveal reveal-d1">
-            <span class="chip">05 · Developer tools</span>
-            <h3>Vpipe</h3>
-            <p>Go CLI that pipes build errors into multi-provider LLMs, auto-sanitizes 20+ secret patterns, and truncates context to stay inside token budgets.</p>
-            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <a href="projects.html#proj-energy" class="card card--lift proj-mini reveal reveal-d1">
+            <span class="chip">Enterprise</span>
+            <h3>Absolute Energy</h3>
+            <p>Corporate website for an oil &amp; gas enterprise client — company profile, service lines and enquiry capture.</p>
+            <div class="proj-mini__tags">
+              <span class="chip chip--neutral">Corporate site</span>
+              <span class="chip chip--neutral">Responsive</span>
+            </div>
+            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
           <div class="card proj-mini reveal reveal-d2" style="display:flex;align-items:center;justify-content:center;text-align:center;border-style:dashed;">
             <div>
-              <p class="muted" style="font-size:0.9rem;margin-bottom:1rem;">Eight systems. Full write-ups on architecture and tradeoffs.</p>
+              <p class="muted" style="font-size:0.9rem;margin-bottom:1rem;">Eight shipped systems — most cards carry a live, scrollable preview of the real site.</p>
               <a href="projects.html" class="btn btn--ghost pressable">Browse all projects</a>
             </div>
           </div>
@@ -536,8 +569,8 @@
           <span class="eyebrow" style="justify-content:center;">Contact</span>
           <h2 class="display">Let’s talk about the next role</h2>
           <p class="lead">
-            Open to fullstack, backend, AI, and Web3/Sui roles. Happy to walk through
-            architecture on SEAL, Otter, DSpace, Asguard, or any system in the portfolio.
+            Open to fullstack, backend, AI, and Web3 roles. Happy to walk through
+            architecture on Asguard, Cgen, Present, Vouch, or any system in the portfolio.
           </p>
           <div class="contact-actions">
             <a href="mailto:chinwokennedy9@gmail.com" class="btn btn--primary pressable">chinwokennedy9@gmail.com</a>

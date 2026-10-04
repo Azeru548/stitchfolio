@@ -337,3 +337,64 @@
     m.style.animationDelay = i * 0.08 + "s";
   });
 })();
+
+/* ── Live website previews: fit scaled iframe + click-to-interact ──
+   Iframe renders at desktop width (1280px) and is scaled to the card.
+   pointer-events stay off so the page scrolls normally; clicking the
+   pill enables interaction, mouse-leave / Esc releases it. */
+(function () {
+  "use strict";
+
+  const VW = 1280;
+  const VH = 800;
+  const frames = document.querySelectorAll(".live-preview");
+  if (!frames.length) return;
+
+  function fit(frame) {
+    const stage = frame.querySelector(".live-preview__stage");
+    const scaler = frame.querySelector(".live-preview__scaler");
+    if (!stage || !scaler) return;
+    const w = stage.clientWidth;
+    if (!w) return;
+    const s = w / VW;
+    scaler.style.transform = "scale(" + s + ")";
+    stage.style.height = Math.round(VH * s) + "px";
+    stage.style.aspectRatio = "auto";
+  }
+  function fitAll() {
+    frames.forEach(fit);
+  }
+
+  frames.forEach((frame) => {
+    const btn = frame.querySelector(".live-preview__engage");
+    const stage = frame.querySelector(".live-preview__stage");
+    const engageLabel = btn ? btn.innerHTML : "";
+    function setLive(on) {
+      frame.classList.toggle("is-live", on);
+      if (btn) btn.innerHTML = on ? "Release &#10005;" : engageLabel;
+    }
+    if (btn) {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setLive(!frame.classList.contains("is-live"));
+      });
+    }
+    if (stage) {
+      stage.addEventListener("mouseleave", () => setLive(false));
+    }
+    frame.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setLive(false);
+    });
+  });
+
+  fitAll();
+  window.addEventListener("resize", fitAll);
+  window.addEventListener("load", fitAll);
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(fitAll);
+    frames.forEach((f) => ro.observe(f));
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fitAll);
+  }
+})();

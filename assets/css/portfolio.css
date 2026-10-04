@@ -1237,3 +1237,53 @@ img.nav__mark {
 @media (prefers-reduced-motion: no-preference) {
   .ambient__orb { transition: transform 0.35s var(--ease-out); }
 }
+
+/* ── Live website previews inside project cards ──
+   Real site in a scaled iframe + browser chrome.
+   Click the pill to scroll/interact; mouse-leave or Esc releases. */
+.live-preview { background: #fff; display: flex; flex-direction: column; height: 100%; }
+.live-preview__bar {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding: 0.55rem 0.8rem;
+  background: var(--surface-2);
+  border-bottom: 2.5px solid var(--ink);
+  font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700;
+}
+.live-preview__dots { display: inline-flex; gap: 4px; flex: none; }
+.live-preview__dots i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--ink); background: var(--coral); }
+.live-preview__dots i:nth-child(2) { background: var(--yellow); }
+.live-preview__dots i:nth-child(3) { background: var(--mint); }
+.live-preview__url {
+  background: #fff; border: 1.5px solid var(--ink); border-radius: 999px;
+  padding: 1px 9px; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; flex: 1; min-width: 0;
+}
+.live-preview__live {
+  display: inline-flex; align-items: center; gap: 5px; flex: none;
+  text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.6rem;
+}
+.live-preview__pulse { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; border: 1.5px solid var(--ink); animation: live-pulse 1.6s ease-in-out infinite; }
+@keyframes live-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.live-preview__open { margin-left: auto; background: var(--ink); color: #fff; border-radius: 999px; padding: 2px 10px; white-space: nowrap; flex: none; }
+.live-preview__stage { position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: #fff; }
+.live-preview__scaler { width: 1280px; transform-origin: top left; }
+.live-preview__scaler iframe { width: 1280px; height: 800px; border: 0; display: block; pointer-events: none; background: #fff; }
+.live-preview.is-live .live-preview__scaler iframe { pointer-events: auto; }
+.live-preview__engage {
+  position: absolute; left: 50%; bottom: 12px; transform: translateX(-50%) rotate(-1deg);
+  font-family: var(--font-display); font-weight: 700; font-size: 0.85rem; color: var(--ink);
+  background: var(--yellow); border: 2px solid var(--ink); border-radius: 999px;
+  padding: 0.4rem 1rem; box-shadow: 2px 2px 0 var(--ink); cursor: pointer;
+  transition: transform 0.18s var(--ease-spring), background 0.18s; white-space: nowrap;
+}
+.live-preview__engage:hover { transform: translateX(-50%) rotate(0deg) scale(1.04); }
+.live-preview.is-live .live-preview__engage { background: var(--ink); color: #fff; }
+/* Hosts that forbid framing (X-Frame-Options / frame-ancestors): branded open-link panel */
+.live-preview__static {
+  min-height: 300px; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 1rem; text-align: center; padding: 2.2rem 1.5rem;
+  background: radial-gradient(circle, rgba(26,26,30,0.07) 1.6px, transparent 1.7px), var(--surface-2);
+  background-size: 22px 22px;
+}
+.live-preview__static-note { font-weight: 700; color: #4A4A55; font-size: 0.92rem; line-height: 1.65; max-width: 36ch; }
+@media (prefers-reduced-motion: reduce) { .live-preview__pulse { animation: none; } }
