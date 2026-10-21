@@ -79,6 +79,9 @@
     "Firebase",
     "Docker",
     "Cybersecurity",
+    "Malware Analysis",
+    "Reverse Engineering",
+    "YARA",
     "Web3"
   ],
   "sameAs": [
@@ -151,9 +154,9 @@
 
   <nav class="step-dots" aria-label="Section progress">
     <a href="#top" data-label="Intro" class="is-active"></a>
-    <a href="#capabilities" data-label="Craft"></a>
-    <a href="#work" data-label="Work"></a>
-    <a href="#experience" data-label="Path"></a>
+    <a href="#capabilities" data-label="Craft"></a>        <a href="#work" data-label="Work"></a>
+        <a href="#security" data-label="Security"></a>
+        <a href="#experience" data-label="Path"></a>
     <a href="#contact" data-label="Connect"></a>
   </nav>
 
@@ -168,6 +171,7 @@
         <a href="projects.html">Projects</a>
         <a href="services.html">Pricing/Services</a>
         <a href="stack.html">Stack</a>
+        <a href="#security">Security</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -454,6 +458,77 @@
       </div>
     </section>
 
+    <!-- SECURITY RESEARCH -->
+    <section class="section" id="security" data-step>
+      <div class="shell">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Security research</span>
+            <h2 class="display">I take malware apart — and publish the whole record</h2>
+          </div>
+          <p class="aside reveal reveal-d1">
+            B.Tech Cybersecurity (FUTO). Two investigations of real specimens —
+            timeline, mechanism, detection — published live with source, IOCs and
+            YARA rules. No CTFs, no toy binaries.
+          </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;align-items:stretch;">
+          <!-- Orphancy — VB6 replicator -->
+          <article class="card card--lift report-card reveal">
+            <div class="live-preview">
+              <div class="live-preview__bar">
+                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="live-preview__url">malware.kennedyazeru.space</span>
+                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
+                <a class="live-preview__open" href="https://malware.kennedyazeru.space" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+              <div class="live-preview__stage">
+                <a href="https://malware.kennedyazeru.space" target="_blank" rel="noopener" aria-label="Read the Orphancy forensic report">
+                  <img src="assets/img/security-orphancy.png" alt="Screenshot of the Orphancy report — Every Executable Was a Copy: a VB6 replicator forensic write-up" loading="lazy" decoding="async" width="1263" height="800" />
+                </a>
+              </div>
+            </div>
+            <div class="report-card__body">
+              <span class="chip">Incident report · VB6 replicator</span>
+              <h3>Every Executable Was a Copy</h3>
+              <p>A six-year-old Visual Basic 6 binary replaced 92 executables on one Windows machine in eleven seconds — preserving every file’s creation time so the infection window stayed invisible. The complete forensic record: timeline, patient zero, and why hash-only detection missed 3 of 10 samples.</p>
+              <p>No C2, no second stage — every infected binary was its own persistence.</p>
+              <div class="report-card__links">
+                <a href="https://malware.kennedyazeru.space" target="_blank" rel="noopener">Read the report ↗</a>
+                <a href="https://github.com/Azeru548/malware-poc" target="_blank" rel="noopener">Source · IOCs · YARA ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- NGL — fake-message engine -->
+          <article class="card card--lift report-card reveal reveal-d1">
+            <div class="live-preview">
+              <div class="live-preview__bar">
+                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="live-preview__url">malware.kennedyazeru.space/ngl</span>
+                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
+                <a class="live-preview__open" href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+              <div class="live-preview__stage">
+                <a href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener" aria-label="Read the NGL reverse-engineering dossier">
+                  <img src="assets/img/security-ngl.png" alt="Screenshot of the NGL dossier — Manufactured Longing: inside NGL's fake-message engine" loading="lazy" decoding="async" width="1263" height="800" />
+                </a>
+              </div>
+            </div>
+            <div class="report-card__body">
+              <span class="chip">RE dossier · Android app</span>
+              <h3>Manufactured Longing</h3>
+              <p>Inside NGL’s fake-message engine: how the anonymous-question app generates the very “someone likes you?” messages it then charges you to unmask. A full teardown of the 64.2 MB APK — 59.3 MB of decompiled JavaScript, zero native libraries, 24 scheduled firing slots.</p>
+              <div class="report-card__links">
+                <a href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener">Read the dossier ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section class="section" id="experience" data-step>
       <div class="shell">
@@ -542,7 +617,7 @@
       </div>
     </section>
 
-    <!-- SECURITY RESEARCH / BEYOND THE CODE -->
+    <!-- BEYOND THE CODE — free-alternative tinkerer (security research has its own section above) -->
     <section class="section" id="beyond" data-step>
       <div class="shell">
         <div class="section-head">
@@ -551,17 +626,12 @@
             <h2 class="display">Hobbies &amp; interests</h2>
           </div>
           <p class="aside reveal reveal-d1">
-            What I do for fun happens to sharpen what I ship: taking things apart,
-            and making expensive tooling free.
+            Security research lives in its own section above. The other habit that
+            sharpens what I ship: making expensive tooling free.
           </p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;">
+        <div style="display:grid;grid-template-columns:1fr;max-width:720px;gap:1rem;">
           <article class="card card--lift card--tilt cap-card reveal">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">pest_control</span></div>
-            <h3>Malware reverse engineering</h3>
-            <p>I love taking executables and apps apart to find out how they work — a six-year-old VB6 file replicator, and the NGL anonymous-messaging app’s fake-message engine. Full forensic write-ups live at <a href="https://malware.kennedyazeru.space" target="_blank" rel="noopener">malware.kennedyazeru.space</a> — including the <a href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener">NGL reverse-engineering report</a> — with source, IOCs and YARA rules at <a href="https://github.com/Azeru548/malware-poc" target="_blank" rel="noopener">github.com/Azeru548/malware-poc</a>.</p>
-          </article>
-          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
             <div class="cap-card__icon"><span class="material-symbols-outlined">sync</span></div>
             <h3>Free-alternative tinkerer</h3>
             <p>I port paid and proprietary tooling to open, free equivalents — agent workflows from Claude Code to OpenCode, the Cyber Strike security harness ported to OpenCode, and Koe’s native MCP server built as a free alternative to ElevenLabs, because paying for API access should never be the entry ticket.</p>

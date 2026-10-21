@@ -1287,3 +1287,57 @@ img.nav__mark {
 }
 .live-preview__static-note { font-weight: 700; color: #4A4A55; font-size: 0.92rem; line-height: 1.65; max-width: 36ch; }
 @media (prefers-reduced-motion: reduce) { .live-preview__pulse { animation: none; } }
+
+/* — Security research: report cards (screenshot of each live write-up) — */
+.report-card { display: flex; flex-direction: column; }
+.report-card .live-preview { flex: none; border-bottom: 2.5px solid var(--ink); }
+.live-preview__stage a { display: block; width: 100%; height: 100%; }
+.live-preview__stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s var(--ease-spring);
+}
+.report-card:hover .live-preview__stage img { transform: scale(1.04); }
+.report-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.35rem 1.5rem 1.5rem;
+}
+.report-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0.8rem 0 0.55rem;
+}
+.report-card__body p {
+  color: #4A4A55;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+.report-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+}
+.report-card__links a {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+  border: 2px solid var(--ink);
+  padding: 4px 11px;
+  border-radius: 999px;
+  box-shadow: 1.5px 1.5px 0 var(--ink);
+  transition: all 0.18s var(--ease-spring);
+}
+.report-card__links a:hover { background: var(--yellow); transform: translate(-1px,-1px); }
