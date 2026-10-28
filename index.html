@@ -475,7 +475,7 @@
           </p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.25rem;align-items:stretch;">
+        <div class="report-grid">
           <!-- Orphancy — VB6 replicator -->
           <article class="card card--lift report-card reveal">
             <div class="live-preview">
@@ -487,7 +487,7 @@
               </div>
               <div class="live-preview__stage">
                 <a href="https://malware.kennedyazeru.space" target="_blank" rel="noopener" aria-label="Read the Orphancy forensic report">
-                  <img src="assets/img/security-orphancy.png" alt="Screenshot of the Orphancy report — Every Executable Was a Copy: a VB6 replicator forensic write-up" loading="lazy" decoding="async" width="1263" height="800" />
+                  <img src="assets/img/security-orphancy.png" alt="Screenshot of the Orphancy report — Every Executable Was a Copy" loading="lazy" decoding="async" width="1263" height="560" />
                 </a>
               </div>
             </div>
@@ -499,7 +499,8 @@
                 <div class="report-card__stat"><strong>11s</strong><span>Infection window</span></div>
                 <div class="report-card__stat"><strong>6 yrs</strong><span>Quiet persistence</span></div>
               </div>
-              <p>A Visual Basic 6 binary rewrote the tools on one Windows machine while preserving every file’s creation time — so the infection window stayed invisible. Full forensic record: timeline, patient zero, and why hash-only detection missed 3 of 10 samples.</p>
+              <p>A six-year-old Visual Basic 6 binary replaced 92 executables on one Windows machine in eleven seconds — preserving every file’s creation time so the infection window stayed invisible. The complete forensic record: timeline, patient zero, and why hash-only detection missed 3 of 10 samples.</p>
+              <p>No C2, no second stage — every infected binary was its own persistence.</p>
               <div class="report-card__links">
                 <a href="https://malware.kennedyazeru.space" target="_blank" rel="noopener">Read the report ↗</a>
                 <a href="https://github.com/Azeru548/malware-poc" target="_blank" rel="noopener">Source · IOCs · YARA ↗</a>
@@ -518,7 +519,7 @@
               </div>
               <div class="live-preview__stage">
                 <a href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener" aria-label="Read the NGL reverse-engineering dossier">
-                  <img src="assets/img/security-ngl.png" alt="Screenshot of the NGL dossier — Manufactured Longing: inside NGL's fake-message engine" loading="lazy" decoding="async" width="1263" height="800" />
+                  <img src="assets/img/security-ngl.png" alt="Screenshot of the NGL dossier — Manufactured Longing: inside NGL's fake-message engine" loading="lazy" decoding="async" width="1263" height="560" />
                 </a>
               </div>
             </div>
@@ -530,7 +531,7 @@
                 <div class="report-card__stat"><strong>59.3 MB</strong><span>Decompiled JS</span></div>
                 <div class="report-card__stat"><strong>24</strong><span>Firing slots</span></div>
               </div>
-              <p>Inside NGL’s fake-message engine: how the anonymous-question app generates the “someone likes you?” prompts it then charges users to unmask. Zero native libraries — the whole engagement loop lives in scheduled JavaScript.</p>
+              <p>Inside NGL’s fake-message engine: how the anonymous-question app generates the very “someone likes you?” messages it then charges you to unmask. A full teardown of the 64.2 MB APK — 59.3 MB of decompiled JavaScript, zero native libraries, 24 scheduled firing slots.</p>
               <div class="report-card__links">
                 <a href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener">Read the dossier ↗</a>
               </div>
@@ -548,7 +549,7 @@
               </div>
               <div class="live-preview__stage">
                 <a href="https://malware.kennedyazeru.space/grindr" target="_blank" rel="noopener" aria-label="Read the Grindr ad-tech reverse-engineering dossier">
-                  <img src="assets/img/security-grindr.png" alt="Preview of the Grindr dossier — The Hidden Passengers: inside Grindr's ad-tech stack" loading="lazy" decoding="async" width="1263" height="800" />
+                  <img src="assets/img/security-grindr.png" alt="Preview of the Grindr dossier — The Hidden Passengers: inside Grindr's ad-tech stack" loading="lazy" decoding="async" width="1263" height="560" />
                 </a>
               </div>
             </div>
@@ -560,7 +561,7 @@
                 <div class="report-card__stat"><strong>129</strong><span>Telemetry fields</span></div>
                 <div class="report-card__stat"><strong>37</strong><span>Permissions</span></div>
               </div>
-              <p>Static reverse-engineering of Grindr Android build 26.22.0: a multi-vendor ad-tech stack, a continuous 129-field device telemetry pipeline, and behavioural scoring that labels profiles with predictions like “Reply likely.”</p>
+              <p>Static reverse-engineering of the Grindr Android client, build 26.22.0: thirteen advertising and tracking companies, a continuous 129-field device telemetry pipeline, and behavioural scoring that labels other people’s profiles with predictions such as “Reply likely.”</p>
               <div class="report-card__links">
                 <a href="https://malware.kennedyazeru.space/grindr" target="_blank" rel="noopener">Read the dossier ↗</a>
               </div>
