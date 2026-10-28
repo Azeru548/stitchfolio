@@ -40,18 +40,22 @@
     });
   }
 
-  /* ── Step dots ── */
+  /* ── Step dots ──
+     Each [data-step] section names the dot it lights up via data-dot, so the
+     rail stays correct when sections are added, removed or reordered. Sections
+     without a data-dot (e.g. full-width teasers) inherit the last mapped dot. */
   const sections = document.querySelectorAll("[data-step]");
   const dots = document.querySelectorAll(".step-dots a");
   function updateDots() {
     if (!sections.length || !dots.length) return;
-    let active = 0;
     const mid = window.innerHeight * 0.42;
-    sections.forEach((sec, i) => {
-      const r = sec.getBoundingClientRect();
-      if (r.top <= mid) active = i;
+    let active = -1;
+    sections.forEach((sec) => {
+      const key = sec.getAttribute("data-dot");
+      if (!key) return;
+      if (sec.getBoundingClientRect().top <= mid) active = key;
     });
-    dots.forEach((d, i) => d.classList.toggle("is-active", i === active));
+    dots.forEach((d) => d.classList.toggle("is-active", d.dataset.dot === active));
   }
 
   /* ── Bouncy reveal ── */

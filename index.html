@@ -153,11 +153,13 @@
   <div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill"></div></div>
 
   <nav class="step-dots" aria-label="Section progress">
-    <a href="#top" data-label="Intro" class="is-active"></a>
-    <a href="#capabilities" data-label="Craft"></a>        <a href="#work" data-label="Work"></a>
-        <a href="#security" data-label="Security"></a>
-        <a href="#experience" data-label="Path"></a>
-    <a href="#contact" data-label="Connect"></a>
+    <a href="#top" data-dot="intro" data-label="Intro" class="is-active"></a>
+    <a href="#capabilities" data-dot="craft" data-label="Craft"></a>
+    <a href="#work" data-dot="work" data-label="Work"></a>
+    <a href="#security" data-dot="security" data-label="Security"></a>
+    <a href="#experience" data-dot="path" data-label="Path"></a>
+    <a href="#beyond" data-dot="beyond" data-label="Beyond"></a>
+    <a href="#contact" data-dot="contact" data-label="Connect"></a>
   </nav>
 
   <header class="nav">
@@ -169,7 +171,7 @@
       <nav class="nav__links" aria-label="Primary">
         <a href="index.html" class="is-active">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="services.html">Pricing/Services</a>
+        <a href="services.html">Services</a>
         <a href="stack.html">Stack</a>
         <a href="#security">Security</a>
         <a href="#experience">Experience</a>
@@ -184,7 +186,7 @@
 
   <main id="top">
     <!-- HERO — onboarding-style first screen -->
-    <section class="hero" data-step>
+    <section class="hero" data-step data-dot="intro">
       <div class="shell hero__grid">
         <div>
           <div class="hero__badge reveal">
@@ -265,7 +267,7 @@
     </section>
 
     <!-- CAPABILITIES -->
-    <section class="section" id="capabilities" data-step>
+    <section class="section" id="capabilities" data-step data-dot="craft">
       <div class="shell">
         <div class="section-head">
           <div class="reveal">
@@ -313,7 +315,7 @@
     </section>
 
     <!-- WORK -->
-    <section class="section" id="work" data-step>
+    <section class="section" id="work" data-step data-dot="work">
       <div class="shell">
         <div class="section-head">
           <div class="reveal">
@@ -392,7 +394,7 @@
 
         <a href="azeru.html" class="card card--lift proj-feature proj-feature--flip reveal">
           <div class="proj-feature__media">
-            <video preload="metadata" playsinline src="screen_1774120316927.mp4" autoplay loop muted playsinline></video>
+            <video preload="metadata" playsinline src="screen_1774120316927.mp4" autoplay loop muted></video>
           </div>
           <div class="proj-feature__body">
             <span class="chip chip--teal">02 · Enterprise RAG</span>
@@ -459,7 +461,7 @@
     </section>
 
     <!-- SECURITY RESEARCH -->
-    <section class="section" id="security" data-step>
+    <section class="section" id="security" data-step data-dot="security">
       <div class="shell">
         <div class="section-head">
           <div class="reveal">
@@ -530,7 +532,7 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="section" id="experience" data-step>
+    <section class="section" id="experience" data-step data-dot="path">
       <div class="shell">
         <div class="exp-grid">
           <div class="reveal">
@@ -618,7 +620,7 @@
     </section>
 
     <!-- BEYOND THE CODE — free-alternative tinkerer (security research has its own section above) -->
-    <section class="section" id="beyond" data-step>
+    <section class="section" id="beyond" data-step data-dot="beyond">
       <div class="shell">
         <div class="section-head">
           <div class="reveal">
@@ -661,7 +663,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact" data-step>
+    <section class="section" id="contact" data-step data-dot="contact">
       <div class="shell">
         <div class="contact-panel reveal">
           <span class="eyebrow" style="justify-content:center;">Contact</span>

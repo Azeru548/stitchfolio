@@ -2,18 +2,13 @@
 # Production canonical is https://www.kennedyazeru.space (www preferred)
 # kennedyazeru.space should 301 redirect to https://www.kennedyazeru.space via DNS/CDN
 
+# NOTE: keep a single "User-agent: *" group. Multiple groups for the same
+# agent are ambiguous — some crawlers apply only the first, which would
+# silently drop the Disallow rules below.
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://www.kennedyazeru.space/sitemap.xml
-
-# Host directive for canonical domain (Bing/Yandex)
-Host: https://www.kennedyazeru.space
-
-# Disallow preview / draft paths if ever present
-User-agent: *
 Disallow: /*?preview=*
 Disallow: /*?draft=*
 
-# Crawl-delay not needed for this site
+# Sitemap
+Sitemap: https://www.kennedyazeru.space/sitemap.xml
