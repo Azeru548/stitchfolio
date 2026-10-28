@@ -491,6 +491,17 @@
                 </a>
               </div>
             </div>
+            <div class="report-card__gloss">
+              <span class="report-card__gloss__label">Glossary</span>
+              <dl>
+                <dt>VB6</dt>
+                <dd>the 1998 Windows runtime it was built on.</dd>
+                <dt>Replicator</dt>
+                <dd>a worm that self-copies with no command server.</dd>
+                <dt>Creation-time preservation</dt>
+                <dd>keeping a file’s original timestamp while rewriting it.</dd>
+              </dl>
+            </div>
             <div class="report-card__body">
               <span class="chip">Incident report · VB6 replicator</span>
               <h3>Every Executable Was a Copy</h3>
@@ -499,8 +510,6 @@
                 <div class="report-card__stat"><strong>11s</strong><span>Infection window</span></div>
                 <div class="report-card__stat"><strong>6 yrs</strong><span>Quiet persistence</span></div>
               </div>
-              <p>A six-year-old Visual Basic 6 binary replaced 92 executables on one Windows machine in eleven seconds — preserving every file’s creation time so the infection window stayed invisible. The complete forensic record: timeline, patient zero, and why hash-only detection missed 3 of 10 samples.</p>
-              <p>No C2, no second stage — every infected binary was its own persistence.</p>
               <div class="report-card__links">
                 <a href="https://malware.kennedyazeru.space" target="_blank" rel="noopener">Read the report ↗</a>
                 <a href="https://github.com/Azeru548/malware-poc" target="_blank" rel="noopener">Source · IOCs · YARA ↗</a>
@@ -523,6 +532,17 @@
                 </a>
               </div>
             </div>
+            <div class="report-card__gloss">
+              <span class="report-card__gloss__label">Glossary</span>
+              <dl>
+                <dt>APK</dt>
+                <dd>the Android package; 64.2 MB torn down here.</dd>
+                <dt>Native libraries</dt>
+                <dd>compiled C/C++ modules — NGL ships none.</dd>
+                <dt>Firing slot</dt>
+                <dd>a scheduled timer that pushes one fake message.</dd>
+              </dl>
+            </div>
             <div class="report-card__body">
               <span class="chip">RE dossier · Android app</span>
               <h3>Manufactured Longing</h3>
@@ -531,7 +551,6 @@
                 <div class="report-card__stat"><strong>59.3 MB</strong><span>Decompiled JS</span></div>
                 <div class="report-card__stat"><strong>24</strong><span>Firing slots</span></div>
               </div>
-              <p>Inside NGL’s fake-message engine: how the anonymous-question app generates the very “someone likes you?” messages it then charges you to unmask. A full teardown of the 64.2 MB APK — 59.3 MB of decompiled JavaScript, zero native libraries, 24 scheduled firing slots.</p>
               <div class="report-card__links">
                 <a href="https://malware.kennedyazeru.space/ngl" target="_blank" rel="noopener">Read the dossier ↗</a>
               </div>
@@ -553,6 +572,17 @@
                 </a>
               </div>
             </div>
+            <div class="report-card__gloss">
+              <span class="report-card__gloss__label">Glossary</span>
+              <dl>
+                <dt>Ad SDK</dt>
+                <dd>an ad library that shares your device identifiers.</dd>
+                <dt>Telemetry</dt>
+                <dd>device fields shipped off the handset.</dd>
+                <dt>Behavioural score</dt>
+                <dd>a label like “Reply likely” on a profile.</dd>
+              </dl>
+            </div>
             <div class="report-card__body">
               <span class="chip">RE dossier · Dating &amp; ad-tech</span>
               <h3>The Hidden Passengers</h3>
@@ -561,7 +591,6 @@
                 <div class="report-card__stat"><strong>129</strong><span>Telemetry fields</span></div>
                 <div class="report-card__stat"><strong>37</strong><span>Permissions</span></div>
               </div>
-              <p>Static reverse-engineering of the Grindr Android client, build 26.22.0: thirteen advertising and tracking companies, a continuous 129-field device telemetry pipeline, and behavioural scoring that labels other people’s profiles with predictions such as “Reply likely.”</p>
               <div class="report-card__links">
                 <a href="https://malware.kennedyazeru.space/grindr" target="_blank" rel="noopener">Read the dossier ↗</a>
               </div>
