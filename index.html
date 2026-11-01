@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_tree,database,layers,psychology,shield,sync,token" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/portfolio.css" />
   <style>
     .material-symbols-outlined {
@@ -49,8 +49,7 @@
   "givenName": "Kennedy",
   "familyName": "Azeru",
   "jobTitle": [
-    "Software Engineer",
-    "Security Researcher"
+    "Security Researcher", "Software Engineer"
   ],
   "description": "Software engineer and security researcher. Language-agnostic — ships web apps, backends, AI/RAG systems, and Solana & Sui dApps, and publishes malware analysis and reverse-engineering reports.",
   "url": "https://www.kennedyazeru.space/",
@@ -76,6 +75,9 @@
     "Vector Search",
     "LLM",
     "Sui Move",
+    "Rust",
+    "Anchor",
+    "Solana",
     "Firebase",
     "Docker",
     "Cybersecurity",
@@ -141,6 +143,21 @@
       }
     })();
   </script>
+  <style>
+    #capabilities, #experience, #beyond, #services-teaser, #contact {
+      content-visibility: auto; contain-intrinsic-size: auto 800px;
+    }
+    .proj-flex { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .proj-card { flex: 1 1 300px; max-width: calc((100% - 2rem) / 3); padding: 1.25rem;
+      display: flex; flex-direction: column; gap: .6rem;
+      transform: none !important; transition: none !important; animation: none !important; opacity: 1 !important; }
+    .proj-card p { margin: 0; }
+    .proj-card .proj-mini__tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .proj-card__links { margin-top: auto; padding-top: .5rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+    .proj-card a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    @media (max-width: 960px) { .proj-card { max-width: calc((100% - 1rem) / 2); } }
+    @media (max-width: 620px) { .proj-card { max-width: 100%; } }
+  </style>
 </head>
 <body>
   <div class="ambient" aria-hidden="true">
@@ -154,9 +171,10 @@
 
   <nav class="step-dots" aria-label="Section progress">
     <a href="#top" data-dot="intro" data-label="Intro" class="is-active"></a>
+    <a href="#security" data-dot="security" data-label="Security"></a>
     <a href="#capabilities" data-dot="craft" data-label="Craft"></a>
     <a href="#work" data-dot="work" data-label="Work"></a>
-    <a href="#security" data-dot="security" data-label="Security"></a>
+    
     <a href="#experience" data-dot="path" data-label="Path"></a>
     <a href="#beyond" data-dot="beyond" data-label="Beyond"></a>
     <a href="#contact" data-dot="contact" data-label="Connect"></a>
@@ -170,10 +188,11 @@
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="index.html" class="is-active">Home</a>
+        <a href="#security">Security</a>
         <a href="projects.html">Projects</a>
         <a href="services.html">Services</a>
         <a href="stack.html">Stack</a>
-        <a href="#security">Security</a>
+        
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -194,13 +213,11 @@
             Port Harcourt · Open to opportunities
           </div>
           <h1 class="display reveal reveal-d1">
-            <span class="line">Systems that hold</span>
-            <span class="line"><span class="accent">under real load.</span></span>
+            <span class="line">I take systems apart,</span>
+            <span class="line"><span class="accent">then build ones that hold.</span></span>
           </h1>
           <p class="lead reveal reveal-d2" style="max-width: 38ch;">
-            Software engineer and security researcher building secure product
-            platforms, intelligent automation, and on-chain agent infrastructure —
-            with clean architecture and measurable outcomes.
+            Security researcher and software engineer. I reverse-engineer real malware and apps, publish the evidence, and build AI and on-chain products on Solana and Sui with the same threat-model discipline.
           </p>
           <div class="hero__actions reveal reveal-d3">
             <a href="projects.html" class="btn btn--primary pressable">
@@ -212,11 +229,11 @@
           <dl class="hero__meta reveal reveal-d4">
             <div>
               <dt>Focus</dt>
-              <dd>Fullstack · AI · Web3</dd>
+              <dd>Security · Web3 · AI</dd>
             </div>
             <div>
               <dt>Domains</dt>
-              <dd>Products · Intelligence · On-chain</dd>
+              <dd>Reverse engineering · On-chain · Products</dd>
             </div>
             <div>
               <dt>Background</dt>
@@ -247,11 +264,11 @@
       <div class="shell">
         <div class="metrics reveal">
           <div class="metrics__item">
-            <div class="metrics__value" data-count="8">0</div>
+            <div class="metrics__value" data-count="8">8</div>
             <div class="metrics__label">Shipped projects</div>
           </div>
           <div class="metrics__item">
-            <div class="metrics__value">Sui Move</div>
+            <div class="metrics__value">Solana · Sui</div>
             <div class="metrics__label">On-chain Web3</div>
           </div>
           <div class="metrics__item">
@@ -259,202 +276,8 @@
             <div class="metrics__label">Production AI</div>
           </div>
           <div class="metrics__item">
-            <div class="metrics__value">Security</div>
-            <div class="metrics__label">Cybersecurity degree</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAPABILITIES -->
-    <section class="section" id="capabilities" data-step data-dot="craft">
-      <div class="shell">
-        <div class="section-head">
-          <div class="reveal">
-            <span class="eyebrow">Capabilities</span>
-            <h2 class="display">Depth across the full product surface</h2>
-          </div>
-          <p class="aside reveal reveal-d1">
-            High-throughput APIs, typed frontends, production AI, and Sui Move protocols
-            that respect latency, cost, and security.
-          </p>
-        </div>
-        <div class="cap-grid">
-          <article class="card card--lift card--tilt cap-card reveal">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">database</span></div>
-            <h3>Backend architecture</h3>
-            <p>Go services with Gin &amp; GORM, Node/TS gateways, REST APIs, microservices patterns, PostgreSQL, and Firebase for durable, high-throughput backends.</p>
-          </article>
-          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">layers</span></div>
-            <h3>Fullstack product UI</h3>
-            <p>Next.js 15+, React 19, TypeScript, and Tailwind — responsive PWAs, wallets, and dashboards with production-grade UX and type safety.</p>
-          </article>
-          <article class="card card--lift card--tilt cap-card reveal reveal-d2">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">psychology</span></div>
-            <h3>AI &amp; LLM systems</h3>
-            <p>RAG pipelines, embedding search, Groq/Llama inference, multi-provider routing, and real-time AI workflows with citation and safety controls.</p>
-          </article>
-          <article class="card card--lift card--tilt cap-card reveal">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">token</span></div>
-            <h3>Web3 &amp; Sui Move</h3>
-            <p>Sui-native smart contracts, programmable agent treasuries, on-chain spend policies, wallet auth via Mysten dapp-kit, PTBs, and hybrid dApps.</p>
-          </article>
-          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">account_tree</span></div>
-            <h3>AI × on-chain settlement</h3>
-            <p>Gateways that settle LLM spend on-chain (SEAL / Otter): non-custodial caps, velocity pause, multi-provider routing, and agent SDKs.</p>
-          </article>
-          <article class="card card--lift card--tilt cap-card reveal reveal-d2">
-            <div class="cap-card__icon"><span class="material-symbols-outlined">shield</span></div>
-            <h3>Security mindset</h3>
-            <p>OAuth/JWT, secure API design, secret sanitization before LLM calls, capability-based ownership on Sui, and threat-aware engineering.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK -->
-    <section class="section" id="work" data-step data-dot="work">
-      <div class="shell">
-        <div class="section-head">
-          <div class="reveal">
-            <span class="eyebrow">Selected work</span>
-            <h2 class="display">Case studies worth opening</h2>
-          </div>
-          <a href="projects.html" class="btn btn--link reveal reveal-d1">
-            Full project index
-            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-
-        <div class="div-label reveal"><span>Shipped &amp; live</span></div>
-        <div class="proj-row">
-          <a href="dspace.html" class="card card--lift proj-mini reveal">
-            <span class="chip">Social dApp</span>
-            <h3>DSpace</h3>
-            <p>SuiPod Chat — hybrid decentralized collab: wallet identity, on-chain pods, Firebase realtime messaging, and in-chat SUI transfers.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">React</span>
-              <span class="chip chip--neutral">Sui dapp-kit</span>
-              <span class="chip chip--neutral">Firebase</span>
-            </div>
-            <span class="btn btn--link">Case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-          <a href="projects.html#proj-cgen" class="card card--lift proj-mini reveal reveal-d1">
-            <span class="chip">AI · CAD</span>
-            <h3>Cgen</h3>
-            <p>Natural language → validated STEP/STL CAD files. Groq specs, Pydantic guardrails, deterministic CadQuery geometry.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">Python</span>
-              <span class="chip chip--neutral">Groq</span>
-              <span class="chip chip--neutral">CadQuery</span>
-            </div>
-            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-          <a href="projects.html#proj-present" class="card card--lift proj-mini reveal reveal-d2">
-            <span class="chip">SaaS · Attendance</span>
-            <h3>Present</h3>
-            <p>Geo + face-verified lecture attendance. Next.js and Firebase with on-device recognition — faces never leave the browser.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">Next.js</span>
-              <span class="chip chip--neutral">Firebase</span>
-              <span class="chip chip--neutral">MediaPipe</span>
-            </div>
-            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-        </div>
-
-        <div class="div-label reveal"><span>AI · Fullstack · Tools</span></div>
-
-        <article class="card card--lift proj-feature reveal">
-          <div class="proj-feature__media">
-            <div class="live-preview">
-              <div class="live-preview__bar">
-                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="live-preview__url">asguard.netlify.app</span>
-                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
-                <a class="live-preview__open" href="https://asguard.netlify.app" target="_blank" rel="noopener">Open ↗</a>
-              </div>
-              <div class="live-preview__stage">
-                <div class="live-preview__scaler">
-                  <iframe src="https://asguard.netlify.app" title="Live preview of the Asguard website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
-                </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
-              </div>
-            </div>
-          </div>
-          <div class="proj-feature__body">
-            <span class="chip chip--teal">01 · Fraud detection</span>
-            <h3>Asguard</h3>
-            <p>Real-time transaction fraud pipeline combining rule-based scoring with AI risk assessment. Flags high-risk events and generates natural-language summaries at sub-second latency.</p>
-            <a href="asguard.html" class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </article>
-
-        <a href="azeru.html" class="card card--lift proj-feature proj-feature--flip reveal">
-          <div class="proj-feature__media">
-            <video preload="metadata" playsinline src="screen_1774120316927.mp4" autoplay loop muted></video>
-          </div>
-          <div class="proj-feature__body">
-            <span class="chip chip--teal">02 · Enterprise RAG</span>
-            <h3>Azeru</h3>
-            <p>Document intelligence that ingests PDFs into chunked, embedded knowledge bases. Semantic retrieval powers citation-backed answers for knowledge-heavy workflows.</p>
-            <span class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </div>
-        </a>
-
-        <article class="card card--lift proj-feature reveal">
-          <div class="proj-feature__media">
-            <div class="live-preview">
-              <div class="live-preview__bar">
-                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-                <span class="live-preview__url">hauserhomes.xyz</span>
-                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
-                <a class="live-preview__open" href="https://hauserhomes.xyz" target="_blank" rel="noopener">Open ↗</a>
-              </div>
-              <div class="live-preview__stage">
-                <div class="live-preview__scaler">
-                  <iframe src="https://hauserhomes.xyz" title="Live preview of the Hauser website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
-                </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
-              </div>
-            </div>
-          </div>
-          <div class="proj-feature__body">
-            <span class="chip chip--teal">03 · Real estate SaaS</span>
-            <h3>Hauser</h3>
-            <p>Property marketplace for the Nigerian market with role-aware onboarding, dynamic listings, real-time Firestore sync, and click analytics for premium tiers.</p>
-            <a href="hauser.html" class="btn btn--link">Read architecture notes <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
-        </article>
-
-        <div class="proj-row" style="margin-top: 1rem;">
-          <a href="projects.html#proj-vouch" class="card card--lift proj-mini reveal">
-            <span class="chip">Verification</span>
-            <h3>Vouch</h3>
-            <p>Point your phone at a pack: NAFDAC/PPB registry verdicts with vision-AI reads, hazard alerts and community reports.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">JavaScript</span>
-              <span class="chip chip--neutral">Vision AI</span>
-            </div>
-            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-          <a href="projects.html#proj-energy" class="card card--lift proj-mini reveal reveal-d1">
-            <span class="chip">Enterprise</span>
-            <h3>Absolute Energy</h3>
-            <p>Corporate website for an oil &amp; gas enterprise client — company profile, service lines and enquiry capture.</p>
-            <div class="proj-mini__tags">
-              <span class="chip chip--neutral">Corporate site</span>
-              <span class="chip chip--neutral">Responsive</span>
-            </div>
-            <span class="btn btn--link">See live preview <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-          <div class="card proj-mini reveal reveal-d2" style="display:flex;align-items:center;justify-content:center;text-align:center;border-style:dashed;">
-            <div>
-              <p class="muted" style="font-size:0.9rem;margin-bottom:1rem;">Eight shipped systems — most cards carry a live, scrollable preview of the real site.</p>
-              <a href="projects.html" class="btn btn--ghost pressable">Browse all projects</a>
-            </div>
+            <div class="metrics__value" data-count="3">3</div>
+            <div class="metrics__label">Published RE reports</div>
           </div>
         </div>
       </div>
@@ -471,7 +294,7 @@
           <p class="aside reveal reveal-d1">
             B.Tech Cybersecurity (FUTO). Three investigations of real specimens —
             timeline, mechanism, detection — published live with source, IOCs and
-            YARA rules. No CTFs, no toy binaries.
+            YARA rules. No CTFs, no toy binaries. NGL and Grindr are analysed from their publicly distributed apps; claims stay limited to what the code shows.
           </p>
         </div>
 
@@ -540,7 +363,7 @@
                 <dt>Native libraries</dt>
                 <dd>compiled C/C++ modules — NGL ships none.</dd>
                 <dt>Firing slot</dt>
-                <dd>a scheduled timer that pushes one fake message.</dd>
+                <dd>a scheduled timer in the decompiled code that triggers one message.</dd>
               </dl>
             </div>
             <div class="report-card__body">
@@ -600,6 +423,77 @@
       </div>
     </section>
 
+    <!-- CAPABILITIES -->
+    <section class="section" id="capabilities" data-step data-dot="craft">
+      <div class="shell">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Capabilities</span>
+            <h2 class="display">Depth across the full product surface</h2>
+          </div>
+          <p class="aside reveal reveal-d1">
+            High-throughput APIs, typed frontends, production AI, and Sui Move protocols
+            that respect latency, cost, and security.
+          </p>
+        </div>
+        <div class="cap-grid">
+          <article class="card card--lift card--tilt cap-card reveal reveal-d2">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">shield</span></div>
+            <h3>Security research &amp; engineering</h3>
+            <p>Malware analysis and reverse engineering with published IOCs and YARA rules, plus OAuth/JWT, secure API design, secret sanitization before LLM calls, and capability-based ownership on Sui.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">token</span></div>
+            <h3>Web3 · Solana &amp; Sui</h3>
+            <p>Rust/Anchor programs on Solana, Sui Move contracts, programmable agent treasuries, on-chain spend policies, wallet auth via Mysten dapp-kit, PTBs, and hybrid dApps.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">account_tree</span></div>
+            <h3>AI × on-chain settlement</h3>
+            <p>Gateways that settle LLM spend on-chain (SEAL / Otter): non-custodial caps, velocity pause, multi-provider routing, and agent SDKs.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d2">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">psychology</span></div>
+            <h3>AI &amp; LLM systems</h3>
+            <p>RAG pipelines, embedding search, Groq/Llama inference, multi-provider routing, and real-time AI workflows with citation and safety controls.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">database</span></div>
+            <h3>Backend architecture</h3>
+            <p>Go services with Gin &amp; GORM, Node/TS gateways, REST APIs, microservices patterns, PostgreSQL, and Firebase for durable, high-throughput backends.</p>
+          </article>
+          <article class="card card--lift card--tilt cap-card reveal reveal-d1">
+            <div class="cap-card__icon"><span class="material-symbols-outlined">layers</span></div>
+            <h3>Fullstack product UI</h3>
+            <p>Next.js 15+, React 19, TypeScript, and Tailwind — responsive PWAs, wallets, and dashboards with production-grade UX and type safety.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section" id="work" data-step data-dot="work">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Selected work</span>
+            <h2 class="display">Case studies worth opening</h2>
+          </div>
+          <a href="projects.html" class="btn btn--link">Full project index →</a>
+        </div>
+        <div class="proj-flex">
+          <article class="card proj-card"><span class="chip">Social dApp</span><h3>DSpace</h3><p>SuiPod Chat — hybrid decentralized collab: wallet identity, on-chain pods, Firebase realtime messaging, and in-chat SUI transfers.</p><div class="proj-mini__tags"><span class="chip chip--neutral">React</span><span class="chip chip--neutral">Sui dapp-kit</span><span class="chip chip--neutral">Firebase</span></div><div class="proj-card__links"><a class="btn btn--link" href="dspace.html">Case study →</a></div></article>
+          <article class="card proj-card"><span class="chip">AI · CAD</span><h3>Cgen</h3><p>Natural language → validated STEP/STL CAD files. Groq specs, Pydantic guardrails, deterministic CadQuery geometry.</p><div class="proj-mini__tags"><span class="chip chip--neutral">Python</span><span class="chip chip--neutral">Groq</span><span class="chip chip--neutral">CadQuery</span></div><div class="proj-card__links"><a class="btn btn--link" href="projects.html#proj-cgen">Live preview →</a></div></article>
+          <article class="card proj-card"><span class="chip">SaaS · Attendance</span><h3>Present</h3><p>Geo + face-verified lecture attendance. Next.js and Firebase with on-device recognition — faces never leave the browser.</p><div class="proj-mini__tags"><span class="chip chip--neutral">Next.js</span><span class="chip chip--neutral">Firebase</span><span class="chip chip--neutral">MediaPipe</span></div><div class="proj-card__links"><a class="btn btn--link" href="projects.html#proj-present">Live preview →</a></div></article>
+          <article class="card proj-card"><span class="chip">Fraud detection</span><h3>Asguard</h3><p>Real-time transaction fraud pipeline combining rule-based scoring with AI risk assessment. Flags high-risk events and generates natural-language summaries at sub-second latency.</p><div class="proj-mini__tags"><span class="chip chip--neutral">Rule scoring</span><span class="chip chip--neutral">AI risk</span></div><div class="proj-card__links"><a class="btn btn--link" href="asguard.html">Architecture notes →</a><a class="btn btn--link" href="https://asguard.netlify.app" target="_blank" rel="noopener">Live ↗</a></div></article>
+          <article class="card proj-card"><span class="chip">Enterprise RAG</span><h3>Azeru</h3><p>Document intelligence that ingests PDFs into chunked, embedded knowledge bases. Semantic retrieval powers citation-backed answers for knowledge-heavy workflows.</p><div class="proj-mini__tags"><span class="chip chip--neutral">RAG</span><span class="chip chip--neutral">Embeddings</span></div><div class="proj-card__links"><a class="btn btn--link" href="azeru.html">Architecture notes →</a></div></article>
+          <article class="card proj-card"><span class="chip">Real estate SaaS</span><h3>Hauser</h3><p>Property marketplace for the Nigerian market with role-aware onboarding, dynamic listings, real-time Firestore sync, and click analytics for premium tiers.</p><div class="proj-mini__tags"><span class="chip chip--neutral">Firestore</span><span class="chip chip--neutral">Marketplace</span></div><div class="proj-card__links"><a class="btn btn--link" href="hauser.html">Architecture notes →</a><a class="btn btn--link" href="https://hauserhomes.xyz" target="_blank" rel="noopener">Live ↗</a></div></article>
+          <article class="card proj-card"><span class="chip">Verification</span><h3>Vouch</h3><p>Point your phone at a pack: NAFDAC/PPB registry verdicts with vision-AI reads, hazard alerts and community reports.</p><div class="proj-mini__tags"><span class="chip chip--neutral">JavaScript</span><span class="chip chip--neutral">Vision AI</span></div><div class="proj-card__links"><a class="btn btn--link" href="projects.html#proj-vouch">Live preview →</a></div></article>
+          <article class="card proj-card"><span class="chip">Enterprise</span><h3>Absolute Energy</h3><p>Corporate website for an oil &amp; gas enterprise client — company profile, service lines and enquiry capture.</p><div class="proj-mini__tags"><span class="chip chip--neutral">Corporate site</span><span class="chip chip--neutral">Responsive</span></div><div class="proj-card__links"><a class="btn btn--link" href="projects.html#proj-energy">Live preview →</a></div></article>
+        </div>
+      </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <section class="section" id="experience" data-step data-dot="path">
       <div class="shell">
@@ -608,6 +502,24 @@
             <span class="eyebrow">Experience</span>
             <h2 class="display" style="font-size:clamp(1.75rem,3vw,2.4rem);margin-bottom:2rem;">Professional timeline</h2>
             <div class="timeline">
+              <div class="timeline__item">
+                <time>Independent</time>
+                <h3>Security Researcher</h3>
+                <p class="org">Self-directed · malware.kennedyazeru.space</p>
+                <ul>
+                  <li>Published three investigations of real specimens — a VB6 replicator, NGL and Grindr’s ad-tech stack — covering timeline, mechanism and detection.</li>
+                  <li>Released source, IOCs and YARA rules for the replicator report on GitHub.</li>
+                </ul>
+              </div>
+              <div class="timeline__item">
+                <time>Independent</time>
+                <h3>Web3 Builder</h3>
+                <p class="org">Solana &amp; Sui · Superteam Nigeria community</p>
+                <ul>
+                  <li>Builds on Solana with Rust/Anchor and on Sui with Move; shipped DSpace, a hybrid dApp with on-chain pods and in-chat SUI transfers.</li>
+                  <li>Active in the Superteam Nigeria ecosystem through hackathon and bounty work.</li>
+                </ul>
+              </div>
               <div class="timeline__item">
                 <time>Jan 2024 — Oct 2024</time>
                 <h3>Fullstack Developer Intern</h3>
@@ -661,12 +573,13 @@
                 </ul>
               </div>
               <div class="card stack-tile">
-                <h4>Web3 · Sui</h4>
+                <h4>Web3 · Solana &amp; Sui</h4>
                 <ul>
+                  <li>Rust · Anchor (Solana)</li>
                   <li>Move smart contracts</li>
                   <li>Mysten dapp-kit · PTBs</li>
-                  <li>Agent treasuries · x402</li>
-                  <li>Wallet auth · settlement</li>
+                  <li>Agent treasuries · x402 · wallet auth</li>
+                  
                 </ul>
               </div>
               <div class="card stack-tile" style="grid-column: 1 / -1;">
@@ -675,6 +588,8 @@
                   <li>Docker · CI/CD</li>
                   <li>OAuth / JWT</li>
                   <li>API hardening</li>
+                  <li>Malware analysis · YARA</li>
+                  <li>Reverse engineering</li>
                   <li>Solidity · Storj</li>
                 </ul>
               </div>
