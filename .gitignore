@@ -4,3 +4,13 @@ Thumbs.db
 *.log
 
 node_modules/
+
+# Scratch / tooling artifacts — never ship these to Pages
+.cloud-attachments/
+_tmp_*
+_*.py
+*.pyc
+__pycache__/
+index.new.html
+patch_*.py
+*.bak
