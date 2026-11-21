@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — Kennedy Azeru | Software Engineer and Security Researcher</title>
-  <meta name="description" content="Eight shipped systems by Kennedy Azeru — Asguard fraud detection, Azeru RAG, Cgen AI CAD, Hauser real estate, Present attendance, Vouch product verification, DSpace social dApp and Absolute Energy enterprise web." />
+  <meta name="description" content="Nine shipped systems by Kennedy Azeru — Koe, a live free voice platform for AI agents, plus Asguard fraud detection, Azeru RAG, Cgen AI CAD, Hauser real estate, Present attendance, Vouch product verification, DSpace social dApp and Absolute Energy enterprise web." />
   <meta name="author" content="Kennedy Azeru" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="googlebot" content="index, follow, max-image-preview:large" />
@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://www.kennedyazeru.space/projects.html" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Projects — Kennedy Azeru | Software Engineer and Security Researcher" />
-  <meta property="og:description" content="Eight shipped systems by Kennedy Azeru — Asguard fraud detection, Azeru RAG, Cgen AI CAD, Hauser real estate, Present attendance, Vouch product verification, DSpace social dApp and Absolute Energy enterprise web." />
+  <meta property="og:description" content="Nine shipped systems by Kennedy Azeru — Koe, a live free voice platform for AI agents, plus Asguard fraud detection, Azeru RAG, Cgen AI CAD, Hauser real estate, Present attendance, Vouch product verification, DSpace social dApp and Absolute Energy enterprise web." />
   <meta property="og:url" content="https://www.kennedyazeru.space/projects.html" />
   <meta property="og:image" content="https://www.kennedyazeru.space/favicon.png" />
   <meta property="og:image:alt" content="Kennedy Azeru — Portfolio" />
@@ -20,7 +20,7 @@
   <meta property="og:locale" content="en_NG" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Projects — Kennedy Azeru | Software Engineer and Security Researcher" />
-  <meta name="twitter:description" content="Eight shipped systems by Kennedy Azeru — Asguard fraud detection, Azeru RAG, Cgen AI CAD, Hauser real estate, Present attendance, Vouch product verification, DSpace social dApp and Absolute Energy enterprise web." />
+  <meta name="twitter:description" content="Nine shipped systems by Kennedy Azeru — Koe, a live free voice platform for AI agents, plus Asguard fraud detection, Azeru RAG, Cgen AI CAD, Hauser real estate, Present attendance, Vouch product verification, DSpace social dApp and Absolute Energy enterprise web." />
   <meta name="twitter:image" content="https://www.kennedyazeru.space/favicon.png" />
   <meta name="twitter:creator" content="@azeru548" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
@@ -260,15 +260,6 @@
   </script>
 </head>
 <body>
-  <div class="ambient" aria-hidden="true">
-    <div class="ambient__grid"></div>
-    <div class="ambient__orb ambient__orb--1" data-parallax data-speed="0.12"></div>
-    <div class="ambient__orb ambient__orb--2" data-parallax data-speed="0.22"></div>
-    <div class="ambient__orb ambient__orb--3" data-parallax data-speed="0.30"></div>
-  </div>
-  <div class="cursor-glow" aria-hidden="true"></div>
-  <div class="scroll-rail" aria-hidden="true"><div class="scroll-rail__fill"></div></div>
-
   <header class="nav">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo">
@@ -297,9 +288,10 @@
         <span class="eyebrow reveal">Portfolio index</span>
         <h1 class="display reveal reveal-d1">Shipped systems with live previews</h1>
         <p class="lead reveal reveal-d2">
-          Eight shipped systems — fraud detection, document RAG, AI CAD generation, real estate and attendance SaaS,
-          product verification, a Sui social dApp and enterprise energy web. Most cards carry a live,
-          scrollable preview of the real site; every card links the live build and source where public.
+          Nine shipped systems — a live voice platform for AI agents, fraud detection, document RAG, AI CAD generation, real estate and attendance SaaS,
+          product verification, a Sui social dApp and enterprise energy web. Each card opens the real
+          site in place — nothing loads until you ask — and links the live build and source where
+          they are public.
         </p>
       </div>
     </header>
@@ -307,6 +299,43 @@
     <section class="section--tight" style="padding-top:0;">
       <div class="shell">
                 <div class="div-label reveal"><span>AI · Fullstack · Tools</span></div>
+
+        <!-- Koe -->
+        <article id="proj-koe" class="card study study--media reveal">
+          <div class="study__media">
+            <div class="live-preview">
+              <div class="live-preview__bar">
+                <span class="live-preview__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="live-preview__url">koe.kennedyazeru.space</span>
+                <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
+                <a class="live-preview__open" href="https://koe.kennedyazeru.space" target="_blank" rel="noopener">Open ↗</a>
+              </div>
+              <div class="live-preview__stage" data-src="https://koe.kennedyazeru.space">
+                <div class="live-preview__scaler">
+                </div>
+                <button class="live-preview__engage" type="button">Load live preview</button>
+              </div>
+            </div>
+          </div>
+          <div class="study__body">
+            <div class="study__num">01 · AI · Voice infrastructure</div>
+            <h2>Koe</h2>
+            <p>Text becomes a finished voiceover for humans and agents: a hosted MCP server, a studio UI and an HTTP API over four engines — Microsoft neural voices plus offline Piper, Kokoro and Kitten — so a script turns into audio with no account, no API bill and no vendor lock-in.</p>
+            <p>Shipped to production and launched this month. Per-tenant free keys behind a proof-of-work gate, per-key and global quotas in SQLite, a bounded queue with a circuit breaker, ephemeral audio behind signed download links, and a pipeline that builds, tests and redeploys on every push.</p>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Node.js</span>
+              <span class="chip chip--neutral">MCP</span>
+              <span class="chip chip--neutral">Docker</span>
+              <span class="chip chip--neutral">AWS</span>
+              <span class="chip chip--neutral">SQLite</span>
+            </div>
+            <div class="study__links">
+              <a href="koe.html" class="btn btn--link">Full case study <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <a href="https://koe.kennedyazeru.space" target="_blank" rel="noopener" class="ext">Live site</a>
+              <a href="https://github.com/Azeru548/koe" target="_blank" rel="noopener" class="ext">GitHub</a>
+            </div>
+          </div>
+        </article>
 
         <!-- Asguard -->
         <article class="card study study--media reveal">
@@ -318,16 +347,15 @@
                 <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
                 <a class="live-preview__open" href="https://asguard.netlify.app" target="_blank" rel="noopener">Open ↗</a>
               </div>
-              <div class="live-preview__stage">
+              <div class="live-preview__stage" data-src="https://asguard.netlify.app">
                 <div class="live-preview__scaler">
-                  <iframe src="https://asguard.netlify.app" title="Live preview of the Asguard website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
                 </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+                <button class="live-preview__engage" type="button">Load live preview</button>
               </div>
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">01 · AI · Fintech risk</div>
+            <div class="study__num">02 · AI · Fintech risk</div>
             <h2>Asguard</h2>
             <p>High-volume fintech environments need fraud decisions that are fast enough for live payment flows and explainable enough for compliance. Asguard scores transactions with layered rules, enriches them with AI risk assessment, and emits structured alerts with natural-language summaries.</p>
             <p>Clear-cut decisions stay on a low-latency path; ambiguous events escalate for deeper model analysis with investigator context in-band.</p>
@@ -351,7 +379,7 @@
             <video preload="metadata" playsinline src="screen_1774120316927.mp4" autoplay loop muted></video>
           </div>
           <div class="study__body">
-            <div class="study__num">02 · RAG · Document intelligence</div>
+            <div class="study__num">03 · RAG · Document intelligence</div>
             <h2>Azeru</h2>
             <p>Enterprise RAG platform that ingests PDFs, chunks them for embedding quality, stores vectors for semantic retrieval, and answers questions with source-aware conversational responses.</p>
             <p>Backend processing in Go for throughput; operator UI in Next.js. Inference routes through high-speed LLM providers so retrieval + generation stays interactive.</p>
@@ -379,16 +407,15 @@
                 <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
                 <a class="live-preview__open" href="https://cgen.pxxl.click" target="_blank" rel="noopener">Open ↗</a>
               </div>
-              <div class="live-preview__stage">
+              <div class="live-preview__stage" data-src="https://cgen.pxxl.click">
                 <div class="live-preview__scaler">
-                  <iframe src="https://cgen.pxxl.click" title="Live preview of the Cgen website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
                 </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+                <button class="live-preview__engage" type="button">Load live preview</button>
               </div>
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">03 · AI · CAD generation</div>
+            <div class="study__num">04 · AI · CAD generation</div>
             <h2>Cgen</h2>
             <p>Natural-language prompts become validated CAD: Groq turns plain English into structured specs, Pydantic validates every op against an allowlist, and a deterministic CadQuery engine emits STEP/STL downloads. Existing parts are revised in place, and every generation stacks as a revision in the project workspace.</p>
             <p>No AI-executed code, ever — geometry comes from the registry and the engine, the model only writes the spec.</p>
@@ -417,16 +444,15 @@
                 <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
                 <a class="live-preview__open" href="https://hauserhomes.xyz" target="_blank" rel="noopener">Open ↗</a>
               </div>
-              <div class="live-preview__stage">
+              <div class="live-preview__stage" data-src="https://hauserhomes.xyz">
                 <div class="live-preview__scaler">
-                  <iframe src="https://hauserhomes.xyz" title="Live preview of the Hauser website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
                 </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+                <button class="live-preview__engage" type="button">Load live preview</button>
               </div>
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">04 · SaaS · Real estate</div>
+            <div class="study__num">05 · SaaS · Real estate</div>
             <h2>Hauser</h2>
             <p>Real estate marketplace for Nigerian property professionals — agents, landlords, and tenants. Role-aware onboarding lands each persona in the right workflow without manual admin setup.</p>
             <p>Next.js + Firebase (Firestore, Cloud Functions): dynamic listings, real-time updates, image optimization, and click analytics for premium tiers.</p>
@@ -452,16 +478,15 @@
                 <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
                 <a class="live-preview__open" href="https://usepresent.netlify.app/" target="_blank" rel="noopener">Open ↗</a>
               </div>
-              <div class="live-preview__stage">
+              <div class="live-preview__stage" data-src="https://usepresent.netlify.app/">
                 <div class="live-preview__scaler">
-                  <iframe src="https://usepresent.netlify.app/" title="Live preview of the Present website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
                 </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+                <button class="live-preview__engage" type="button">Load live preview</button>
               </div>
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">05 · SaaS · Attendance</div>
+            <div class="study__num">06 · SaaS · Attendance</div>
             <h2>Present</h2>
             <p>Geo-verified attendance with on-device face recognition: lecturers open sessions, students verify location within the class radius plus a live face match — embeddings never leave the browser.</p>
             <p>No QR codes, no shareable links, one mark per student per session. Lecturer dashboards track every session with per-student verification status.</p>
@@ -493,7 +518,7 @@
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">06 · Verification · Consumer</div>
+            <div class="study__num">07 · Verification · Consumer</div>
             <h2>Vouch</h2>
             <p>Point your phone at a product pack, get a plain-language verdict: Vouch checks NAFDAC and PPB Kenya registration records with fuzzy name matching, reads registration numbers from pack photos via a vision model, and layers hazard alerts plus community reports on top.</p>
             <p>Mobile-first for shoppers in Nigeria and Kenya — registered and active, approval not active, details don’t match, or not found.</p>
@@ -518,16 +543,15 @@
                 <span class="live-preview__live"><span class="live-preview__pulse" aria-hidden="true"></span>Live</span>
                 <a class="live-preview__open" href="https://dspace1.netlify.app/" target="_blank" rel="noopener">Open ↗</a>
               </div>
-              <div class="live-preview__stage">
+              <div class="live-preview__stage" data-src="https://dspace1.netlify.app/">
                 <div class="live-preview__scaler">
-                  <iframe src="https://dspace1.netlify.app/" title="Live preview of the DSpace app" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="no-referrer"></iframe>
                 </div>
-                <button class="live-preview__engage" type="button">Click to scroll &amp; explore</button>
+                <button class="live-preview__engage" type="button">Load live preview</button>
               </div>
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">07 · Web3 · Social</div>
+            <div class="study__num">08 · Web3 · Social</div>
             <h2>DSpace</h2>
             <p>SuiPod Chat — hybrid decentralized collaboration: Sui wallet identity and on-chain pods, Firebase realtime messaging, and in-chat SUI transfers.</p>
             <p>Chain where trust matters, Firebase where speed matters — membership and money live on Sui, message fan-out rides realtime listeners.</p>
@@ -559,7 +583,7 @@
             </div>
           </div>
           <div class="study__body">
-            <div class="study__num">08 · Enterprise · Energy</div>
+            <div class="study__num">09 · Enterprise · Energy</div>
             <h2>Absolute Energy</h2>
             <p>Corporate website for Absolute Energy Field Services, an oil &amp; gas enterprise client — company profile, service lines and enquiry capture in a fast, responsive package.</p>
             <p>Enterprise delivery: stakeholder-approved structure, performance-conscious pages, and a handover the internal team can actually maintain.</p>

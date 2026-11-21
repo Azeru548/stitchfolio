@@ -1432,3 +1432,46 @@ img.nav__mark {
   .report-card__stats { grid-template-columns: 1fr 1fr; }
   .report-card .live-preview__stage { max-height: 140px; }
 }
+
+/* ── Minimal mode ─────────────────────────────────────────────────────────
+   The sheet-of-paper look stays; the motion layer does not. Nothing below
+   depends on JavaScript, so the page is finished before any script runs:
+   no orbs, no star cursor, no parallax, no staged reveals, no looping
+   animations. Hover states stay instant instead of animated. */
+.ambient,
+.cursor-glow,
+.scroll-rail,
+.step-dots { display: none !important; }
+
+*, *::before, *::after { animation: none !important; }
+
+.reveal,
+.reveal.is-in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.card--tilt { transform-style: flat; }
+[data-parallax] { will-change: auto; }
+
+/* Live preview before it is loaded: a quiet placeholder, not a blank box. */
+.live-preview__stage[data-src]:not(.is-loaded) {
+  background: radial-gradient(circle, rgba(26, 26, 30, 0.07) 1.6px, transparent 1.7px), var(--surface-2);
+  background-size: 22px 22px;
+}
+.live-preview__stage[data-src]:not(.is-loaded) .live-preview__engage {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+}
+.live-preview__stage[data-src]:not(.is-loaded) .live-preview__engage:hover {
+  transform: translate(-50%, 50%);
+}
+.live-preview__stage.is-live .live-preview__scaler iframe { pointer-events: auto; }
+/* An unloaded preview owns the whole media column, so no white gap is left
+   under the placeholder while the card's copy is taller than 16:10. */
+.live-preview__stage[data-src]:not(.is-loaded) {
+  flex: 1 1 auto;
+  aspect-ratio: auto;
+  min-height: 280px;
+}
