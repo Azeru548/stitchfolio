@@ -34,8 +34,8 @@
   <link rel="stylesheet" href="assets/css/portfolio.css" />
   <style>
     .material-symbols-outlined { font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; font-size: inherit; line-height: 1; }
-    .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .svc { padding: 1.75rem 1.85rem; display: flex; flex-direction: column; }
+    .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
+    .svc { padding: 1.75rem 1.85rem; display: flex; flex-direction: column; height: 100%; min-width: 0; }
     .svc__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
     .svc__icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--ink); color: #fff; border: 2.5px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); transform: rotate(-3deg); margin-bottom: 0.85rem; }
     .svc__icon .material-symbols-outlined { font-size: 1.75rem; }
@@ -74,13 +74,11 @@
     .incl-grid { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1.2rem; margin-bottom: 0.9rem; }
     .incl-grid li { display: flex; gap: 0.55rem; font-size: 0.9rem; font-weight: 700; color: var(--ink-soft); line-height: 1.55; }
     .incl-grid li::before { content: "·"; color: var(--coral); font-weight: 800; font-size: 1.3rem; line-height: 1.2; }
-    #starter .svc-grid { max-width: calc(50% - 0.5rem); }
     @media (max-width: 900px) {
       .svc-grid { grid-template-columns: 1fr; }
       .model-grid { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr 1fr; }
       .incl-grid { grid-template-columns: 1fr; }
-      #starter .svc-grid { max-width: none; }
     }
     @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
   </style>
@@ -205,13 +203,40 @@
       </div>
     </header>
 
-    <section class="section--tight" style="padding-top:0;" id="engineering" aria-labelledby="eng-heading">
+    <section class="section--tight" style="padding-top:0;" id="engineering" aria-labelledby="offer-heading">
       <div class="shell">
-        <div class="div-label reveal"><span id="eng-heading">Engineering engagements</span></div>
-        <p class="line-intro reveal">Scoped custom work, priced as project minimums in USD. Final quote after discovery, written in the SOW.</p>
+        <div class="div-label reveal"><span id="offer-heading">What I ship</span></div>
+        <p class="line-intro reveal">Engineering engagements are scoped custom work with project minimums in USD. Starter builds are fixed template sites priced in naira (dollar equivalent at ₦1,500 / $1).</p>
         <div class="svc-grid">
 
-          <article class="card card--lift svc reveal">
+          <article class="card card--lift svc reveal" id="starter">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">web</span></div>
+                <h2>Starter build</h2>
+              </div>
+              <span class="svc__tag">Fixed template</span>
+            </div>
+            <p class="desc">A one-to-four page responsive site on a fixed template, with copy polish and a contact / WhatsApp CTA. No discovery call, no custom design, no SOW.</p>
+            <ul class="incl">
+              <li>1–4 page responsive site, fixed template</li>
+              <li>Copy polish, contact and WhatsApp CTA</li>
+              <li>Basic on-page SEO + deploy guidance</li>
+              <li>Two revisions + one-week bugfix window</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">HTML/CSS/JS</span>
+              <span class="chip chip--neutral">Template</span>
+              <span class="chip chip--neutral">WhatsApp CTA</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Starting at</small>₦50k</div>
+              <span class="price-ngn">≈ $35</span>
+            </div>
+            <div class="meta-row"><span>Fixed template</span><span>Two revisions</span><span>1-week bugfix</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal reveal-d1">
             <div class="svc__top">
               <div>
                 <div class="svc__icon"><span class="material-symbols-outlined">web</span></div>
@@ -397,7 +422,7 @@
         </div>
 
         <article class="card svc-includes reveal">
-          <h3>Every engagement includes</h3>
+          <h3>Every engineering engagement includes</h3>
           <ul class="incl-grid">
             <li>Written scope and SOW</li>
             <li>Discovery before build</li>
@@ -408,52 +433,6 @@
           </ul>
           <p class="note">Payment split 50 / 30 / 20. Invoiced in USD by wire or USDC.</p>
         </article>
-
-        <div class="contact-panel reveal" style="margin-top: 2.5rem;">
-          <span class="eyebrow" style="justify-content:center;">Start a scope</span>
-          <h2 class="display" style="font-size:clamp(1.5rem,3vw,2.25rem);">Tell me what needs to hold under load</h2>
-          <p class="lead">Send a 5-line brief: goal, users, deadline, budget band, and links (repo/docs/figma if any). I reply with a fixed quote + dates.</p>
-          <div class="contact-actions">
-            <a href="mailto:chinwokennedy9@gmail.com?subject=Project%20scope%20—%20Services%20page" class="btn btn--primary pressable">chinwokennedy9@gmail.com</a>
-            <a href="projects.html" class="btn btn--ghost pressable">Check the work first</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section--tight" id="starter" aria-labelledby="starter-heading">
-      <div class="shell">
-        <div class="div-label reveal"><span id="starter-heading">Starter builds</span></div>
-        <p class="line-intro reveal">Fixed template builds, priced in naira. Dollar equivalent shown at ₦1,500 / $1.</p>
-        <div class="svc-grid">
-          <article class="card card--lift svc reveal">
-            <div class="svc__top">
-              <div>
-                <div class="svc__icon"><span class="material-symbols-outlined">web</span></div>
-                <h2>1–4 page responsive site</h2>
-              </div>
-              <span class="svc__tag">Fixed template</span>
-            </div>
-            <p class="desc">A one-to-four page responsive site on a fixed template, with copy polish and a contact / WhatsApp CTA. No discovery call, no custom design, no SOW.</p>
-            <ul class="incl">
-              <li>1–4 page responsive site, fixed template</li>
-              <li>Copy polish, contact and WhatsApp CTA</li>
-              <li>Basic on-page SEO + deploy guidance</li>
-              <li>Two revisions + one-week bugfix window</li>
-            </ul>
-            <div class="gap-chips mb-2">
-              <span class="chip chip--neutral">HTML/CSS/JS</span>
-              <span class="chip chip--neutral">Template</span>
-              <span class="chip chip--neutral">WhatsApp CTA</span>
-            </div>
-            <div class="price-row">
-              <div class="price"><small>Starting at</small>₦50k</div>
-              <span class="price-ngn">≈ $35</span>
-            </div>
-            <div class="meta-row"><span>Fixed template</span><span>Two revisions</span><span>1-week bugfix</span></div>
-          </article>
-        </div>
-        <p class="note" style="margin-top:1rem;">Dollar equivalents at ₦1,500 / $1 for planning.</p>
 
         <div class="contact-panel reveal" style="margin-top: 2.5rem;">
           <span class="eyebrow" style="justify-content:center;">Start a scope</span>
