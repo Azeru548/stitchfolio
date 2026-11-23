@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_tree,database,layers,psychology,shield,sync,token" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=account_tree,calendar_month,database,healing,layers,neurology,psychology,shield,sync,terminal,token,web" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/portfolio.css" />
   <style>
     .material-symbols-outlined {
@@ -124,6 +124,43 @@
   "inLanguage": "en-NG"
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kennedy Azeru — Software Engineering Services",
+  "provider": { "@id": "https://www.kennedyazeru.space/#person" },
+  "url": "https://www.kennedyazeru.space/#services",
+  "areaServed": "Worldwide",
+  "priceRange": "$35–$8,000+",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Starter builds",
+        "itemListElement": [
+          { "@type": "Offer", "name": "1–4 page responsive site (fixed template)", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "NGN", "minPrice": "50000" } }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Engineering engagements",
+        "itemListElement": [
+          { "@type": "Offer", "name": "Landing page & small site", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "1200" } },
+          { "@type": "Offer", "name": "Backend API or service", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "2500" } },
+          { "@type": "Offer", "name": "Fullstack web app", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "4500" } },
+          { "@type": "Offer", "name": "AI / RAG system", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "6500" } },
+          { "@type": "Offer", "name": "Web3 build (Solana or Sui)", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "8000" } },
+          { "@type": "Offer", "name": "Audit & rescue sprint", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "2000" } },
+          { "@type": "Offer", "name": "Monthly retainer", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "USD", "minPrice": "3500", "unitText": "MONTH" } }
+        ]
+      }
+    ]
+  }
+}
+  </script>
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.kennedyazeru.space/sitemap.xml" />
 
   <!-- Guard: preview / non-canonical hosts -> noindex (keeps www.kennedyazeru.space as only indexable) -->
@@ -144,7 +181,7 @@
     })();
   </script>
   <style>
-    #capabilities, #experience, #beyond, #services-teaser, #contact {
+    #capabilities, #experience, #beyond, #contact {
       content-visibility: auto; contain-intrinsic-size: auto 800px;
     }
     .proj-flex { display: flex; flex-wrap: wrap; gap: 1rem; }
@@ -169,7 +206,7 @@
       <nav class="nav__links" aria-label="Primary">
         <a href="index.html" class="is-active">Home</a>
         <a href="projects.html">Projects</a>
-        <a href="services.html">Services</a>
+        <a href="#services">Services</a>
         <a href="stack.html">Stack</a>
         <a href="#security">Security</a>
         <a href="#experience">Experience</a>
@@ -606,22 +643,279 @@
       </div>
     </section>
 
-    <!-- SERVICES TEASER -->
-    <section class="section" id="services-teaser" data-step>
+    <!-- SERVICES & PRICING -->
+    <section class="section" id="services" data-step data-dot="services" aria-labelledby="services-heading">
       <div class="shell">
-        <div class="contact-panel reveal" style="text-align:left;">
-          <span class="eyebrow">Client work</span>
-          <h2 class="display" style="font-size:clamp(1.75rem,3vw,2.4rem);margin-bottom:1rem;">I take on paid builds — scoped in writing, shipped with handover</h2>
-          <p class="lead" style="text-align:left;margin:0 0 1.25rem;max-width:62ch;">
-            Simple sites from <strong>₦50k (≈ $35)</strong> · Backend APIs from <strong>₦150k (≈ $100)</strong> ·
-            Fullstack apps from <strong>₦200k (≈ $135)</strong> · AI/RAG from <strong>₦300k (≈ $200)</strong> ·
-            Web3 dApps (Solana &amp; Sui) from <strong>₦500k (≈ $335)</strong>.
-            Send a five-line brief — goal, users, deadline, budget band, links — and I reply within 48 hours with a fixed quote and dates. 50% reserves the slot; you get weekly demos on an always-deployable staging link, then docs and handover.
-          </p>
-          <div class="contact-actions" style="justify-content:flex-start;">
-            <a href="services.html" class="btn btn--primary pressable">View services &amp; pricing</a>
-            <a href="mailto:chinwokennedy9@gmail.com?subject=Project%20scope%20—%20Homepage" class="btn btn--ghost pressable">Request a quote</a>
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Services &amp; pricing</span>
+            <h2 class="display" id="services-heading">Production engineering you can buy</h2>
           </div>
+          <p class="aside reveal reveal-d1">
+            Engineering engagements are scoped custom work with project minimums in USD. Starter builds are fixed template sites priced in naira (dollar equivalent at ₦1,500 / $1). Response within 48h · NDA-friendly · code ownership transfers on final payment.
+          </p>
+        </div>
+
+        <div class="svc-grid">
+          <article class="card card--lift svc reveal" id="svc-starter">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">web</span></div>
+                <h3>Starter build</h3>
+              </div>
+              <span class="svc__tag">Fixed template</span>
+            </div>
+            <p class="desc">A one-to-four page responsive site on a fixed template, with copy polish and a contact / WhatsApp CTA. No discovery call, no custom design, no SOW.</p>
+            <ul class="incl">
+              <li>1–4 page responsive site, fixed template</li>
+              <li>Copy polish, contact and WhatsApp CTA</li>
+              <li>Basic on-page SEO + deploy guidance</li>
+              <li>Two revisions + one-week bugfix window</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">HTML/CSS/JS</span>
+              <span class="chip chip--neutral">Template</span>
+              <span class="chip chip--neutral">WhatsApp CTA</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Starting at</small>₦50k</div>
+              <span class="price-ngn">≈ $35</span>
+            </div>
+            <div class="meta-row"><span>Fixed template</span><span>Two revisions</span><span>1-week bugfix</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal reveal-d1" id="svc-landing">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">web</span></div>
+                <h3>Landing page &amp; small site</h3>
+              </div>
+              <span class="svc__tag">Custom scope</span>
+            </div>
+            <p class="desc">A landing page or small marketing site — mobile-first, contact paths, and on-page SEO — scoped to the brief and built against a written SOW.</p>
+            <ul class="incl">
+              <li>Responsive site matched to the agreed pages</li>
+              <li>Copy polish, images, on-page SEO</li>
+              <li>Deploy + domain/email hookup guidance</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">HTML/CSS/JS</span>
+              <span class="chip chip--neutral">Next.js</span>
+              <span class="chip chip--neutral">Tailwind</span>
+              <span class="chip chip--neutral">Vercel</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$1,200</div>
+            </div>
+            <div class="meta-row"><span>2 weeks</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal reveal-d1" id="svc-backend">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">terminal</span></div>
+                <h3>Backend API or service</h3>
+              </div>
+              <span class="svc__tag">Go · Node</span>
+            </div>
+            <p class="desc">REST APIs and workers with Gin/GORM or Node, Postgres/Firebase, JWT/OAuth, rate limits and deploy-ready Docker. The same patterns behind Asguard and Azeru ingestion.</p>
+            <ul class="incl">
+              <li>Scoped API design + Postgres/Firestore schema</li>
+              <li>Auth (JWT/OAuth), validation, error contracts</li>
+              <li>Dockerfile, env template, README runbook</li>
+              <li>Postman collection</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Go/Gin</span>
+              <span class="chip chip--neutral">PostgreSQL</span>
+              <span class="chip chip--neutral">Firebase</span>
+              <span class="chip chip--neutral">Docker</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$2,500</div>
+            </div>
+            <div class="meta-row"><span>3–4 weeks</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal" id="svc-fullstack">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">layers</span></div>
+                <h3>Fullstack web app</h3>
+              </div>
+              <span class="svc__tag">Next.js · React</span>
+            </div>
+            <p class="desc">Typed Next.js 15 + React 19 + Tailwind apps with Firebase/Firestore realtime, dashboards, role-aware onboarding and analytics — the Hauser playbook, minus the bloat.</p>
+            <ul class="incl">
+              <li>Auth, roles, Firestore + Cloud Functions wiring</li>
+              <li>Image optimization, SEO basics, analytics hooks</li>
+              <li>Deploy to Vercel/Firebase + handover video</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Next.js 15</span>
+              <span class="chip chip--neutral">TypeScript</span>
+              <span class="chip chip--neutral">Tailwind</span>
+              <span class="chip chip--neutral">Firebase</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$4,500</div>
+            </div>
+            <div class="meta-row"><span>4–8 weeks</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal reveal-d1" id="svc-ai">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">neurology</span></div>
+                <h3>AI / RAG system</h3>
+              </div>
+              <span class="svc__tag">RAG · Agents</span>
+            </div>
+            <p class="desc">Citation-backed RAG over your PDFs, multi-provider routing (Groq/OpenAI/Anthropic), secret sanitization and evals. Azeru and Cgen patterns — retrieval quality first, demo theatre never.</p>
+            <ul class="incl">
+              <li>Ingest → chunk → embed → retrieve → grounded answers</li>
+              <li>Provider routing + fallbacks, token-budget guards</li>
+              <li>Secret scrubbing before any LLM egress</li>
+              <li>Eval set + admin review surface</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Groq/Llama</span>
+              <span class="chip chip--neutral">Vector search</span>
+              <span class="chip chip--neutral">Go + Next.js</span>
+              <span class="chip chip--neutral">Docker</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$6,500</div>
+            </div>
+            <div class="meta-row"><span>4–8 weeks</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal" id="svc-web3">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">token</span></div>
+                <h3>Web3 build</h3>
+              </div>
+              <span class="svc__tag">Solana · Sui</span>
+            </div>
+            <p class="desc">Smart-contract integration and dApps on Solana or Sui — wallets, token flows, on-chain programs/modules and dashboards. SEAL/Otter/DSpace lineage, now across two chains.</p>
+            <ul class="incl">
+              <li>Solana programs / Sui Move modules for your use case</li>
+              <li>Wallet integration + transaction flows + dashboard</li>
+              <li>Devnet/testnet deploy + explorer-verified walkthrough</li>
+              <li>Threat notes: custody, keys, pause paths</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Solana</span>
+              <span class="chip chip--neutral">Anchor</span>
+              <span class="chip chip--neutral">Sui Move</span>
+              <span class="chip chip--neutral">Wallet adapters</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$8,000</div>
+            </div>
+            <div class="meta-row"><span>5–10 weeks</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal reveal-d1" id="svc-audit">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">healing</span></div>
+                <h3>Audit &amp; rescue sprint</h3>
+              </div>
+              <span class="svc__tag">1–2 weeks</span>
+            </div>
+            <p class="desc">API hardening, RAG quality pass, or Web3 review with a written findings list and a fixes PR. No full rebuild required.</p>
+            <ul class="incl">
+              <li>Scoped review of the repo and runtime</li>
+              <li>Written findings + recommended fixes</li>
+              <li>Fixes PR for agreed items</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">APIs</span>
+              <span class="chip chip--neutral">RAG</span>
+              <span class="chip chip--neutral">Web3</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$2,000</div>
+            </div>
+            <div class="meta-row"><span>1–2 weeks</span></div>
+          </article>
+
+          <article class="card card--lift svc reveal" id="svc-retainer">
+            <div class="svc__top">
+              <div>
+                <div class="svc__icon"><span class="material-symbols-outlined">calendar_month</span></div>
+                <h3>Monthly retainer</h3>
+              </div>
+              <span class="svc__tag">Ongoing</span>
+            </div>
+            <p class="desc">About 40 hours a month of build, fix, and harden across your stack. Pause anytime with 2 weeks notice.</p>
+            <ul class="incl">
+              <li>~40 hours / month reserved</li>
+              <li>Fixes, deps, small features, monitoring</li>
+              <li>Pause with 2 weeks notice</li>
+            </ul>
+            <div class="gap-chips mb-2">
+              <span class="chip chip--neutral">Build</span>
+              <span class="chip chip--neutral">Fix</span>
+              <span class="chip chip--neutral">Harden</span>
+            </div>
+            <div class="price-row">
+              <div class="price"><small>Project minimum</small>$3,500<span style="font-size:1rem;">/mo</span></div>
+            </div>
+            <div class="meta-row"><span>~40 hrs / month</span></div>
+          </article>
+        </div>
+
+        <article class="card svc-includes reveal">
+          <h3>Every engineering engagement includes</h3>
+          <ul class="incl-grid">
+            <li>Written scope and SOW</li>
+            <li>Discovery before build</li>
+            <li>Weekly staging demo</li>
+            <li>Docs and a runbook at handover</li>
+            <li>Code ownership on final payment</li>
+            <li>30 days of support</li>
+          </ul>
+          <p class="note">Payment split 50 / 30 / 20. Invoiced in USD by wire or USDC.</p>
+        </article>
+
+        <div class="div-label reveal" style="margin-top:2.5rem;"><span>How we work</span></div>
+        <div class="model-grid">
+          <article class="card card--lift model reveal">
+            <span class="chip">Most popular</span>
+            <h3 style="margin-top:0.7rem;">Fixed-scope project</h3>
+            <p>Milestone contract: scope doc → 50% kickoff → build demos → 30% at beta → 20% on handover. Code ownership transfers on final payment.</p>
+          </article>
+          <article class="card card--lift model reveal reveal-d1">
+            <span class="chip chip--neutral">Ongoing</span>
+            <h3 style="margin-top:0.7rem;">Monthly retainer</h3>
+            <p>~40 hrs/month of build + fix + harden across your stack. Pause anytime with 2 weeks notice. Best after a first fixed-scope win.</p>
+          </article>
+          <article class="card card--lift model reveal reveal-d2">
+            <span class="chip chip--neutral">1–2 weeks</span>
+            <h3 style="margin-top:0.7rem;">Audit &amp; rescue sprint</h3>
+            <p>API hardening, RAG quality pass, or Web3 review with a written findings + fixes PR. No full rebuild required.</p>
+          </article>
+        </div>
+
+        <div class="div-label reveal" style="margin-top:2.5rem;"><span>Process</span></div>
+        <div class="svc-steps">
+          <div class="card svc-step reveal"><div class="svc-step__n">01</div><h3>Scope call (30 min)</h3><p>Goals, users, must-haves vs nice-to-haves. You get a fixed quote + timeline within 48h.</p></div>
+          <div class="card svc-step reveal reveal-d1"><div class="svc-step__n">02</div><h3>Contract + kickoff</h3><p>Milestone plan in writing, repo + staging stood up, 50% kickoff to reserve the slot.</p></div>
+          <div class="card svc-step reveal reveal-d1"><div class="svc-step__n">03</div><h3>Build in demos</h3><p>Weekly loom + staging link. Staging is always deployable — no big-bang surprises.</p></div>
+          <div class="card svc-step reveal reveal-d2"><div class="svc-step__n">04</div><h3>Handover + support</h3><p>Docs, env runbook, deploy, handover video. Support window as scoped. Retainer optional.</p></div>
+        </div>
+
+        <div class="div-label reveal" style="margin-top:2.5rem;"><span>FAQ</span></div>
+        <div class="faq reveal">
+          <details><summary>Do you do hourly work?</summary><p>No — fixed scopes and retainers only. Hourly penalizes efficiency. You get a written scope, fixed price and dates before we start.</p></details>
+          <details><summary>Who owns the code?</summary><p>You do, on final payment. MIT-licensed starter included where relevant; secrets and keys never leave your vault.</p></details>
+          <details><summary>Payment terms?</summary><p>50% kickoff, 30% beta, 20% handover. Engineering engagements are invoiced in USD by wire or USDC. Starter builds are invoiced in naira. Bank transfer is available for naira invoices.</p></details>
+          <details><summary>How fast can we start?</summary><p>Usually 1–2 weeks out. Rescue sprints can start faster if the repo and credentials are ready.</p></details>
+          <details><summary>Do you maintain after launch?</summary><p>Yes — the support window in the scope is included. After that, a monthly retainer covers fixes, deps, small features and monitoring.</p></details>
+          <details><summary>NDA / contracts?</summary><p>Happy to sign your NDA. Scope, price, dates and IP go in writing before kickoff.</p></details>
         </div>
       </div>
     </section>
@@ -638,7 +932,7 @@
           </p>
           <div class="contact-actions">
             <a href="mailto:chinwokennedy9@gmail.com" class="btn btn--primary pressable">chinwokennedy9@gmail.com</a>
-            <a href="services.html" class="btn btn--ghost pressable">Scope a paid build</a>
+            <a href="#services" class="btn btn--ghost pressable">Scope a paid build</a>
             <a href="tel:+2349137068463" class="btn btn--ghost pressable">+234 913 706 8463</a>
             <a href="Kennedy_Chinwo_Resume.pdf" class="btn btn--link">Download CV</a>
             <a href="https://github.com/Azeru548" target="_blank" rel="noopener" class="btn btn--link">GitHub</a>
@@ -660,7 +954,7 @@
         <a href="https://www.linkedin.com/in/kennedy-chinwo-068a9a284/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:chinwokennedy9@gmail.com">Email</a>
         <a href="projects.html">Projects</a>
-        <a href="services.html">Services</a>
+        <a href="#services">Services</a>
       </div>
     </div>
   </footer>
